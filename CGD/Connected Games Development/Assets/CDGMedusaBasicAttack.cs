@@ -67,8 +67,8 @@ public class CDGMedusaBasicAttack : MonoBehaviour
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
             print("hit other player");
-            Vector3 PlayerToEnemyDirection = Vector3.Normalize(collider.gameObject.transform.position - transform.position);
-            collider.gameObject.GetComponent<Rigidbody>().AddForce(PlayerToEnemyDirection * RepelForce, ForceMode.Force);
+            Vector3 PlayerToEnemyDirection = Vector3.Normalize(collider.gameObject.transform.position - OwnPlayer.transform.position);
+            collider.gameObject.GetComponent<Rigidbody>().AddForce(PlayerToEnemyDirection * RepelForce);
         }
     }
     // maybe move actual physics calculation into fixedupdate
