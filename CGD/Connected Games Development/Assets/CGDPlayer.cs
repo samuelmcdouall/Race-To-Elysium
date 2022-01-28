@@ -68,8 +68,12 @@ public class CGDPlayer : MonoBehaviour
 
     public void ApplySpeedModifierForSeconds(float ModiferPercentage, float Duration)
     {
-        _speedModifier = 1.0f - (ModiferPercentage / 100.0f);
-        Invoke("ResetSpeedModifier", Duration);
+        // can only have one slow at a time
+        if (_speedModifier == 1.0f)
+        {
+            _speedModifier = 1.0f - (ModiferPercentage / 100.0f);
+            Invoke("ResetSpeedModifier", Duration);
+        }
     }
     public void ResetSpeedModifier()
     {
@@ -127,6 +131,7 @@ public class CGDPlayer : MonoBehaviour
                 PlayerRb.velocity = new Vector3(PlayerRb.velocity.x, original_vertical_speed, PlayerRb.velocity.z);
             }
         }
+        PlayerRb.velocity = PlayerRb.velocity * _speedModifier;
     }
 
     public void HandleGroundCheckMechanics()
@@ -218,7 +223,7 @@ public class CGDPlayer : MonoBehaviour
     {
         horizontal_direction = new Vector3(horizontal_direction.x, 0.0f, horizontal_direction.z);
         horizontal_direction = horizontal_direction.normalized * PlayerMoveForce;
-        PlayerRb.AddForce(horizontal_direction * _speedModifier);
+        PlayerRb.AddForce(horizontal_direction);
     }
 
     public void HandleJumpMechanics()
