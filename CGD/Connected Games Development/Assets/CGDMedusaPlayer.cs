@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CGDMedusaPlayer : CGDPlayer
 {
-    [Header("Ultimate")]
+    [Header("Ultimate Attack")]
     [SerializeField]
     float _freezeDuration;
     [SerializeField]
