@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CDGRepelAttack : MonoBehaviour
+public class CDGMedusaBasicAttack : MonoBehaviour
 {
     public GameObject OwnPlayer;
     Collider _repelCollider;
