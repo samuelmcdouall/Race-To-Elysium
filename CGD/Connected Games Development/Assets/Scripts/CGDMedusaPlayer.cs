@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CGDMedusaPlayer : CGDPlayer
 {
@@ -9,25 +10,33 @@ public class CGDMedusaPlayer : CGDPlayer
     float _freezeDuration;
     [SerializeField]
     float _freezeRange;
+    PhotonView _view;
+    public GameObject MainCamera;
 
-    void Start()
+    void Awake()
     {
         InitialPlayerSetup();
     }
 
     public override void FixedUpdate()
     {
-        base.FixedUpdate();
+        if (_view.IsMine)
+        {
+            base.FixedUpdate();
+        }
     }
     public override void Update()
     {
-        if (_enabledControls)
+        if (_view.IsMine)
         {
-            HandleJumpMechanics();
-
-            if (Input.GetMouseButtonDown(1))
+            if (_enabledControls)
             {
-                UltimateAttack();
+                HandleJumpMechanics();
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    UltimateAttack();
+                }
             }
         }
     }
@@ -70,10 +79,15 @@ public class CGDMedusaPlayer : CGDPlayer
     public override void InitialPlayerSetup()
     {
         PlayerRb = GetComponent<Rigidbody>();
+        _view = GetComponent<PhotonView>();
         Cursor.visible = _showCursor;
         _cameraTr = Camera.main.transform;
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         UltimateCharge = 0.0f;
+        if (!_view.IsMine)
+        {
+            Destroy(MainCamera);
+        }
     }
 }

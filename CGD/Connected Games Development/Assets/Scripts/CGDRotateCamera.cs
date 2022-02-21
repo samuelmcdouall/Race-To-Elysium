@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CGDRotateCamera : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class CGDRotateCamera : MonoBehaviour
     [SerializeField]
     float MouseYMaxClamp = 60.0f;
 
+    public PhotonView View;
+
     //[Header("Menus")]
     //public GameObject pause_menu;
     //public GameObject options_menu;
@@ -25,8 +28,11 @@ public class CGDRotateCamera : MonoBehaviour
     {
         //if (!pause_menu.activeSelf && !options_menu.activeSelf && !controls_menu.activeSelf)
         //{
+        if (View.IsMine)
+        {
             GetMouseInput();
             CameraTargetToRotateAround.rotation = Quaternion.Euler(_mouseY, _mouseX, 0.0f);
+        }
         //}
     }
 
