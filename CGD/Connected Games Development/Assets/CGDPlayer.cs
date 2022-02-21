@@ -23,7 +23,9 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public Transform _cameraTr;
     //public static Transform last_camera_tr;
-
+    [System.NonSerialized]
+    public float UltimateCharge;
+    public CGDUltimateBar UltimateBar;
     // Animations
     //[System.NonSerialized]
     //public Animator player_ani;
@@ -246,6 +248,22 @@ public class CGDPlayer : MonoBehaviour
     public void JumpUp()
     {
         PlayerRb.AddForce(0.0f, _playerJumpForce, 0.0f, ForceMode.Impulse);
+    }
+
+    public void ModifyUltimateCharge(float charge_amount)
+    {
+        UltimateCharge += charge_amount;
+        if (UltimateCharge > 100.0f)
+        {
+            UltimateCharge = 100.0f;
+        }
+        else if (UltimateCharge < 0.0f)
+        {
+            UltimateCharge = 0.0f;
+        }
+        UltimateBar.SetUltBar(UltimateCharge);
+        print("Ultimate Charge: " + UltimateCharge);
+        // set the new value here in the bar
     }
 
     public void OnCollisionEnter(Collision collision)
