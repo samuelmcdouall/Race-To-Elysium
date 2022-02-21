@@ -9,7 +9,6 @@ public class CGDMedusaPlayer : CGDPlayer
     float _freezeDuration;
     [SerializeField]
     float _freezeRange;
-    bool _readyToFreeze;
 
     void Start()
     {
@@ -28,49 +27,44 @@ public class CGDMedusaPlayer : CGDPlayer
 
             if (Input.GetMouseButtonDown(1))
             {
-                if (_readyToFreeze)
-                {
-                    UltimateAttack();
-                }
-                else
-                {
-                    print("Need to recharge ultimate");
-                }
-            }
-            if (Input.GetMouseButtonDown(2) && !_readyToFreeze)
-            {
-                // todo actual mechanics for charging, not just middle clicking
-                RechargeUltimateAttack();
+                UltimateAttack();
             }
         }
     }
     public override void UltimateAttack()
     {
-        print("Medusa ultimate attack!");
-        _readyToFreeze = false;
-        RaycastHit hit;
-        Vector3 ForwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
-        ForwardDirection = ForwardDirection.normalized;
-        Debug.DrawRay(transform.position, ForwardDirection * _freezeRange, Color.cyan, 1.0f);
-        if (Physics.Raycast(transform.position, ForwardDirection, out hit, _freezeRange))
+        if (UltimateCharge == 100.0f)
         {
-            if (hit.transform.gameObject.tag == "Player")
+            print("Medusa ultimate attack!");
+            UltimateCharge = 0.0f;
+            UltimateBar.SetUltBar(UltimateCharge);
+            RaycastHit hit;
+            Vector3 ForwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
+            ForwardDirection = ForwardDirection.normalized;
+            Debug.DrawRay(transform.position, ForwardDirection * _freezeRange, Color.cyan, 1.0f);
+            if (Physics.Raycast(transform.position, ForwardDirection, out hit, _freezeRange))
             {
-                print("I just hit a player, freeze them!");
-                hit.transform.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(100.0f, _freezeDuration);
-                // todo may want to do other things such as block camera rotation or abilites too
+                if (hit.transform.gameObject.tag == "Player")
+                {
+                    print("I just hit a player, freeze them!");
+                    hit.transform.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(100.0f, _freezeDuration);
+                    // todo may want to do other things such as block camera rotation or abilites too
+                }
+            }
+            else
+            {
+                print("Didn't hit anything!");
             }
         }
         else
         {
-            print("Didn't hit anything!");
+            print("Not enough charge!");
         }
     }
     public override void RechargeUltimateAttack()
     {
         //todo debug only
         print("Ready to freeze again!");
-        _readyToFreeze = true;
     }
 
     public override void InitialPlayerSetup()
@@ -80,6 +74,6 @@ public class CGDMedusaPlayer : CGDPlayer
         _cameraTr = Camera.main.transform;
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
-        _readyToFreeze = true;
+        UltimateCharge = 0.0f;
     }
 }
