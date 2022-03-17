@@ -10,7 +10,6 @@ public class CGDMedusaPlayer : CGDPlayer
     float _freezeDuration;
     [SerializeField]
     float _freezeRange;
-    PhotonView _view;
     public GameObject MainCamera;
 
     void Awake()
@@ -37,6 +36,10 @@ public class CGDMedusaPlayer : CGDPlayer
                 {
                     UltimateAttack();
                 }
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                //    ChangeColor(new Vector3(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
+                //}
             }
         }
     }
@@ -56,7 +59,8 @@ public class CGDMedusaPlayer : CGDPlayer
                 if (hit.transform.gameObject.tag == "Player")
                 {
                     print("I just hit a player, freeze them!");
-                    hit.transform.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(100.0f, _freezeDuration);
+                    int photonViewID = hit.transform.gameObject.GetComponent<PhotonView>().ViewID;
+                    hit.transform.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(_freezeDuration, photonViewID, true);
                     // todo may want to do other things such as block camera rotation or abilites too
                 }
             }
@@ -88,6 +92,30 @@ public class CGDMedusaPlayer : CGDPlayer
         if (!_view.IsMine)
         {
             Destroy(MainCamera);
+        }
+    }
+    [PunRPC]
+    void ChangeColor(Vector3 color)
+    {
+        GetComponent<Renderer>().material.color = new Color(color.x, color.y, color.z, 1.0f);
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            GetComponent<PhotonView>().RPC("ChangeColor", RpcTarget.OthersBuffered, color);
+        }
+    }
+    [PunRPC]
+    public void KnockbackOtherPlayer(Vector3 forceToAdd, int photonViewID)
+    {
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
+        if (_view.IsMine)
+        {
+            Debug.Log("send message to other players");
+            GetComponent<PhotonView>().RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
+        }
+        else
+        {
+            Debug.Log("Got this instruction from other player");
         }
     }
 }
