@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CGDGroundCheck : MonoBehaviour
 {
-    public static bool IsGrounded;
+    public bool IsGrounded;
     void OnTriggerStay(Collider collider)
     {
         if (collider != null)
