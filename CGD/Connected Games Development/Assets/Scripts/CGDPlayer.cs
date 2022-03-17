@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,11 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public float UltimateCharge;
     public CGDUltimateBar UltimateBar;
+    float _ultPickupDelay = 0.5f; // can't modifiy ult charge for at least 0.5 seconds, not brilliant but will do for now
+    bool _ableToPickupUlt = true;
+    [System.NonSerialized]
+    public PhotonView _view;
+    public CGDGroundCheck GroundCheck;
     // Animations
     //[System.NonSerialized]
     //public Animator player_ani;
@@ -68,9 +74,25 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    public void ApplySpeedModifierForSeconds(float ModiferPercentage, float Duration)
+    [PunRPC] // todo maybe better way of doing this
+    public void ApplySpeedModifierForSecondsToGivenPlayer(float ModiferPercentage, float Duration, int photonViewID, bool sendToOtherPlayers)
     {
         // can only have one slow at a time
+
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(ModiferPercentage, Duration);
+        if (sendToOtherPlayers)
+        {
+            Debug.Log("send apply speed mod for seconds instruction to other players");
+            GetComponent<PhotonView>().RPC("ApplySpeedModifierForSecondsToGivenPlayer", RpcTarget.OthersBuffered, ModiferPercentage, Duration, photonViewID, false);
+        }
+        else
+        {
+            Debug.Log("Got this apply speed mod for seconds instruction from other player");
+        }
+    }
+    public void ApplySpeedModifierForSeconds(float ModiferPercentage, float Duration)
+    {
         if (_speedModifier == 1.0f)
         {
             _speedModifier = 1.0f - (ModiferPercentage / 100.0f);
@@ -80,6 +102,33 @@ public class CGDPlayer : MonoBehaviour
     public void ResetSpeedModifier()
     {
         _speedModifier = 1.0f;
+        print("returned to normal speed");
+    }
+    [PunRPC] // todo maybe better way of doing this
+    public void DisableControlsForSecondsToGivenPlayer(float Duration, int photonViewID, bool sendToOtherPlayers)
+    {
+        // can only have one slow at a time
+
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<CGDPlayer>().DisableControlsForSeconds(Duration);
+        if (sendToOtherPlayers)
+        {
+            Debug.Log("send apply speed mod for seconds instruction to other players");
+            GetComponent<PhotonView>().RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
+        }
+        else
+        {
+            Debug.Log("Got this apply speed mod for seconds instruction from other player");
+        }
+    }
+    public void DisableControlsForSeconds(float Duration)
+    {
+        _enabledControls = false;
+        Invoke("EnableControls", Duration);
+    }
+    public void EnableControls()
+    {
+        _enabledControls = true;
         print("returned to normal speed");
     }
     public virtual void Update()
@@ -138,7 +187,7 @@ public class CGDPlayer : MonoBehaviour
 
     public void HandleGroundCheckMechanics()
     {
-        if (CGDGroundCheck.IsGrounded)
+        if (GroundCheck.IsGrounded)
         {
             DetermineIfReadyToJumpOffGround();
         }
@@ -232,7 +281,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (CGDGroundCheck.IsGrounded && _ableToJumpOffGround)
+            if (GroundCheck.IsGrounded && _ableToJumpOffGround)
             {
                 JumpUp();
                 //Invoke("JumpUp", 0.0f);
@@ -252,18 +301,36 @@ public class CGDPlayer : MonoBehaviour
 
     public void ModifyUltimateCharge(float charge_amount)
     {
-        UltimateCharge += charge_amount;
-        if (UltimateCharge > 100.0f)
+        if (_ableToPickupUlt)
         {
-            UltimateCharge = 100.0f;
+            _ableToPickupUlt = false;
+            Invoke("AbleToPickUltAgain", _ultPickupDelay);
+            if (charge_amount > 0.0f)
+            {
+                print("Increased charge by: " + charge_amount);
+            }
+            else
+            {
+                print("Decreased charge by: " + -charge_amount);
+            }
+            UltimateCharge += charge_amount;
+            if (UltimateCharge > 100.0f)
+            {
+                UltimateCharge = 100.0f;
+            }
+            else if (UltimateCharge < 0.0f)
+            {
+                UltimateCharge = 0.0f;
+            }
+            UltimateBar.SetUltBar(UltimateCharge);
+            print("Ultimate Charge: " + UltimateCharge);
+            // set the new value here in the bar
         }
-        else if (UltimateCharge < 0.0f)
-        {
-            UltimateCharge = 0.0f;
-        }
-        UltimateBar.SetUltBar(UltimateCharge);
-        print("Ultimate Charge: " + UltimateCharge);
-        // set the new value here in the bar
+    }
+
+    void AbleToPickUltAgain()
+    {
+        _ableToPickupUlt = true;
     }
 
     public void OnCollisionEnter(Collision collision)
