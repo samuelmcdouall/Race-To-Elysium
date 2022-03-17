@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OwnPlayer: {fileID: 4049573236163780219}
-  RepelBubbleDuration: 0.1
-  RepelForce: 1000
-  RepelCooldown: 0.1
+  _repelBubbleDuration: 0.1
+  _repelForce: 200
+  _repelCooldown: 1
   _readyToRepel: 0
 --- !u!65 &2236836925217184053
 BoxCollider:
@@ -196,10 +196,10 @@ RectTransform:
   m_Father: {fileID: 8208920918311995564}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -612, y: 429}
-  m_SizeDelta: {x: 523.6959, y: 99.8559}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 261.84796, y: -49.927948}
+  m_SizeDelta: {x: 523.6959, y: 99.855896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2771807487963418590
 MonoBehaviour:
@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 1751250552735227615}
   - component: {fileID: 1958545619369189649}
   - component: {fileID: 4864938221004231505}
+  - component: {fileID: 1978823763770631500}
   m_Layer: 0
   m_Name: MedusaPlayer
   m_TagString: Player
@@ -399,14 +400,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveForce: 40
   _playerTopSpeed: 4
-  _playerJumpForce: 5
+  _playerJumpForce: 10
   _playerFallForce: 0
   UltimateBar: {fileID: 5766264640925217962}
+  GroundCheck: {fileID: 3694094280244703910}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
   _enabledControls: 1
-  _freezeDuration: 3
+  _freezeDuration: 15
   _freezeRange: 10
   MainCamera: {fileID: 6945357730522883761}
 --- !u!114 &1958545619369189649
@@ -429,6 +431,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4864938221004231505}
+  - {fileID: 1978823763770631500}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -447,7 +450,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 2
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -465,6 +468,22 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &1978823763770631500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049573236163780219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 1
+  m_TeleportIfDistanceGreaterThan: 2
 --- !u!1 &5433551232186928924
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee9f1d9efc0a7469633525d7a9fc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGrounded: 0
 --- !u!1 &6945357730522883761
 GameObject:
   m_ObjectHideFlags: 0
