@@ -404,6 +404,9 @@ MonoBehaviour:
   _playerFallForce: 0
   UltimateBar: {fileID: 5766264640925217962}
   GroundCheck: {fileID: 3694094280244703910}
+  WonScreen: {fileID: 0}
+  LossScreen: {fileID: 0}
+  RotateCamera: {fileID: 2249433769207627536}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
