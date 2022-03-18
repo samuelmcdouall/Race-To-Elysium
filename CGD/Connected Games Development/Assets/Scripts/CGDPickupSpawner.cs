@@ -39,7 +39,7 @@ public class CGDPickupSpawner : MonoBehaviour
     void Update()
     {
         //print(_spawnDelay);
-        if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient) // still issue here with platform reference
         {
             if (!SpawnedPickup)
             {
@@ -48,7 +48,7 @@ public class CGDPickupSpawner : MonoBehaviour
                     float random_x_pos = Random.Range(_minXSpawnDis, _maxXSpawnDis);
                     float random_z_pos = Random.Range(_minZSpawnDis, _maxZSpawnDis);
                     Vector3 spawn_position = new Vector3(random_x_pos, 1.0f, random_z_pos) + gameObject.transform.position;
-                    GameObject pickup = PhotonNetwork.Instantiate(Pickup.name, spawn_position, Quaternion.identity);
+                    GameObject pickup = PhotonNetwork.InstantiateRoomObject(Pickup.name, spawn_position, Quaternion.identity);
                     pickup.GetComponent<CGDUltimatePickupReduce>().PickupPlatformSpawner = gameObject;
                     pickup.transform.Find("IncreaseCollider").GetComponent<CGDUltimatePickupIncrease>().PickupPlatformSpawner = gameObject;
                     SpawnedPickup = true;
