@@ -13,11 +13,11 @@ public class CGDUltimatePickupReduce : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_reductionPercentage);
-            if (PhotonNetwork.IsMasterClient)
+            if (PickupPlatformSpawner)
             {
                 PickupPlatformSpawner.GetComponent<CGDPickupSpawner>().SpawnedPickup = false;
-                PhotonNetwork.Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 }
