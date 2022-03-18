@@ -43,6 +43,10 @@ MonoBehaviour:
   - ChangeColor
   - ApplySpeedModifierForSecondsToGivenPlayer
   - DisableControlsForSecondsToGivenPlayer
+  - GameOverScreen
+  - DisplayLossScreen
+  - DisplayWinScreen
+  - DisplayGameOverScreen
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
