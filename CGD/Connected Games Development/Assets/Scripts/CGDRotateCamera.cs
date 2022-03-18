@@ -28,7 +28,7 @@ public class CGDRotateCamera : MonoBehaviour
     {
         //if (!pause_menu.activeSelf && !options_menu.activeSelf && !controls_menu.activeSelf)
         //{
-        if (View.IsMine)
+        if (View.IsMine && !CGDGameOverScreenManager.GameOver)
         {
             GetMouseInput();
             CameraTargetToRotateAround.rotation = Quaternion.Euler(_mouseY, _mouseX, 0.0f);
