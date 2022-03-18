@@ -32,6 +32,12 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public PhotonView _view;
     public CGDGroundCheck GroundCheck;
+    //[System.NonSerialized]
+    public GameObject WonScreen;
+    //[System.NonSerialized]
+    public GameObject LossScreen;
+    public CGDRotateCamera RotateCamera;
+
     // Animations
     //[System.NonSerialized]
     //public Animator player_ani;
@@ -68,7 +74,7 @@ public class CGDPlayer : MonoBehaviour
     {
         LimitSpeedToMaximum();
         HandleGroundCheckMechanics();
-        if (_enabledControls)
+        if (_enabledControls && !CGDGameOverScreenManager.GameOver)
         {
             HandleMovementMechanics();
         }
@@ -133,7 +139,7 @@ public class CGDPlayer : MonoBehaviour
     }
     public virtual void Update()
     {
-        if (_enabledControls)
+        if (_enabledControls && !CGDGameOverScreenManager.GameOver)
         {
             HandleJumpMechanics();
         }
@@ -331,6 +337,47 @@ public class CGDPlayer : MonoBehaviour
     void AbleToPickUltAgain()
     {
         _ableToPickupUlt = true;
+    }
+
+    //[PunRPC]
+    //public void DisplayWinScreen() // gonna have to do it by ID
+    //{
+    //    Debug.Log("send victory instruction to other players, means i won");
+    //    WonScreen.SetActive(true);
+    //    Cursor.visible = true;
+    //    _enabledControls = false;
+    //    RotateCamera._enabledCameraControls = false;
+    //    GetComponent<PhotonView>().RPC("DisplayLossScreen", RpcTarget.OthersBuffered);
+    //}
+
+    //[PunRPC]
+    //public void DisplayLossScreen() // gonna have to do it by ID
+    //{
+    //    Debug.Log("Got this victory instruction from other player, means i lost");
+    //    LossScreen.SetActive(true);
+    //    Cursor.visible = true;
+    //    _enabledControls = false;
+    //    RotateCamera._enabledCameraControls = false;
+        
+    //}
+    [PunRPC]
+    public void DisplayGameOverScreen() // gonna have to do it by ID
+    {
+        if (_view.IsMine)
+        {
+            Debug.Log("send victory instruction to other players, means i won");
+            CGDGameOverScreenManager.DisplayWinScreen();
+            //GetComponent<PhotonView>().RPC("GameOverScreen", RpcTarget.OthersBuffered);
+        }
+        else
+        {
+            Debug.Log("Got this victory instruction from other player, means i lost");
+            CGDGameOverScreenManager.DisplayLossScreen();
+            //LossScreen.SetActive(true);
+            //Cursor.visible = true;
+            //_enabledControls = false;
+            //RotateCamera._enabledCameraControls = false;
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
