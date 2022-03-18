@@ -82,6 +82,7 @@ public class CGDMedusaPlayer : CGDPlayer
 
     public override void InitialPlayerSetup()
     {
+        // this is being called twice todo
         PlayerRb = GetComponent<Rigidbody>();
         _view = GetComponent<PhotonView>();
         Cursor.visible = _showCursor;
