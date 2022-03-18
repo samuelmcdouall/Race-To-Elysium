@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &29681943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &242811738
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &321855192
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +561,7 @@ MonoBehaviour:
   MouseYMinClamp: -35
   MouseYMaxClamp: 60
   View: {fileID: 0}
+  _enabledCameraControls: 1
 --- !u!81 &321855195
 AudioListener:
   m_ObjectHideFlags: 0
@@ -653,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee9f1d9efc0a7469633525d7a9fc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGrounded: 0
 --- !u!65 &343224386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -814,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &478070493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -936,6 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &565223906
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +981,10 @@ MonoBehaviour:
   _playerJumpForce: 8
   _playerFallForce: 0
   UltimateBar: {fileID: 0}
+  GroundCheck: {fileID: 0}
+  WonScreen: {fileID: 0}
+  LossScreen: {fileID: 0}
+  RotateCamera: {fileID: 0}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
@@ -1123,6 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &600537384
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1233,6 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &648365584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1428,6 +1441,10 @@ MonoBehaviour:
   _playerJumpForce: 0
   _playerFallForce: 0
   UltimateBar: {fileID: 0}
+  GroundCheck: {fileID: 0}
+  WonScreen: {fileID: 0}
+  LossScreen: {fileID: 0}
+  RotateCamera: {fileID: 0}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
@@ -1758,6 +1775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &951390351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1880,6 +1898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &1048381118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &1084822961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2115,6 +2135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &1101237145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2410,6 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee9f1d9efc0a7469633525d7a9fc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGrounded: 0
 --- !u!65 &1235013164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2481,6 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &1389337325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,6 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &1718570656
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2932,6 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &1763789989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,6 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reductionPercentage: 25
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!23 &1763789992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3100,6 +3126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &1883307568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,6 +3272,7 @@ MonoBehaviour:
   MouseYMinClamp: -35
   MouseYMaxClamp: 60
   View: {fileID: 0}
+  _enabledCameraControls: 1
 --- !u!81 &1991752610
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3354,6 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &2006335766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increasePercentage: 50
+  PickupPlatformSpawner: {fileID: 0}
 --- !u!1 &2104673150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,6 +3849,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
+--- !u!1001 &3942596868584746517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251776, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942596869525251780, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
+      propertyPath: m_Name
+      value: VictoryPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
 --- !u!1001 &4985776662018021338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3826,6 +3913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2355218848240284939, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
       propertyPath: m_Name
       value: UltPickup (ReduceCollider)
