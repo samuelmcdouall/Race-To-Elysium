@@ -12,12 +12,10 @@ public class CGDGameSceneLoader : MonoBehaviour
     public Text _countDownText;
     bool _beginCountDown;
     PhotonView _view;
-    bool _beginLoadingScene;
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         _beginCountDown = false;
-        _beginLoadingScene = false;
         _view = GetComponent<PhotonView>();
         _countDownText.text = "";
         _countDownTimer = _countDownTime;
@@ -26,7 +24,7 @@ public class CGDGameSceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient)
+        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient) // this is more of a debugging
         {
             BeginCountDown();
         }
@@ -34,30 +32,29 @@ public class CGDGameSceneLoader : MonoBehaviour
         {
             _countDownTimer -= Time.deltaTime;
             float roundedCountDownTimer = Mathf.Ceil(_countDownTimer);
-            if (_beginLoadingScene)
+            if (_countDownTimer <= 0.0f)
             {
                 _countDownText.text = "";
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    _countDownTimer = _countDownTime;
+                    PhotonNetwork.LoadLevel("GameScene");
+                }
             }
             else
             {
                 _countDownText.text = ((int)roundedCountDownTimer).ToString();
             }
-            if (PhotonNetwork.IsMasterClient && _countDownTimer <= 0.0f)
-            {
-                _countDownTimer = _countDownTime;
-                _beginLoadingScene = true;
-                _countDownText.text = "";
-                PhotonNetwork.LoadLevel("GameScene");
-            }
         }
+    }
+    public void BeginCountDownForAllPlayers()
+    {
+        print("I'm the last player to join, telling everyone to start counting down");
+        _view.RPC("BeginCountDown", RpcTarget.AllBuffered);
     }
     [PunRPC]
     void BeginCountDown()
     {
         _beginCountDown = true;
-        if (_view.IsMine)
-        {
-            _view.RPC("BeginCountDown", RpcTarget.OthersBuffered);
-        }
     }
 }
