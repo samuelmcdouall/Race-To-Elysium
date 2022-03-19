@@ -49,6 +49,8 @@ MonoBehaviour:
   - DisplayGameOverScreen
   - UpdateCountDownText
   - BeginCountDown
+  - ModifiyPlayerNumForAllPlayers
+  - ModifiyPlayerNum
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
