@@ -12,10 +12,12 @@ public class CGDGameSceneLoader : MonoBehaviour
     public Text _countDownText;
     bool _beginCountDown;
     PhotonView _view;
+    bool _begunLoadingLevel;
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         _beginCountDown = false;
+        _begunLoadingLevel = false;
         _view = GetComponent<PhotonView>();
         _countDownText.text = "";
         _countDownTimer = _countDownTime;
@@ -32,8 +34,13 @@ public class CGDGameSceneLoader : MonoBehaviour
         {
             _countDownTimer -= Time.deltaTime;
             float roundedCountDownTimer = Mathf.Ceil(_countDownTimer);
-            if (_countDownTimer <= 0.0f)
+            if (_begunLoadingLevel)
             {
+                _countDownText.text = "";
+            }
+            else if (_countDownTimer <= 0.0f)
+            {
+                _begunLoadingLevel = true;
                 _countDownText.text = "";
                 if (PhotonNetwork.IsMasterClient)
                 {
