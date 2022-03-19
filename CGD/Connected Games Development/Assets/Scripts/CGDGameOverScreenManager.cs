@@ -44,6 +44,7 @@ public class CGDGameOverScreenManager : MonoBehaviour
         {
             yield return null;
         }
+        GameOver = false;
         PhotonNetwork.LoadLevel("MainMenuScene");
     }
 }
