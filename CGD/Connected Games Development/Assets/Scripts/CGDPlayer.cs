@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CGDPlayer : MonoBehaviour
 {
@@ -328,7 +329,10 @@ public class CGDPlayer : MonoBehaviour
             {
                 UltimateCharge = 0.0f;
             }
-            UltimateBar.SetUltBar(UltimateCharge);
+            if (_view.IsMine)
+            {
+                UltimateBar.SetUltBar(UltimateCharge);
+            }
             print("Ultimate Charge: " + UltimateCharge);
             // set the new value here in the bar
         }
