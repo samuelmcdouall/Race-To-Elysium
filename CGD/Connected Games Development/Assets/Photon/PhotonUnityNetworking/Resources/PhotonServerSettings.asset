@@ -47,6 +47,8 @@ MonoBehaviour:
   - DisplayLossScreen
   - DisplayWinScreen
   - DisplayGameOverScreen
+  - UpdateCountDownText
+  - BeginCountDown
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
