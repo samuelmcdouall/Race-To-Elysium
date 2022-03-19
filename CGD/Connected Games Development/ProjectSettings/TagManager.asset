@@ -10,6 +10,8 @@ TagManager:
   - WinScreen
   - LossScreen
   - GameOverScreenManager
+  - CountDownText
+  - GameSceneLoader
   layers:
   - Default
   - TransparentFX
