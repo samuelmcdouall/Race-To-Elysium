@@ -28,7 +28,7 @@ public class CGDMedusaPlayer : CGDPlayer
     {
         if (_view.IsMine)
         {
-            if (_enabledControls)
+            if (_enabledControls && !CGDGameOverScreenManager.GameOver)
             {
                 HandleJumpMechanics();
 
