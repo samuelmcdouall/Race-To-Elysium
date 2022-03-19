@@ -22,11 +22,6 @@ public class CGDPlayerSpawner : MonoBehaviour
     {
         Vector2 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), PlayerPrefab.transform.position.y, Random.Range(_minSpawnZ, _maxSpawnZ));
         PhotonNetwork.Instantiate(PlayerPrefab.name, randomPosition, Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // check how many players there are in the scene here, if equal to 4 then set to tru on game scene loader
     }
 }
