@@ -12,7 +12,8 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -34,5 +35,10 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("PlayerLobbyScene");
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }
