@@ -90,6 +90,7 @@ public class CGDMedusaPlayer : CGDPlayer
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         UltimateCharge = 0.0f;
+        Cursor.lockState = CursorLockMode.Locked;
         if (!_view.IsMine)
         {
             Destroy(MainCamera);
