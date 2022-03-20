@@ -75,7 +75,7 @@ public class CGDPlayer : MonoBehaviour
     {
         LimitSpeedToMaximum();
         HandleGroundCheckMechanics();
-        if (_enabledControls && !CGDGameOverScreenManager.GameOver)
+        if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             HandleMovementMechanics();
         }
@@ -140,7 +140,7 @@ public class CGDPlayer : MonoBehaviour
     }
     public virtual void Update()
     {
-        if (_enabledControls && !CGDGameOverScreenManager.GameOver)
+        if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             HandleJumpMechanics();
         }
