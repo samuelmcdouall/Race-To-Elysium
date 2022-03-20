@@ -58,17 +58,17 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            ReorderPlayersAndLeaveRoom();
-        }
+        //if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    ReorderPlayersAndLeaveRoom();
+        //}
     }
-    void ReorderPlayersAndLeaveRoom()
-    {
-        print("leaving this room");
-        ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-        StartCoroutine(LeaveRoom());
-    }
+    //public void ReorderPlayersAndLeaveRoom()
+    //{
+    //    print("leaving this room");
+    //    ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
+    //    StartCoroutine(LeaveRoom());
+    //}
     
 
     //public override void OnDisconnected(DisconnectCause cause)
@@ -77,11 +77,11 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
     //    ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
     //    base.OnDisconnected(cause);
     //}
-    void OnApplicationQuit()
-    {
-        print("leaving this room (disconnected from server)");
-        ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-    }
+    //void OnApplicationQuit()
+    //{
+    //    print("leaving this room (disconnected from server)");
+    //    ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
+    //}
 
     void ModifiyPlayerNumForAllPlayers(int leftPlayerNum)
     {
