@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnPlayer: {fileID: 4049573236163780219}
   _repelBubbleDuration: 0.1
-  _repelForce: 200
+  _repelForce: 500
   _repelCooldown: 1
   _readyToRepel: 0
 --- !u!65 &2236836925217184053
