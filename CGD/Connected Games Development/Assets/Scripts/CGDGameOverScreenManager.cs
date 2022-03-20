@@ -23,6 +23,7 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         print("DISPLAY WIN SCREEN");
         GameOver = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         WonScreen.SetActive(true);
     }
     public static void DisplayLossScreen()
@@ -30,6 +31,7 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         print("DISPLAY LOSS SCREEN");
         GameOver = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         LossScreen.SetActive(true);
     }
 
