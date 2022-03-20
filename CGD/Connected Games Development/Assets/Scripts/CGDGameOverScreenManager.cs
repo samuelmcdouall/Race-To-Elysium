@@ -8,7 +8,9 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public static GameObject WonScreen;
     public static GameObject LossScreen;
+    public static GameObject PauseMenu;
     public static bool GameOver;
+    public CGDPauseManager PauseManager;
 
     void Start()
     {
@@ -17,6 +19,8 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         WonScreen.SetActive(false);
         LossScreen = GameObject.FindGameObjectWithTag("LossScreen");
         LossScreen.SetActive(false);
+        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        PauseMenu.SetActive(false);
     }
     public static void DisplayWinScreen()
     {
@@ -24,6 +28,10 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         GameOver = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if (PauseMenu.activeSelf)
+        {
+            PauseMenu.SetActive(false);
+        }
         WonScreen.SetActive(true);
     }
     public static void DisplayLossScreen()
@@ -32,6 +40,10 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         GameOver = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if (PauseMenu.activeSelf)
+        {
+            PauseMenu.SetActive(false);
+        }
         LossScreen.SetActive(true);
     }
 
