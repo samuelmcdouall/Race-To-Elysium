@@ -39,7 +39,8 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             _gameSceneLoader = GameObject.FindGameObjectWithTag("GameSceneLoader");
             
             Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), PlayerPrefab.transform.position.y, Random.Range(_minSpawnZ, _maxSpawnZ));
-            PhotonNetwork.Instantiate(PlayerPrefab.name, randomPosition, Quaternion.identity);
+            Vector3 constantPos = new Vector3(0.0f, 2.0f, 0.0f);
+            PhotonNetwork.Instantiate(PlayerPrefab.name, constantPos, Quaternion.identity);
             if (playerCount == _maxPlayers)
             {
                 print("Enough players (" + _maxPlayers + ") to start the game");
@@ -110,6 +111,7 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
         {
             yield return null;
         }
+        CGDGameOverScreenManager.GameOver = false;
         PhotonNetwork.LoadLevel("MainMenuScene");
     }
 }
