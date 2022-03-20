@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveForce: 40
   _playerTopSpeed: 4
-  _playerJumpForce: 10
+  _playerJumpForce: 9
   _playerFallForce: 0
   UltimateBar: {fileID: 5766264640925217962}
   GroundCheck: {fileID: 3694094280244703910}
