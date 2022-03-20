@@ -28,7 +28,7 @@ public class CGDGameSceneLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient) // this is more of a debugging
         {
-            BeginCountDown();
+            BeginCountDownForAllPlayers();
         }
         if (_beginCountDown)
         {
@@ -56,7 +56,7 @@ public class CGDGameSceneLoader : MonoBehaviour
     }
     public void BeginCountDownForAllPlayers()
     {
-        print("I'm the last player to join, telling everyone to start counting down");
+        print("I'm the last player/the master host has told us to join, telling everyone to start counting down");
         _view.RPC("BeginCountDown", RpcTarget.AllBuffered);
     }
     [PunRPC]
