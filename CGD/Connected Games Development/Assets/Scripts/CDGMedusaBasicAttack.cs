@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CDGMedusaBasicAttack : MonoBehaviour
 {
+    // todo rename this because its being applied to everyone
     public GameObject OwnPlayer;
     Collider _repelCollider;
     [SerializeField]
@@ -64,10 +65,6 @@ public class CDGMedusaBasicAttack : MonoBehaviour
             _repelCollider.enabled = true;
             _readyToRepel = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //ChangeColor(new Vector3(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
-        }
     }
 
     void OnTriggerEnter(Collider collider)
@@ -78,7 +75,7 @@ public class CDGMedusaBasicAttack : MonoBehaviour
             Vector3 playerToEnemyDirection = Vector3.Normalize(collider.gameObject.transform.position - OwnPlayer.transform.position);
             Vector3 forceToAdd = playerToEnemyDirection * _repelForce;
             int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
-            OwnPlayer.GetComponent<CGDMedusaPlayer>().KnockbackOtherPlayer(forceToAdd, photonViewID);
+            OwnPlayer.GetComponent<CGDPlayer>().KnockbackOtherPlayer(forceToAdd, photonViewID);
         }
     }
 
