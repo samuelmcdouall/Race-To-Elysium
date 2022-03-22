@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,48 +8,27 @@ public class CGDMidasUltimateAttack : MonoBehaviour
     public GameObject OwnPlayer;
     Collider _slowCollider;
     [SerializeField]
-    float _slowBubbleDuration;
-    float _slowBubbleDurationTimer;
+    float _slowColliderDuration;
     [SerializeField]
     float _slowDuration;
     [SerializeField]
-    float _slowPercentage;
-    public bool _readyToSlow;
+    float _slowPercentageModifier;
 
 
     void Start()
     {
         _slowCollider = GetComponent<Collider>();
         _slowCollider.enabled = false;
-        _slowBubbleDurationTimer = 0.0f;
-        _readyToSlow = true;
     }
 
-    void Update()
+    public void ActivateUltimateCollider()
     {
-        if (_slowCollider.enabled)
-        {
-            if (_slowBubbleDurationTimer > _slowBubbleDuration)
-            {
-                _slowBubbleDurationTimer = 0.0f;
-                _slowCollider.enabled = false;
-            }
-            else
-            {
-                _slowBubbleDurationTimer += Time.deltaTime;
-            }
-        }
-        if (Input.GetMouseButtonDown(1) && _readyToSlow)
-        {
-            _slowCollider.enabled = true;
-            _readyToSlow = false;
-        }
-        if (Input.GetMouseButtonDown(2) && !_readyToSlow)
-        {
-            // todo actual mechanics for charging, not just middle clicking
-            print("recharged ultimate");
-            _readyToSlow = true;
-        }
+        _slowCollider.enabled = true;
+        Invoke("DeactivateUltimateCollider", _slowColliderDuration);
+    }
+    void DeactivateUltimateCollider()
+    {
+        _slowCollider.enabled = false;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -56,7 +36,8 @@ public class CGDMidasUltimateAttack : MonoBehaviour
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
             print("bubble slow affected other player");
-            collider.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(_slowPercentage, _slowDuration);
+            int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
+            collider.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSecondsToGivenPlayer(_slowPercentageModifier,_slowDuration, photonViewID, true);
         }
     }
     // maybe move actual physics calculation into fixedupdate
