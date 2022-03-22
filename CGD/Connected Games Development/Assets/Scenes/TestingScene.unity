@@ -988,9 +988,8 @@ MonoBehaviour:
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
   _enabledControls: 1
-  _basicAttackFireInterval: 2
-  _basicAttackForce: 1000
-  _basicAttackRange: 10
+  MainCamera: {fileID: 0}
+  UltimateCollider: {fileID: 0}
 --- !u!54 &565223908
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2267,10 +2266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OwnPlayer: {fileID: 565223906}
-  _slowBubbleDuration: 0.1
+  _slowColliderDuration: 0
   _slowDuration: 5
-  _slowPercentage: 50
-  _readyToSlow: 0
+  _slowPercentageModifier: 0
 --- !u!135 &1115434761
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3801,6 +3799,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &59948497920168657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2016165719594524313, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795399786686693011, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373455968948470533, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099968565272977907, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_Name
+      value: MidasPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099968565272977907, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
 --- !u!1001 &3331741678547075016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3858,11 +3925,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3315799979909315725, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
       propertyPath: m_Name
       value: MedusaPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7177916749495622641, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
       propertyPath: sceneViewId
