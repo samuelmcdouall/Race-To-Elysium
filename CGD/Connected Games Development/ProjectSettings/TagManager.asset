@@ -13,6 +13,7 @@ TagManager:
   - CountDownText
   - GameSceneLoader
   - PauseMenu
+  - SettingsMenu
   layers:
   - Default
   - TransparentFX
