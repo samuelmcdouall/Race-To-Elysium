@@ -9,6 +9,7 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public static CGDGameSettings Instance;
     public static int PlayerNum = -1; // have to decrease this by one if someone in the queue moves up
+    public static float MouseSensitivity = 10.0f; 
     void Awake()
     {
         if (!Instance)
