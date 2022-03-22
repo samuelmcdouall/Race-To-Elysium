@@ -5,12 +5,13 @@ using Photon.Pun;
 
 public class CGDMedusaPlayer : CGDPlayer
 {
+    [Header("Camera")]
+    public GameObject MainCamera;
     [Header("Ultimate Attack")]
     [SerializeField]
     float _freezeDuration;
     [SerializeField]
     float _freezeRange;
-    public GameObject MainCamera;
 
     void Awake()
     {
@@ -36,10 +37,6 @@ public class CGDMedusaPlayer : CGDPlayer
                 {
                     UltimateAttack();
                 }
-                //if (Input.GetKeyDown(KeyCode.Space))
-                //{
-                //    ChangeColor(new Vector3(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
-                //}
             }
         }
     }
@@ -74,11 +71,6 @@ public class CGDMedusaPlayer : CGDPlayer
             print("Not enough charge!");
         }
     }
-    public override void RechargeUltimateAttack()
-    {
-        //todo debug only
-        print("Ready to freeze again!");
-    }
 
     public override void InitialPlayerSetup()
     {
@@ -94,30 +86,6 @@ public class CGDMedusaPlayer : CGDPlayer
         if (!_view.IsMine)
         {
             Destroy(MainCamera);
-        }
-    }
-    [PunRPC]
-    void ChangeColor(Vector3 color)
-    {
-        GetComponent<Renderer>().material.color = new Color(color.x, color.y, color.z, 1.0f);
-        if (GetComponent<PhotonView>().IsMine)
-        {
-            GetComponent<PhotonView>().RPC("ChangeColor", RpcTarget.OthersBuffered, color);
-        }
-    }
-    [PunRPC]
-    public void KnockbackOtherPlayer(Vector3 forceToAdd, int photonViewID)
-    {
-        PhotonView photonView = PhotonView.Find(photonViewID);
-        photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
-        if (_view.IsMine)
-        {
-            Debug.Log("send message to other players");
-            GetComponent<PhotonView>().RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
-        }
-        else
-        {
-            Debug.Log("Got this instruction from other player");
         }
     }
 }
