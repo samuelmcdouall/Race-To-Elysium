@@ -6,8 +6,8 @@ using Photon.Pun;
 public class CGDRotateCamera : MonoBehaviour
 {
     [Header("Rotation")]
-    [SerializeField]
-    float RotationSpeed = 10.0f;
+    //[SerializeField]
+    //float RotationSpeed = 10.0f;
     public Transform CameraTargetToRotateAround;
     float _mouseX;
     float _mouseY;
@@ -38,8 +38,8 @@ public class CGDRotateCamera : MonoBehaviour
 
     void GetMouseInput()
     {
-        _mouseX += Input.GetAxis("Mouse X") * RotationSpeed;//SettingsManager.look_sensitivity;
-        _mouseY -= Input.GetAxis("Mouse Y") * RotationSpeed;//SettingsManager.look_sensitivity;
+        _mouseX += Input.GetAxis("Mouse X") * CGDGameSettings.MouseSensitivity;//SettingsManager.look_sensitivity;
+        _mouseY -= Input.GetAxis("Mouse Y") * CGDGameSettings.MouseSensitivity;//SettingsManager.look_sensitivity;
         _mouseY = Mathf.Clamp(_mouseY, MouseYMinClamp, MouseYMaxClamp);
     }
 }
