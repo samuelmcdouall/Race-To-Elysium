@@ -82,28 +82,28 @@ public class CGDPlayer : MonoBehaviour
     }
 
     [PunRPC] // todo maybe better way of doing this
-    public void ApplySpeedModifierForSecondsToGivenPlayer(float ModiferPercentage, float Duration, int photonViewID, bool sendToOtherPlayers)
+    public void ApplySpeedModifierForSecondsToGivenPlayer(float modiferPercentage, float duration, int photonViewID, bool sendToOtherPlayers)
     {
         // can only have one slow at a time
 
         PhotonView photonView = PhotonView.Find(photonViewID);
-        photonView.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(ModiferPercentage, Duration);
+        photonView.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(modiferPercentage, duration);
         if (sendToOtherPlayers)
         {
             Debug.Log("send apply speed mod for seconds instruction to other players");
-            GetComponent<PhotonView>().RPC("ApplySpeedModifierForSecondsToGivenPlayer", RpcTarget.OthersBuffered, ModiferPercentage, Duration, photonViewID, false);
+            _view.RPC("ApplySpeedModifierForSecondsToGivenPlayer", RpcTarget.OthersBuffered, modiferPercentage, duration, photonViewID, false);
         }
         else
         {
             Debug.Log("Got this apply speed mod for seconds instruction from other player");
         }
     }
-    public void ApplySpeedModifierForSeconds(float ModiferPercentage, float Duration)
+    public void ApplySpeedModifierForSeconds(float modiferPercentage, float duration)
     {
         if (_speedModifier == 1.0f)
         {
-            _speedModifier = 1.0f - (ModiferPercentage / 100.0f);
-            Invoke("ResetSpeedModifier", Duration);
+            _speedModifier = 1.0f - (modiferPercentage / 100.0f);
+            Invoke("ResetSpeedModifier", duration);
         }
     }
     public void ResetSpeedModifier()
@@ -121,7 +121,7 @@ public class CGDPlayer : MonoBehaviour
         if (sendToOtherPlayers)
         {
             Debug.Log("send apply speed mod for seconds instruction to other players");
-            GetComponent<PhotonView>().RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
+            _view.RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
         }
         else
         {
@@ -351,7 +351,7 @@ public class CGDPlayer : MonoBehaviour
     //    Cursor.visible = true;
     //    _enabledControls = false;
     //    RotateCamera._enabledCameraControls = false;
-    //    GetComponent<PhotonView>().RPC("DisplayLossScreen", RpcTarget.OthersBuffered);
+    //    _view.RPC("DisplayLossScreen", RpcTarget.OthersBuffered);
     //}
 
     //[PunRPC]
@@ -371,7 +371,7 @@ public class CGDPlayer : MonoBehaviour
         {
             Debug.Log("send victory instruction to other players, means i won");
             CGDGameOverScreenManager.DisplayWinScreen();
-            //GetComponent<PhotonView>().RPC("GameOverScreen", RpcTarget.OthersBuffered);
+            //_view.RPC("GameOverScreen", RpcTarget.OthersBuffered);
         }
         else
         {
@@ -396,6 +396,22 @@ public class CGDPlayer : MonoBehaviour
         if (collision.gameObject.tag == "MovingPlatform")
         {
             transform.SetParent(null);
+        }
+    }
+
+    [PunRPC]
+    public void KnockbackOtherPlayer(Vector3 forceToAdd, int photonViewID)
+    {
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
+        if (_view.IsMine)
+        {
+            Debug.Log("send message to other players");
+            _view.RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
+        }
+        else
+        {
+            Debug.Log("Got this instruction from other player");
         }
     }
 }
