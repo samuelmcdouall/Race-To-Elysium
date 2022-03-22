@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class CGDPauseManager : MonoBehaviour
 {
     public GameObject PauseMenu;
+    public GameObject SettingsMenu;
+    public Slider MouseSensitivitySlider;
     public static bool Paused;
     PhotonView _view;
     // Start is called before the first frame update
@@ -13,25 +16,39 @@ public class CGDPauseManager : MonoBehaviour
     {
         Paused = false;
         _view = GetComponent<PhotonView>();
+        MouseSensitivitySlider.value = CGDGameSettings.MouseSensitivity;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !CGDGameOverScreenManager.GameOver)
+        if (!CGDGameOverScreenManager.GameOver)
         {
-            if (!PauseMenu.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ShowPauseScreen();
-            }
-            else
-            {
-                HidePauseScreen();
+                if (SettingsMenu.activeSelf)
+                {
+                    HideSettingsMenu();
+                }
+                else if (PauseMenu.activeSelf)
+                {
+                    HidePauseMenu();
+                }
+                else
+                {
+                    ShowPauseMenu();
+                }
             }
         }
     }
 
-    void ShowPauseScreen()
+    private void HideSettingsMenu()
+    {
+        SettingsMenu.SetActive(false);
+        PauseMenu.SetActive(true);
+    }
+
+    void ShowPauseMenu()
     {
         PauseMenu.SetActive(true);
         Paused = true;
@@ -39,7 +56,7 @@ public class CGDPauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void HidePauseScreen()
+    public void HidePauseMenu()
     {
         PauseMenu.SetActive(false);
         Paused = false;
@@ -49,8 +66,25 @@ public class CGDPauseManager : MonoBehaviour
 
     public void OnClickResumeButon()
     {
-        HidePauseScreen();
+        HidePauseMenu();
     }
+
+    public void OnClickSettingsButton()
+    {
+        ShowSettingsMenu();
+    }
+
+    public void OnClickBackButton()
+    {
+        HideSettingsMenu();
+    }
+
+    private void ShowSettingsMenu()
+    {
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+    }
+
     public void OnClickQuitToMainMenuButton()
     {
         print("leaving this room");
@@ -62,6 +96,13 @@ public class CGDPauseManager : MonoBehaviour
         print("leaving this room and quitting to desktop");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         StartCoroutine(LeaveRoomAndQuitApplication());
+    }
+
+    public void OnChangeMouseSensivitySlider()
+    {
+        CGDGameSettings.MouseSensitivity = MouseSensitivitySlider.value;
+        PlayerPrefs.SetFloat("Sensitivity", MouseSensitivitySlider.value);
+        PlayerPrefs.Save();
     }
     IEnumerator LeaveRoom()
     {
