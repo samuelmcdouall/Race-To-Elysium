@@ -59,7 +59,7 @@ public class CDGMedusaBasicAttack : MonoBehaviour
                 }
             }
         }
-        if (Input.GetMouseButtonDown(0) && _readyToRepel)
+        if (Input.GetMouseButtonDown(0) && _readyToRepel && OwnPlayer.GetComponent<CGDPlayer>()._enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             print("clicked");
             _repelCollider.enabled = true;
