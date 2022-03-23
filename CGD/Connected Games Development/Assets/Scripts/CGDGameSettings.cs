@@ -9,7 +9,8 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public static CGDGameSettings Instance;
     public static int PlayerNum = -1; // have to decrease this by one if someone in the queue moves up
-    public static float MouseSensitivity = -1.0f; 
+    public static float MouseSensitivity = -1.0f;
+    public static float MusicVolume = -1.0f;
     void Awake()
     {
         if (!Instance)
@@ -22,6 +23,7 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(gameObject);
         MouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 10.5f);
+        MusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
         //_view = GetComponent<PhotonView>();
     }
 

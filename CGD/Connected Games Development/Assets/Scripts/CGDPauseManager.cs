@@ -9,6 +9,7 @@ public class CGDPauseManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject SettingsMenu;
     public Slider MouseSensitivitySlider;
+    public Slider MusicVolumeSlider;
     public static bool Paused;
     PhotonView _view;
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class CGDPauseManager : MonoBehaviour
         Paused = false;
         _view = GetComponent<PhotonView>();
         MouseSensitivitySlider.value = CGDGameSettings.MouseSensitivity;
+        //MusicVolumeSlider.value = CGDGameSettings.MusicVolume;
     }
 
     // Update is called once per frame
@@ -102,6 +104,12 @@ public class CGDPauseManager : MonoBehaviour
     {
         CGDGameSettings.MouseSensitivity = MouseSensitivitySlider.value;
         PlayerPrefs.SetFloat("Sensitivity", MouseSensitivitySlider.value);
+        PlayerPrefs.Save();
+    }
+    public void OnChangeMusicVolumeSlider()
+    {
+        CGDGameSettings.MusicVolume = MusicVolumeSlider.value;
+        PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
         PlayerPrefs.Save();
     }
     IEnumerator LeaveRoom()
