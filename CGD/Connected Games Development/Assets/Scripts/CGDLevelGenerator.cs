@@ -28,9 +28,9 @@ public class CGDLevelGenerator : MonoBehaviour
     void GenerateLevelForAllPlayers()
     {
         // random numbers generated here so same
-        int tartarusPreset = Random.Range(0, 3);
-        int gaiaPreset = Random.Range(0, 3);
-        int elysiumPreset = Random.Range(0, 3);
+        int tartarusPreset = Random.Range(0, 1);
+        int gaiaPreset = Random.Range(0, 1);
+        int elysiumPreset = Random.Range(0, 1);
         _view.RPC("GenerateLevel", RpcTarget.AllBufferedViaServer, tartarusPreset, gaiaPreset, elysiumPreset);
     }
 
