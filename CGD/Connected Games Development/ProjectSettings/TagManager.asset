@@ -14,6 +14,7 @@ TagManager:
   - GameSceneLoader
   - PauseMenu
   - SettingsMenu
+  - SpeedBoostPowerUpCue
   layers:
   - Default
   - TransparentFX
