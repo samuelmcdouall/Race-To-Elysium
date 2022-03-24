@@ -100,11 +100,11 @@ public class CGDPlayer : MonoBehaviour
     }
     public void ApplySpeedModifierForSeconds(float modiferPercentage, float duration)
     {
-        if (_speedModifier == 1.0f)
-        {
+        //if (_speedModifier == 1.0f)
+        //{
             _speedModifier = 1.0f - (modiferPercentage / 100.0f);
             Invoke("ResetSpeedModifier", duration);
-        }
+        //}
     }
     public void ResetSpeedModifier()
     {
@@ -182,14 +182,14 @@ public class CGDPlayer : MonoBehaviour
         }
         else
         {
-            if (PlayerRb.velocity.magnitude > _playerTopSpeed)
+            if (PlayerRb.velocity.magnitude > _playerTopSpeed * _speedModifier)
             {
                 float original_vertical_speed = PlayerRb.velocity.y;
-                PlayerRb.velocity = PlayerRb.velocity.normalized * _playerTopSpeed;
+                PlayerRb.velocity = PlayerRb.velocity.normalized * _playerTopSpeed * _speedModifier;
                 PlayerRb.velocity = new Vector3(PlayerRb.velocity.x, original_vertical_speed, PlayerRb.velocity.z);
             }
         }
-        PlayerRb.velocity = PlayerRb.velocity * _speedModifier;
+        PlayerRb.velocity = PlayerRb.velocity * 1.0f; // todo should probably remove this, as its going to get continually faster
     }
 
     public void HandleGroundCheckMechanics()
