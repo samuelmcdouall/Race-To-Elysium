@@ -41,7 +41,7 @@ public class CGDMidasPlayer : CGDPlayer
     {
         if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
-            print("Medusa ultimate attack!");
+            print("Midas ultimate attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetUltBar(UltimateCharge);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
