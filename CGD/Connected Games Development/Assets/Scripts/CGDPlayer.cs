@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CGDPlayer : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class CGDPlayer : MonoBehaviour
     //[System.NonSerialized]
     public GameObject LossScreen;
     public CGDRotateCamera RotateCamera;
+    public GameObject BlindScreen;
 
     // Animations
     //[System.NonSerialized]
@@ -413,5 +415,66 @@ public class CGDPlayer : MonoBehaviour
         {
             Debug.Log("Got this instruction from other player");
         }
+    }
+
+    [PunRPC]
+    public void DisplayBlindScreenForSecondsToGivenPlayer(float fullBlindDuration, float fadeOutDuration, int photonViewID, bool sendToOtherPlayers)
+    {
+        //PhotonView photonView = PhotonView.Find(photonViewID);
+        // check if phton views are same then do the flash if so
+        //photonView.gameObject.GetComponent<CGDPlayer>().DisplayFullBlindScreenForSeconds(fullBlindDuration, fadeOutDuration); //uncomment this to go back
+        print("photon id to be blinded: " + photonViewID);
+        print("my photon id: " + _view.ViewID);
+        if (photonViewID == _view.ViewID && _view.IsMine)
+        {
+            DisplayFullBlindScreenForSeconds(fullBlindDuration, fadeOutDuration);
+        }
+        if (sendToOtherPlayers)
+        {
+            Debug.Log("send blind for seconds instruction to other players");
+            _view.RPC("DisplayBlindScreenForSecondsToGivenPlayer", RpcTarget.OthersBuffered, fullBlindDuration, fadeOutDuration, photonViewID, false);
+        }
+        else
+        {
+            Debug.Log("Got this blind for seconds instruction from other player");
+        }
+    }
+    public void DisplayFullBlindScreenForSeconds(float fullBlindDuration, float fadeOutDuration)
+    {
+        print("Blinded!");
+        BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        HoldAndFadeOutBlindScreen(fullBlindDuration, fadeOutDuration);
+    }
+
+    void HoldAndFadeOutBlindScreen(float fullBlindDuration, float fadeOutDuration)
+    {
+        StartCoroutine(HoldBlindScreen(fullBlindDuration, fadeOutDuration));
+    }
+
+    IEnumerator HoldBlindScreen(float fullBlindDuration, float fadeOutDuration)
+    {
+        yield return new WaitForSeconds(fullBlindDuration);
+        yield return StartCoroutine(FadeOutBlindScreen(fadeOutDuration));
+    }
+
+    IEnumerator FadeOutBlindScreen(float fadeOutDuration)
+    {
+        float fadeOutTimer = 0.0f;
+
+        while (fadeOutTimer < fadeOutDuration)
+        {
+            float faded_opacity = Mathf.Lerp(1.0f, 0.0f, fadeOutTimer / fadeOutDuration);
+            BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, faded_opacity);
+            fadeOutTimer += Time.deltaTime;
+            yield return null;
+        }
+        SetToFullyTransparent();
+        yield return null;
+    }
+
+    void SetToFullyTransparent()
+    {
+        print("No longer blinded");
+        BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 }
