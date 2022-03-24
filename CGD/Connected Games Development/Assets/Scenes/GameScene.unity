@@ -1111,7 +1111,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &355197761
 RectTransform:
@@ -6476,7 +6476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4273cef1d2fd34a8d77f9976ad8f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 4099968565272977907, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+  PlayerPrefab: {fileID: 8359134243737553029, guid: c387be2afcaf8fb418e29cb99606ca8d, type: 3}
   _minSpawnX: -8
   _maxSpawnX: 8
   _minSpawnZ: -8
