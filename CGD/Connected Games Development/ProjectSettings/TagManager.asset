@@ -15,6 +15,7 @@ TagManager:
   - PauseMenu
   - SettingsMenu
   - SpeedBoostPowerUpCue
+  - BlindScreen
   layers:
   - Default
   - TransparentFX
