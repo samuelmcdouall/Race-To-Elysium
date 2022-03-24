@@ -22,7 +22,6 @@ public class CGDNarcissusUltimateAttack : MonoBehaviour
 
     public void ActivateUltimateCollider()
     {
-        //todo activating too early when spawn in, need to disable initially for a certain time
         _blindCollider.enabled = true;
         Invoke("DeactivateUltimateCollider", _blindColliderDuration);
     }
