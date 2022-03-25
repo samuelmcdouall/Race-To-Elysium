@@ -12,7 +12,7 @@ public class CGDUltimatePickupReduce : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_reductionPercentage);
+            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeUltPickup(-_reductionPercentage);
             if (PickupPlatformSpawner) // this may not be used, trying to figure out other solution
             {
                 PickupPlatformSpawner.GetComponent<CGDPickupSpawner>().SpawnedPickup = false;
