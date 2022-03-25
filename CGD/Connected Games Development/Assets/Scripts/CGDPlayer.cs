@@ -308,21 +308,21 @@ public class CGDPlayer : MonoBehaviour
         PlayerRb.AddForce(0.0f, _playerJumpForce, 0.0f, ForceMode.Impulse);
     }
 
-    public void ModifyUltimateCharge(float charge_amount)
+    public void ModifyUltimateChargeUltPickup(float chargeAmount)
     {
         if (_ableToPickupUlt)
         {
             _ableToPickupUlt = false;
             Invoke("AbleToPickUltAgain", _ultPickupDelay);
-            if (charge_amount > 0.0f)
+            if (chargeAmount > 0.0f)
             {
-                print("Increased charge by: " + charge_amount);
+                print("Increased charge by: " + chargeAmount);
             }
             else
             {
-                print("Decreased charge by: " + -charge_amount);
+                print("Decreased charge by: " + -chargeAmount);
             }
-            UltimateCharge += charge_amount;
+            UltimateCharge += chargeAmount;
             if (UltimateCharge > 100.0f)
             {
                 UltimateCharge = 100.0f;
@@ -336,8 +336,33 @@ public class CGDPlayer : MonoBehaviour
                 UltimateBar.SetUltBar(UltimateCharge);
             }
             print("Ultimate Charge: " + UltimateCharge);
-            // set the new value here in the bar
         }
+    }
+
+    public void ModifyUltimateChargeHazard(float chargeAmount)
+    {
+        if (chargeAmount > 0.0f)
+        {
+            print("Increased charge by: " + chargeAmount);
+        }
+        else
+        {
+            print("Decreased charge by: " + -chargeAmount);
+        }
+        UltimateCharge += chargeAmount;
+        if (UltimateCharge > 100.0f)
+        {
+            UltimateCharge = 100.0f;
+        }
+        else if (UltimateCharge < 0.0f)
+        {
+            UltimateCharge = 0.0f;
+        }
+        if (_view.IsMine)
+        {
+            UltimateBar.SetUltBar(UltimateCharge);
+        }
+        print("Ultimate Charge: " + UltimateCharge);
     }
 
     void AbleToPickUltAgain()
