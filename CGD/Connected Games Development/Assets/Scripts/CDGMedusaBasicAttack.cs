@@ -78,6 +78,11 @@ public class CDGMedusaBasicAttack : MonoBehaviour
             OwnPlayer.GetComponent<CGDPlayer>().KnockbackOtherPlayer(forceToAdd, photonViewID);
             collider.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(0.5f, photonViewID, true);
         }
+        else if (collider.tag == "Gate")
+        {
+            print("hit gate");
+            collider.gameObject.GetComponent<CGDGate>().ReduceHealthOfGateForAllPlayers();
+        }
     }
 
 
