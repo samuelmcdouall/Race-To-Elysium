@@ -13,7 +13,7 @@ public class CGDLavaHazard : MonoBehaviour
         {
             //print("player in the lava");
             other.gameObject.GetComponent<CGDPlayer>().UltimateCharge -= _ultPerDecrPerSecond * Time.fixedDeltaTime;
-            other.gameObject.GetComponent<CGDPlayer>().UltimateBar.SetUltBar(other.gameObject.GetComponent<CGDPlayer>().UltimateCharge);
+            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeHazard(-_ultPerDecrPerSecond * Time.fixedDeltaTime);
         }
     }
     private void OnTriggerEnter(Collider other)
