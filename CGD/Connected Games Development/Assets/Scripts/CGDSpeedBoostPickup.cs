@@ -10,7 +10,6 @@ public class CGDSpeedBoostPickup : MonoBehaviour
     [SerializeField]
     float _speedBoostDuration;
     GameObject _speedBoostUI;
-    GameObject _speedBoostUIText;
 
     void Start()
     {
@@ -18,9 +17,12 @@ public class CGDSpeedBoostPickup : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        print("WEEEEE");
-        other.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(-_speedBoostPerModifier, _speedBoostDuration);
-        _speedBoostUI.GetComponent<CGDUIDisplay>().DisplayUI(_speedBoostDuration);
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            print("WEEEEE");
+            other.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(-_speedBoostPerModifier, _speedBoostDuration);
+            _speedBoostUI.GetComponent<CGDUIDisplay>().DisplayUI(_speedBoostDuration);
+            Destroy(gameObject);
+        }
     }
 }
