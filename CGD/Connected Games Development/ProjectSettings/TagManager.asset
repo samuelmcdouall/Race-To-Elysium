@@ -16,6 +16,7 @@ TagManager:
   - SettingsMenu
   - SpeedBoostPowerUpCue
   - BlindScreen
+  - Gate
   layers:
   - Default
   - TransparentFX
