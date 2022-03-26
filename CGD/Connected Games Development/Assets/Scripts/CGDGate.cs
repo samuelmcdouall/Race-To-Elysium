@@ -7,11 +7,18 @@ public class CGDGate : MonoBehaviour
 {
     PhotonView _view;
     [SerializeField]
-    int _hitPoints;
+    float _maxHitPoints;
+    float _currHitPoints;
+    public GameObject HealthBar;
+    public Transform Checkpoint;
+    public GameObject Hazard;
     // Start is called before the first frame update
     void Start()
     {
         _view = GetComponent<PhotonView>();
+        _currHitPoints = _maxHitPoints;
+        HealthBar.GetComponent<CGDUltimateBar>().SliderBar.maxValue = _maxHitPoints;
+        HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints); 
     }
 
     public void ReduceHealthOfGateForAllPlayers()
@@ -21,11 +28,23 @@ public class CGDGate : MonoBehaviour
     [PunRPC]
     void ReduceHealthOfGate()
     {
-        _hitPoints--;
-        if (_hitPoints == 0)
+        _currHitPoints--;
+        if (_currHitPoints == 0.0f)
         {
             // update checkpoint
+            HealthBar.SetActive(false);
+            HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints);
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject p in players)
+            {
+                p.GetComponent<CGDPlayer>().CheckpointPosition = Checkpoint.position;
+            }
+            Hazard.GetComponent<CGDGateHazardSweeping>().Completed = true;
             Destroy(gameObject);
+        }
+        else
+        {
+            HealthBar.GetComponent<CGDUltimateBar>().SetBar(_currHitPoints);
         }
     }
 }
