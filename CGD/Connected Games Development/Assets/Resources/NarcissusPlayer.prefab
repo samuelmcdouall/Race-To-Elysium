@@ -855,6 +855,7 @@ MonoBehaviour:
   LossScreen: {fileID: 0}
   RotateCamera: {fileID: 5982184592316836334}
   BlindScreen: {fileID: 836811451730255049}
+  CheckpointPosition: {x: 0, y: 0, z: 0}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
@@ -963,5 +964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6744a3b4b57ce4680d47af5fa66e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FillUltBar: {fileID: 4994654287811738750}
-  SliderUltBar: {fileID: 7657268428179020064}
+  FillBar: {fileID: 4994654287811738750}
+  SliderBar: {fileID: 7657268428179020064}
+  HpBar: 0
