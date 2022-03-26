@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CGDUltimateBar : MonoBehaviour
+public class CGDUltimateBar : MonoBehaviour // todo rename to generic bar
 {
-    public Image FillUltBar;
-    public Slider SliderUltBar;
+    public Image FillBar;
+    public Slider SliderBar;
+    public bool HpBar;
 
-    public void SetUltBar(float current_ult_charge)
+    public void SetBar(float value)
     {
-        SliderUltBar.value = current_ult_charge;
-        if (current_ult_charge == 100.0f)
+        SliderBar.value = value;
+        if (HpBar)
         {
-            FillUltBar.color = Color.green;
+            FillBar.color = Color.Lerp(Color.red, Color.green, SliderBar.value / SliderBar.maxValue);
         }
         else
         {
-            FillUltBar.color = Color.red;
+            if (value == 100.0f)
+            {
+                FillBar.color = Color.green;
+            }
+            else
+            {
+                FillBar.color = Color.red;
+            }
         }
     }
 
