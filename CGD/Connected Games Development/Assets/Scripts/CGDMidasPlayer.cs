@@ -43,7 +43,7 @@ public class CGDMidasPlayer : CGDPlayer
         {
             print("Midas ultimate attack!");
             UltimateCharge = 0.0f;
-            UltimateBar.SetUltBar(UltimateCharge);
+            UltimateBar.SetBar(UltimateCharge);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
         }
         else

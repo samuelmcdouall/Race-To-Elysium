@@ -43,7 +43,7 @@ public class CGDNarcissusPlayer : CGDPlayer
         {
             print("Narcissus ultimate attack!");
             UltimateCharge = 0.0f;
-            UltimateBar.SetUltBar(UltimateCharge);
+            UltimateBar.SetBar(UltimateCharge);
             UltimateCollider.GetComponent<CGDNarcissusUltimateAttack>().ActivateUltimateCollider();
         }
         else

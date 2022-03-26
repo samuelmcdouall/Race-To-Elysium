@@ -46,7 +46,7 @@ public class CGDMedusaPlayer : CGDPlayer
         {
             print("Medusa ultimate attack!");
             UltimateCharge = 0.0f;
-            UltimateBar.SetUltBar(UltimateCharge);
+            UltimateBar.SetBar(UltimateCharge);
             RaycastHit hit;
             Vector3 ForwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
             ForwardDirection = ForwardDirection.normalized;
