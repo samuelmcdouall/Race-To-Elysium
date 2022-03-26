@@ -7,19 +7,14 @@ public class CGDGateTrigger : MonoBehaviour
     // Start is called before the first frame update
     public GameObject HealthBar;
     public GameObject Hazard;
-    bool _triggered;
 
-    void Start()
+    void OnTriggerEnter(Collider collider)
     {
-        _triggered = false;
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (!_triggered && collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            _triggered = true;
             Hazard.SetActive(true);
             HealthBar.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }
