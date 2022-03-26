@@ -9,7 +9,11 @@ using Photon.Realtime;
 public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
 {
 
-    public GameObject PlayerPrefab; // will need multiple depending on which character has been chosen , need to discuss when you actually *choose* which character to play
+    public GameObject MedusaPrefab; // will need multiple depending on which character has been chosen , need to discuss when you actually *choose* which character to play
+    public GameObject MidasPrefab;
+    public GameObject NarcissusPrefab;
+    public GameObject ArachnePrefab;
+    GameObject _chosenPrefab;
 
     [SerializeField]
     float _minSpawnX;
@@ -28,6 +32,22 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        if (CGDGameSettings.CharacterNum == 1)
+        {
+            _chosenPrefab = MedusaPrefab;
+        }
+        else if (CGDGameSettings.CharacterNum == 2)
+        {
+            _chosenPrefab = MidasPrefab;
+        }
+        else if (CGDGameSettings.CharacterNum == 3)
+        {
+            _chosenPrefab = NarcissusPrefab;
+        }
+        else if (CGDGameSettings.CharacterNum == 4)
+        {
+            _chosenPrefab = ArachnePrefab;
+        }
         _view = GetComponent<PhotonView>();
         // check how many players there are in the scene here, if equal to 4 then set to tru on game scene loader
         if (SceneManager.GetActiveScene().name == "PlayerLobbyScene")
@@ -38,9 +58,9 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             CGDGameSettings.PlayerNum = playerCount;
             _gameSceneLoader = GameObject.FindGameObjectWithTag("GameSceneLoader");
             
-            Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), PlayerPrefab.transform.position.y, Random.Range(_minSpawnZ, _maxSpawnZ));
+            Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), _chosenPrefab.transform.position.y, Random.Range(_minSpawnZ, _maxSpawnZ));
             Vector3 constantPos = new Vector3(0.0f, 2.0f, 0.0f);
-            PhotonNetwork.Instantiate(PlayerPrefab.name, constantPos, Quaternion.identity);
+            PhotonNetwork.Instantiate(_chosenPrefab.name, constantPos, Quaternion.identity);
             if (playerCount == _maxPlayers)
             {
                 print("Enough players (" + _maxPlayers + ") to start the game");
@@ -51,8 +71,8 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
         else
         {
             //print("numBUH: " + PhotonNetwork.LocalPlayer.GetPlayerNumber());
-            Vector3 spawnPosition = new Vector3(_spawnPositions[CGDGameSettings.PlayerNum - 1].position.x, PlayerPrefab.transform.position.y, _spawnPositions[CGDGameSettings.PlayerNum - 1].position.z);
-            PhotonNetwork.Instantiate(PlayerPrefab.name, spawnPosition, Quaternion.identity);
+            Vector3 spawnPosition = new Vector3(_spawnPositions[CGDGameSettings.PlayerNum - 1].position.x, _chosenPrefab.transform.position.y, _spawnPositions[CGDGameSettings.PlayerNum - 1].position.z);
+            PhotonNetwork.Instantiate(_chosenPrefab.name, spawnPosition, Quaternion.identity);
         }
     }
 
