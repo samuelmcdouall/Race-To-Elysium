@@ -40,6 +40,8 @@ public class CGDPlayer : MonoBehaviour
     public GameObject LossScreen;
     public CGDRotateCamera RotateCamera;
     public GameObject BlindScreen;
+    public Vector3 CheckpointPosition = new Vector3(0.0f,0.0f,0.0f);
+    float _checkpointOffset = 2.0f;
 
     // Animations
     //[System.NonSerialized]
@@ -75,6 +77,11 @@ public class CGDPlayer : MonoBehaviour
 
     public virtual void FixedUpdate()
     {
+        if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
+        {
+            float randX = Random.Range(-5.0f, 5.0f);
+            transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
+        }
         LimitSpeedToMaximum();
         HandleGroundCheckMechanics();
         if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
@@ -333,7 +340,7 @@ public class CGDPlayer : MonoBehaviour
             }
             if (_view.IsMine)
             {
-                UltimateBar.SetUltBar(UltimateCharge);
+                UltimateBar.SetBar(UltimateCharge);
             }
             print("Ultimate Charge: " + UltimateCharge);
         }
@@ -360,7 +367,7 @@ public class CGDPlayer : MonoBehaviour
         }
         if (_view.IsMine)
         {
-            UltimateBar.SetUltBar(UltimateCharge);
+            UltimateBar.SetBar(UltimateCharge);
         }
         print("Ultimate Charge: " + UltimateCharge);
     }
