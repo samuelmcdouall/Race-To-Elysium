@@ -76,6 +76,7 @@ public class CDGMedusaBasicAttack : MonoBehaviour
             Vector3 forceToAdd = playerToEnemyDirection * _repelForce;
             int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
             OwnPlayer.GetComponent<CGDPlayer>().KnockbackOtherPlayer(forceToAdd, photonViewID);
+            OwnPlayer.GetComponent<CGDPlayer>().ModifyUltimateCharge(20.0f);
             collider.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(0.5f, photonViewID, true);
         }
         else if (collider.tag == "Gate")
