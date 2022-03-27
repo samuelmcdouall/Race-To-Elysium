@@ -58,9 +58,9 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             CGDGameSettings.PlayerNum = playerCount;
             _gameSceneLoader = GameObject.FindGameObjectWithTag("GameSceneLoader");
             
-            Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), _chosenPrefab.transform.position.y, Random.Range(_minSpawnZ, _maxSpawnZ));
+            Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), 2.0f, Random.Range(_minSpawnZ, _maxSpawnZ));
             Vector3 constantPos = new Vector3(0.0f, 2.0f, 0.0f);
-            PhotonNetwork.Instantiate(_chosenPrefab.name, constantPos, Quaternion.identity);
+            PhotonNetwork.Instantiate(_chosenPrefab.name, randomPosition, Quaternion.identity);
             if (playerCount == _maxPlayers)
             {
                 print("Enough players (" + _maxPlayers + ") to start the game");
