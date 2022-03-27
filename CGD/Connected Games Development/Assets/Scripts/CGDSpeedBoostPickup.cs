@@ -21,7 +21,7 @@ public class CGDSpeedBoostPickup : MonoBehaviour
         {
             print("WEEEEE");
             other.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(-_speedBoostPerModifier, _speedBoostDuration);
-            _speedBoostUI.GetComponent<CGDUIDisplay>().DisplayUI(_speedBoostDuration);
+            other.gameObject.GetComponent<CGDPlayer>().DisplayUI(_speedBoostDuration);
             Destroy(gameObject);
         }
     }

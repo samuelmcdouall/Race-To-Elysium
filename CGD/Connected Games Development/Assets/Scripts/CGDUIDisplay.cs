@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CGDUIDisplay : MonoBehaviour
 {
-    PhotonView _view;
+    PhotonView _view; //todo may just remove this script
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class CGDUIDisplay : MonoBehaviour
     }
     public void DisplayUI(float duration)
     {
-        if (_view.IsMine)
+        if (_view.IsMine || true)
         {
             gameObject.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
             Invoke("HideUI", duration);

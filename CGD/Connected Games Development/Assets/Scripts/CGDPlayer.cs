@@ -42,6 +42,7 @@ public class CGDPlayer : MonoBehaviour
     public GameObject BlindScreen;
     public Vector3 CheckpointPosition = new Vector3(0.0f,0.0f,0.0f);
     float _checkpointOffset = 2.0f;
+    public GameObject SpeedBoostIcon;
 
     // Animations
     //[System.NonSerialized]
@@ -129,12 +130,12 @@ public class CGDPlayer : MonoBehaviour
         photonView.gameObject.GetComponent<CGDPlayer>().DisableControlsForSeconds(Duration);
         if (sendToOtherPlayers)
         {
-            Debug.Log("send apply speed mod for seconds instruction to other players");
+            Debug.Log("send disable controls for seconds instruction to other players");
             _view.RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
         }
         else
         {
-            Debug.Log("Got this apply speed mod for seconds instruction from other player");
+            Debug.Log("Got this disable controls for seconds instruction from other player");
         }
     }
     public void DisableControlsForSeconds(float Duration)
@@ -346,7 +347,7 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    public void ModifyUltimateChargeHazard(float chargeAmount)
+    public void ModifyUltimateCharge(float chargeAmount)
     {
         if (chargeAmount > 0.0f)
         {
@@ -508,5 +509,21 @@ public class CGDPlayer : MonoBehaviour
     {
         print("No longer blinded");
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    }
+
+    public void DisplayUI(float duration)
+    {
+        if (_view.IsMine)
+        {
+            SpeedBoostIcon.SetActive(true);
+            //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            Invoke("HideUI", duration);
+        }
+    }
+
+    void HideUI()
+    {
+        SpeedBoostIcon.SetActive(false);
+        //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 }
