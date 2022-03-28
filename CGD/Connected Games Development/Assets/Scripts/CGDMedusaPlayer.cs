@@ -48,10 +48,10 @@ public class CGDMedusaPlayer : CGDPlayer
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
             RaycastHit hit;
-            Vector3 ForwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
-            ForwardDirection = ForwardDirection.normalized;
-            Debug.DrawRay(transform.position, ForwardDirection * _freezeRange, Color.cyan, 1.0f);
-            if (Physics.Raycast(transform.position, ForwardDirection, out hit, _freezeRange))
+            Vector3 forwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
+            forwardDirection = forwardDirection.normalized;
+            Debug.DrawRay(transform.position, forwardDirection * _freezeRange, Color.cyan, 1.0f);
+            if (Physics.Raycast(transform.position, forwardDirection, out hit, _freezeRange))
             {
                 if (hit.transform.gameObject.tag == "Player")
                 {
