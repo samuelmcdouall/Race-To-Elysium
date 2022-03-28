@@ -18,7 +18,7 @@ public class CGDGate : MonoBehaviour
         _view = GetComponent<PhotonView>();
         _currHitPoints = _maxHitPoints;
         HealthBar.GetComponent<CGDUltimateBar>().SliderBar.maxValue = _maxHitPoints;
-        HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints); 
+        HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints);
     }
 
     public void ReduceHealthOfGateForAllPlayers()
@@ -33,7 +33,7 @@ public class CGDGate : MonoBehaviour
         {
             // update checkpoint
             HealthBar.SetActive(false);
-            HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints);
+            //HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints);
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             foreach(GameObject p in players)
             {
