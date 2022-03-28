@@ -43,6 +43,10 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
         {
             CharacterNum = 3;
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            CharacterNum = 4;
+        }
     }
 
     //public override void OnLeftRoom()
