@@ -23,7 +23,7 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
     float _minSpawnZ;
     [SerializeField]
     float _maxSpawnZ;
-    int _maxPlayers = 5;
+    int _maxPlayers = 3;
     GameObject _gameSceneLoader;
     [SerializeField]
     List<Transform> _spawnPositions;
