@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CGDMainMenuMusicManager : MonoBehaviour
+public class CGDMusicManager : MonoBehaviour
 {
     // Start is called before the first frame update, todo maybe change to just music manager so can use in other scenes
     AudioSource _as;
@@ -22,11 +22,5 @@ public class CGDMainMenuMusicManager : MonoBehaviour
     public void UpdateMusicVolume(float volume) 
     {
         _as.volume = volume;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

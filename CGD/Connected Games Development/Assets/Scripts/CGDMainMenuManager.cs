@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
+public class CGDMainMenuManager : MonoBehaviourPunCallbacks
 {
     //todo rename to general main menu buttons manager
     public InputField CreateRoomInput;
@@ -12,7 +12,7 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
     public GameObject MainMenu;
     public GameObject SettingsMenu;
     public Slider MusicSlider;
-    public CGDMainMenuMusicManager MusicManager;
+    public CGDMusicManager MusicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +65,5 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
         PlayerPrefs.SetFloat("MusicVolume", MusicSlider.value);
         PlayerPrefs.Save();
         MusicManager.UpdateMusicVolume(MusicSlider.value);
-        
     }
 }
