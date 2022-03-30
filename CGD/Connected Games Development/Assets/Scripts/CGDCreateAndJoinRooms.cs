@@ -6,8 +6,13 @@ using Photon.Pun;
 
 public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
+    //todo rename to general main menu buttons manager
     public InputField CreateRoomInput;
     public InputField JoinRoomInput;
+    public GameObject MainMenu;
+    public GameObject SettingsMenu;
+    public Slider MusicSlider;
+    public CGDMainMenuMusicManager MusicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +24,7 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void CreateRoom()
@@ -40,5 +45,26 @@ public class CGDCreateAndJoinRooms : MonoBehaviourPunCallbacks
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void SettingsButton()
+    {
+        MainMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        MainMenu.SetActive(true);
+        SettingsMenu.SetActive(false);
+    }
+
+    public void OnMusicSldierChange()
+    {
+        CGDGameSettings.MusicVolume = MusicSlider.value;
+        PlayerPrefs.SetFloat("MusicVolume", MusicSlider.value);
+        PlayerPrefs.Save();
+        MusicManager.UpdateMusicVolume(MusicSlider.value);
+        
     }
 }
