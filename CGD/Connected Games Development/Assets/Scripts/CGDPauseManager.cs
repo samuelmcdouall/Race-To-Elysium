@@ -10,6 +10,7 @@ public class CGDPauseManager : MonoBehaviour
     public GameObject SettingsMenu;
     public Slider MouseSensitivitySlider;
     public Slider MusicVolumeSlider;
+    public CGDMusicManager MusicManager;
     public static bool Paused;
     PhotonView _view;
     // Start is called before the first frame update
@@ -111,6 +112,7 @@ public class CGDPauseManager : MonoBehaviour
         CGDGameSettings.MusicVolume = MusicVolumeSlider.value;
         PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
         PlayerPrefs.Save();
+        MusicManager.UpdateMusicVolume(MusicVolumeSlider.value);
     }
     IEnumerator LeaveRoom()
     {
