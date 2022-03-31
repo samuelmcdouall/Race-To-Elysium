@@ -341,6 +341,7 @@ MonoBehaviour:
   MouseYMinClamp: -35
   MouseYMaxClamp: 60
   View: {fileID: 5838027862200079791}
+  OwnPlayer: {fileID: 8221330821640465093}
 --- !u!1 &3627394822091690843
 GameObject:
   m_ObjectHideFlags: 0
