@@ -10,9 +10,12 @@ public class CGDPauseManager : MonoBehaviour
     public GameObject SettingsMenu;
     public Slider MouseSensitivitySlider;
     public Slider MusicVolumeSlider;
+    public Slider SoundVolumeSlider;
     public CGDMusicManager MusicManager;
     public static bool Paused;
     PhotonView _view;
+    public AudioClip ClickSFX;
+    GameObject _audioListenerPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,10 @@ public class CGDPauseManager : MonoBehaviour
                 }
             }
         }
+        if (!_audioListenerPosition)
+        {
+            _audioListenerPosition = GameObject.FindGameObjectWithTag("MainCamera");
+        }
     }
 
     private void HideSettingsMenu()
@@ -69,16 +76,19 @@ public class CGDPauseManager : MonoBehaviour
 
     public void OnClickResumeButon()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         HidePauseMenu();
     }
 
     public void OnClickSettingsButton()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         ShowSettingsMenu();
     }
 
     public void OnClickBackButton()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         HideSettingsMenu();
     }
 
@@ -90,12 +100,14 @@ public class CGDPauseManager : MonoBehaviour
 
     public void OnClickQuitToMainMenuButton()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         print("leaving this room");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         StartCoroutine(LeaveRoom());
     }
     public void OnClickQuitToDesktopButton()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         print("leaving this room and quitting to desktop");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         StartCoroutine(LeaveRoomAndQuitApplication());
@@ -113,6 +125,13 @@ public class CGDPauseManager : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
         PlayerPrefs.Save();
         MusicManager.UpdateMusicVolume(MusicVolumeSlider.value);
+    }
+
+    public void OnChangeSoundVolumeSlider()
+    {
+        CGDGameSettings.SoundVolume = SoundVolumeSlider.value;
+        PlayerPrefs.SetFloat("SoundVolume", SoundVolumeSlider.value);
+        PlayerPrefs.Save();
     }
     IEnumerator LeaveRoom()
     {

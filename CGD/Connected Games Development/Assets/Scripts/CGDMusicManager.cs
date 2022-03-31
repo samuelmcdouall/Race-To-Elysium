@@ -9,6 +9,7 @@ public class CGDMusicManager : MonoBehaviour
     AudioSource _as;
     public AudioClip MainMusic;
     public Slider MusicSlider;
+    public Slider SoundSlider;
     void Start()
     {
         _as = GetComponent<AudioSource>();
@@ -17,6 +18,7 @@ public class CGDMusicManager : MonoBehaviour
         _as.volume = CGDGameSettings.MusicVolume;
         _as.Play();
         MusicSlider.value = CGDGameSettings.MusicVolume;
+        SoundSlider.value = CGDGameSettings.SoundVolume;
     }
 
     public void UpdateMusicVolume(float volume) 

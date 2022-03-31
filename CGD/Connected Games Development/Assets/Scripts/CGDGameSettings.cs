@@ -12,6 +12,7 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
     public static int PlayerNum = -1; // have to decrease this by one if someone in the queue moves up
     public static float MouseSensitivity = -1.0f;
     public static float MusicVolume = -1.0f;
+    public static float SoundVolume = -1.0f;
     void Awake()
     {
         if (!Instance)
@@ -25,6 +26,8 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(gameObject);
         MouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 10.5f);
         MusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        SoundVolume = PlayerPrefs.GetFloat("SoundVolume", 0.5f);
+
         //_view = GetComponent<PhotonView>();
     }
 

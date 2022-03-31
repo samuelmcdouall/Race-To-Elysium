@@ -381,6 +381,10 @@ PrefabInstance:
       propertyPath: MusicSlider
       value: 
       objectReference: {fileID: 8755499741016336798}
+    - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
+      propertyPath: SoundSlider
+      value: 
+      objectReference: {fileID: 8755499741016336799}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
 --- !u!114 &352700794 stripped
@@ -1117,6 +1121,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 222708914670753956, guid: cba48b46d173c074abb730e775e69397, type: 3}
+      propertyPath: ClickSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+    - target: {fileID: 222708914670753956, guid: cba48b46d173c074abb730e775e69397, type: 3}
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 1308529787}
@@ -1136,6 +1144,10 @@ PrefabInstance:
       propertyPath: MusicVolumeSlider
       value: 
       objectReference: {fileID: 8755499741016336798}
+    - target: {fileID: 222708914670753956, guid: cba48b46d173c074abb730e775e69397, type: 3}
+      propertyPath: SoundVolumeSlider
+      value: 
+      objectReference: {fileID: 8755499741016336799}
     - target: {fileID: 222708914670753956, guid: cba48b46d173c074abb730e775e69397, type: 3}
       propertyPath: MouseSensitivitySlider
       value: 
@@ -1471,6 +1483,34 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1512927558}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnChangeSoundVolumeSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CGDPauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4241653945290614524, guid: 8810ad8554751254f9505a210a560638, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1536,6 +1576,17 @@ PrefabInstance:
 --- !u!114 &8755499741016336798 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2251966863687013310, guid: 8810ad8554751254f9505a210a560638, type: 3}
+  m_PrefabInstance: {fileID: 8755499741016336797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8755499741016336799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2973482521059947994, guid: 8810ad8554751254f9505a210a560638, type: 3}
   m_PrefabInstance: {fileID: 8755499741016336797}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
