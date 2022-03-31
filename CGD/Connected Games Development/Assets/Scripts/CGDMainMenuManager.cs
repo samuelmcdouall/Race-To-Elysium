@@ -31,19 +31,28 @@ public class CGDMainMenuManager : MonoBehaviourPunCallbacks
 
     }
 
-    public void CreateRoom()
+    public void JoinRandomRoomButton()
     {
+        //list all avaliable rooms
+        //if none avaliable then 
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
+        PhotonNetwork.JoinRandomOrCreateRoom();
+    }
+
+    public void CreateRoomButton()
+    {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.CreateRoom(CreateRoomInput.text);
     }
 
-    public void JoinRoom()
+    public void JoinRoomButton()
     {
+        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.JoinRoom(JoinRoomInput.text);
     }
 
     public override void OnJoinedRoom()
     {
-        AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.LoadLevel("PlayerLobbyScene");
     }
 

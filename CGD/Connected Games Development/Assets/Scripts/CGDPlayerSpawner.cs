@@ -23,7 +23,7 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
     float _minSpawnZ;
     [SerializeField]
     float _maxSpawnZ;
-    int _maxPlayers = 3;
+    int _maxPlayers = 4;
     GameObject _gameSceneLoader;
     [SerializeField]
     List<Transform> _spawnPositions;
@@ -64,6 +64,7 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             if (playerCount == _maxPlayers)
             {
                 print("Enough players (" + _maxPlayers + ") to start the game");
+                PhotonNetwork.CurrentRoom.IsOpen = false;
                 _gameSceneLoader.GetComponent<CGDGameSceneLoader>().BeginCountDownForAllPlayers();
 
             }

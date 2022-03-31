@@ -46,6 +46,7 @@ public class CGDGameSceneLoader : MonoBehaviour
                 {
                     _countDownTimer = _countDownTime;
                     // here randomly determine the game preset + apply to the game settings + send to everyone, then in the game scene use that to enable the groups
+                    
                     PhotonNetwork.LoadLevel("GameScene");
                 }
             }
