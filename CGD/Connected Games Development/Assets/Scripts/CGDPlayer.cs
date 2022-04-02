@@ -46,7 +46,7 @@ public class CGDPlayer : MonoBehaviour
     public AudioClip JumpSFX;
     public AudioClip UltSFX;
     [System.NonSerialized]
-    public PickupHeld _pickupHeld;
+    public PowerUpHeld _powerUpHeld;
 
     // Animations
     //[System.NonSerialized]
@@ -532,7 +532,7 @@ public class CGDPlayer : MonoBehaviour
         //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
-    public enum PickupHeld
+    public enum PowerUpHeld
     {
         SpeedBoost,
         JumpBoost,
