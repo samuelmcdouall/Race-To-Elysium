@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 47b7a45414f3b564e9e8349bfa18b29f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -376,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: MainMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 5b728ca468884df46bea6e8d1d74c2e7, type: 3}
+      objectReference: {fileID: 8300000, guid: 76b53e46ff6ef6745931798de86f2bd4, type: 3}
     - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: MusicSlider
       value: 
