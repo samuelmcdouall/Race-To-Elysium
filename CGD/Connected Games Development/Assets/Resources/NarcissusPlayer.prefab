@@ -601,6 +601,10 @@ MonoBehaviour:
   _repelForce: 400
   _repelCooldown: 1
   _readyToRepel: 0
+  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
 --- !u!65 &5997020625786589131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -934,12 +938,15 @@ MonoBehaviour:
   BlindScreen: {fileID: 836811451730255049}
   CheckpointPosition: {x: 0, y: 0, z: 0}
   SpeedBoostIcon: {fileID: 3462690282675416024}
+  JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
+  UltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
   _enabledControls: 1
   MainCamera: {fileID: 3193539389366677583}
   UltimateCollider: {fileID: 5490843599454987658}
+  BlindFX: {fileID: 100004, guid: 60fd66ae32c81014e917f339de640e52, type: 3}
 --- !u!1 &9084475345112426095
 GameObject:
   m_ObjectHideFlags: 0

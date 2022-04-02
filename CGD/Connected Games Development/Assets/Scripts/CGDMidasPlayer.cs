@@ -9,6 +9,7 @@ public class CGDMidasPlayer : CGDPlayer
     public GameObject MainCamera;
     [Header("Ultimate Attack")]
     public GameObject UltimateCollider;
+    public GameObject SlowFX;
 
     void Awake()
     {
@@ -35,6 +36,20 @@ public class CGDMidasPlayer : CGDPlayer
                     UltimateAttack();
                 }
             }
+            float scaledColorPosition = transform.position.y / 50.0f;
+            if (scaledColorPosition > 1.0f)
+            {
+                scaledColorPosition = 1.0f;
+            }
+            else if (scaledColorPosition < 0.0f)
+            {
+                scaledColorPosition = 0.0f;
+            }
+
+            Color tartarusColor = new Color(1.0f, 0.0f, 0.0f);
+            Color normalColour = new Color(0.45f, 0.45f, 0.45f);
+            Color skyboxColor = Color.Lerp(tartarusColor, normalColour, scaledColorPosition);
+            RenderSettings.skybox.SetColor("_Tint", skyboxColor);
         }
     }
     public override void UltimateAttack()
@@ -44,6 +59,8 @@ public class CGDMidasPlayer : CGDPlayer
             print("Midas ultimate attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
+            AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
+            PhotonNetwork.Instantiate(SlowFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
         }
         else
@@ -62,6 +79,7 @@ public class CGDMidasPlayer : CGDPlayer
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         UltimateCharge = 0.0f;
+        _pickupHeld = PickupHeld.None;
         Cursor.lockState = CursorLockMode.Locked;
         if (!_view.IsMine)
         {

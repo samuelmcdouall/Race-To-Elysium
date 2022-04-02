@@ -19,6 +19,10 @@ public class CDGMedusaBasicAttack : MonoBehaviour
     float _repelCooldownTimer;
     public bool _readyToRepel;
     Rigidbody _tempRb;
+    public AudioClip AttackSFX1;
+    public AudioClip AttackSFX2;
+    public AudioClip AttackHitPlayer;
+    public AudioClip AttackHitGate;
 
 
     void Start()
@@ -62,6 +66,15 @@ public class CDGMedusaBasicAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _readyToRepel && OwnPlayer.GetComponent<CGDPlayer>()._enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             print("clicked");
+            int randSoundEffect = Random.Range(0, 2);
+            if (randSoundEffect == 0)
+            {
+                AudioSource.PlayClipAtPoint(AttackSFX1, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(AttackSFX2, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            }
             _repelCollider.enabled = true;
             _readyToRepel = false;
         }
@@ -71,6 +84,7 @@ public class CDGMedusaBasicAttack : MonoBehaviour
     {
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
+            AudioSource.PlayClipAtPoint(AttackHitPlayer, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
             print("hit other player");
             Vector3 playerToEnemyDirection = Vector3.Normalize(collider.gameObject.transform.position - OwnPlayer.transform.position);
             Vector3 forceToAdd = playerToEnemyDirection * _repelForce;
@@ -82,6 +96,7 @@ public class CDGMedusaBasicAttack : MonoBehaviour
         else if (collider.tag == "Gate")
         {
             print("hit gate");
+            AudioSource.PlayClipAtPoint(AttackHitGate, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
             collider.gameObject.GetComponent<CGDGate>().ReduceHealthOfGateForAllPlayers();
         }
     }

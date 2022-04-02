@@ -49,6 +49,10 @@ MonoBehaviour:
   _repelForce: 400
   _repelCooldown: 1
   _readyToRepel: 0
+  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
 --- !u!65 &2236836925217184053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -563,6 +567,8 @@ MonoBehaviour:
   BlindScreen: {fileID: 3075409906373312605}
   CheckpointPosition: {x: 0, y: 0, z: 0}
   SpeedBoostIcon: {fileID: 1877287682620588930}
+  JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
+  UltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
@@ -570,6 +576,8 @@ MonoBehaviour:
   MainCamera: {fileID: 6945357730522883761}
   _freezeDuration: 5
   _freezeRange: 20
+  FreezeFX: {fileID: 1965343156803978, guid: bf082a81e768e374e8bb129ce6f07bfc, type: 3}
+  HitFreezeSFX: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
 --- !u!114 &1958545619369189649
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,13 +50,13 @@ public class CGDRotateCamera : MonoBehaviour
         {
             if (hit.transform.gameObject != OwnPlayer)
             {
-                print("can't see player, move camera closer");
+                //print("can't see player, move camera closer");
                 float playerToObstacleDistance = Vector3.Distance(hit.point, OwnPlayer.transform.position);
                 transform.position = OwnPlayer.transform.position + -cameraToPlayerDirection * (playerToObstacleDistance);
             }
             else
             {
-                print("can see player, move camera to normal position");
+                //print("can see player, move camera to normal position");
                 transform.position = maxPossibleCameraPosition;
             }
         }

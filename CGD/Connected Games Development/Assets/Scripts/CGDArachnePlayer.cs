@@ -38,6 +38,20 @@ public class CGDArachnePlayer : CGDPlayer
                     UltimateAttack();
                 }
             }
+            float scaledColorPosition = transform.position.y / 50.0f;
+            if (scaledColorPosition > 1.0f)
+            {
+                scaledColorPosition = 1.0f;
+            }
+            else if (scaledColorPosition < 0.0f)
+            {
+                scaledColorPosition = 0.0f;
+            }
+
+            Color tartarusColor = new Color(1.0f, 0.0f, 0.0f);
+            Color normalColour = new Color(0.45f, 0.45f, 0.45f);
+            Color skyboxColor = Color.Lerp(tartarusColor, normalColour, scaledColorPosition);
+            RenderSettings.skybox.SetColor("_Tint", skyboxColor);
         }
     }
     public override void UltimateAttack()
@@ -70,6 +84,7 @@ public class CGDArachnePlayer : CGDPlayer
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         UltimateCharge = 0.0f;
+        _pickupHeld = PickupHeld.None;
         Cursor.lockState = CursorLockMode.Locked;
         if (!_view.IsMine)
         {

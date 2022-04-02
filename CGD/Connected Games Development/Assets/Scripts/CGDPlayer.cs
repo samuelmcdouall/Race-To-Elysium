@@ -43,6 +43,10 @@ public class CGDPlayer : MonoBehaviour
     public Vector3 CheckpointPosition = new Vector3(0.0f,0.0f,0.0f);
     float _checkpointOffset = 2.0f;
     public GameObject SpeedBoostIcon;
+    public AudioClip JumpSFX;
+    public AudioClip UltSFX;
+    [System.NonSerialized]
+    public PickupHeld _pickupHeld;
 
     // Animations
     //[System.NonSerialized]
@@ -301,6 +305,7 @@ public class CGDPlayer : MonoBehaviour
             if (GroundCheck.IsGrounded && _ableToJumpOffGround)
             {
                 JumpUp();
+                AudioSource.PlayClipAtPoint(JumpSFX, transform.position, CGDGameSettings.SoundVolume);
                 //Invoke("JumpUp", 0.0f);
                 _ableToJumpOffGround = false;
             }
@@ -525,5 +530,17 @@ public class CGDPlayer : MonoBehaviour
     {
         SpeedBoostIcon.SetActive(false);
         //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    }
+
+    public enum PickupHeld
+    {
+        SpeedBoost,
+        JumpBoost,
+        SpeedAndJumpBoost,
+        Peel,
+        Spikes,
+        PoisonCloud,
+        LavaPool,
+        None
     }
 }
