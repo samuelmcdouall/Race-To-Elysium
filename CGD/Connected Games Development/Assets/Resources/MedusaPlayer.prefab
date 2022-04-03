@@ -66,6 +66,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1396305826647682383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3067372093977861198}
+  - component: {fileID: 7021015945189470074}
+  - component: {fileID: 4475019015290917108}
+  m_Layer: 5
+  m_Name: JumpBoostPowerUpIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &3067372093977861198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396305826647682383}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8208920918311995564}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -230.7019, y: -270}
+  m_SizeDelta: {x: 223.4038, y: 140.6507}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7021015945189470074
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396305826647682383}
+  m_CullTransparentMesh: 1
+--- !u!114 &4475019015290917108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396305826647682383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e6fad5487c12ca7418379ab7ffb5d02e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1877287682620588930
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,8 +153,8 @@ GameObject:
   - component: {fileID: 4540776921196584444}
   - component: {fileID: 7061031036746769913}
   m_Layer: 5
-  m_Name: SpeedBoostPowerUpCue
-  m_TagString: SpeedBoostPowerUpCue
+  m_Name: SpeedBoostPowerUpIcon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -230.7019, y: -136.32532}
+  m_AnchoredPosition: {x: -230.7019, y: -270}
   m_SizeDelta: {x: 223.4038, y: 140.6507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4540776921196584444
@@ -174,6 +249,8 @@ RectTransform:
   - {fileID: 3700933584535885180}
   - {fileID: 5241972090774419392}
   - {fileID: 253430587493275273}
+  - {fileID: 3067372093977861198}
+  - {fileID: 7638274105470216373}
   m_Father: {fileID: 2747120578565243163}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -440,6 +517,7 @@ GameObject:
   - component: {fileID: 1958545619369189649}
   - component: {fileID: 4864938221004231505}
   - component: {fileID: 1978823763770631500}
+  - component: {fileID: 1080854333369416524}
   m_Layer: 0
   m_Name: MedusaPlayer
   m_TagString: Player
@@ -566,13 +644,13 @@ MonoBehaviour:
   RotateCamera: {fileID: 2249433769207627536}
   BlindScreen: {fileID: 3075409906373312605}
   CheckpointPosition: {x: 0, y: 0, z: 0}
-  SpeedBoostIcon: {fileID: 1877287682620588930}
   JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
   UltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
   _showCursor: 0
   _enabledControls: 1
+  _jumpModifier: 0
   MainCamera: {fileID: 6945357730522883761}
   _freezeDuration: 5
   _freezeRange: 20
@@ -651,6 +729,44 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 2
+--- !u!114 &1080854333369416524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049573236163780219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a0f482afd8678479125aed5a4f2a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileSpawnPoint: {fileID: 0}
+  _iconFlashRate: 0.5
+  AreaDenialProjectile: {fileID: 0}
+  _areaDenialProjectileSpeed: 0
+  AreaDenialProjectileLaunchSFX: {fileID: 0}
+  SpeedBoostIcon: {fileID: 1877287682620588930}
+  _speedBoostPerModifier: 50
+  _speedBoostDuration: 5
+  SpeedBoostSFX: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
+  JumpBoostIcon: {fileID: 1396305826647682383}
+  _jumpBoostPerModifier: 50
+  _jumpBoostDuration: 5
+  JumpBoostSFX: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
+  SpeedJumpBoostIcon: {fileID: 9000175414008568931}
+  _speedBothBoostPerModifier: 75
+  _jumpBothBoostPerModifier: 75
+  _speedJumpBoostDuration: 5
+  SpeedJumpBoostSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+  PeelIcon: {fileID: 0}
+  PeelSFX: {fileID: 0}
+  SpikesIcon: {fileID: 0}
+  SpikesSFX: {fileID: 0}
+  PoisonCloudIcon: {fileID: 0}
+  PoisonCloudSFX: {fileID: 0}
+  LavaPoolIcon: {fileID: 0}
+  LavaPoolSFX: {fileID: 0}
 --- !u!1 &5433551232186928924
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +1033,81 @@ MonoBehaviour:
   MouseYMaxClamp: 60
   View: {fileID: 1958545619369189649}
   OwnPlayer: {fileID: 4049573236163780219}
+--- !u!1 &9000175414008568931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7638274105470216373}
+  - component: {fileID: 2693300495764818444}
+  - component: {fileID: 1572568324175587520}
+  m_Layer: 5
+  m_Name: SpeedAndJumpBoostPowerUpIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7638274105470216373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000175414008568931}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8208920918311995564}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -230.7019, y: -270}
+  m_SizeDelta: {x: 223.4038, y: 140.6507}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2693300495764818444
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000175414008568931}
+  m_CullTransparentMesh: 1
+--- !u!114 &1572568324175587520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000175414008568931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e6fad5487c12ca7418379ab7ffb5d02e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &9120036184895403078
 GameObject:
   m_ObjectHideFlags: 0
