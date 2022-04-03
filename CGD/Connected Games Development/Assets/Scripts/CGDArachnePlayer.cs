@@ -83,8 +83,8 @@ public class CGDArachnePlayer : CGDPlayer
         _cameraTr = Camera.main.transform;
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
+        _jumpModifier = 1.0f;
         UltimateCharge = 0.0f;
-        _powerUpHeld = PowerUpHeld.None;
         Cursor.lockState = CursorLockMode.Locked;
         if (!_view.IsMine)
         {

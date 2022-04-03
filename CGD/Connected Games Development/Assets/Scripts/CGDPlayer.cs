@@ -42,11 +42,8 @@ public class CGDPlayer : MonoBehaviour
     public GameObject BlindScreen;
     public Vector3 CheckpointPosition = new Vector3(0.0f,0.0f,0.0f);
     float _checkpointOffset = 2.0f;
-    public GameObject SpeedBoostIcon;
     public AudioClip JumpSFX;
     public AudioClip UltSFX;
-    [System.NonSerialized]
-    public PowerUpHeld _powerUpHeld;
 
     // Animations
     //[System.NonSerialized]
@@ -74,6 +71,7 @@ public class CGDPlayer : MonoBehaviour
     public bool _enabledControls;
 
     protected float _speedModifier;
+    public float _jumpModifier;
 
     void Start()
     {
@@ -152,6 +150,19 @@ public class CGDPlayer : MonoBehaviour
         _enabledControls = true;
         print("returned to normal speed");
     }
+    public void ApplyJumpModifierForSeconds(float modiferPercentage, float duration)
+    {
+        //if (_speedModifier == 1.0f)
+        //{
+        _jumpModifier = 1.0f - (modiferPercentage / 100.0f);
+        Invoke("ResetJumpModifier", duration);
+        //}
+    }
+    public void ResetJumpModifier()
+    {
+        _jumpModifier = 1.0f;
+        print("returned to normal jump power");
+    }
     public virtual void Update()
     {
         if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
@@ -181,6 +192,7 @@ public class CGDPlayer : MonoBehaviour
         _cameraTr = Camera.main.transform;
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
+        _jumpModifier = 1.0f;
     }
 
     public void LimitSpeedToMaximum()
@@ -318,7 +330,7 @@ public class CGDPlayer : MonoBehaviour
 
     public void JumpUp()
     {
-        PlayerRb.AddForce(0.0f, _playerJumpForce, 0.0f, ForceMode.Impulse);
+        PlayerRb.AddForce(0.0f, _playerJumpForce * _jumpModifier, 0.0f, ForceMode.Impulse);
     }
 
     public void ModifyUltimateChargeUltPickup(float chargeAmount)
@@ -516,31 +528,19 @@ public class CGDPlayer : MonoBehaviour
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
-    public void DisplayUI(float duration)
-    {
-        if (_view.IsMine)
-        {
-            SpeedBoostIcon.SetActive(true);
-            //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-            Invoke("HideUI", duration);
-        }
-    }
+    //public void DisplayUI(float duration)
+    //{
+    //    if (_view.IsMine)
+    //    {
+    //        SpeedBoostIcon.SetActive(true);
+    //        //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+    //        Invoke("HideUI", duration);
+    //    }
+    //}
 
-    void HideUI()
-    {
-        SpeedBoostIcon.SetActive(false);
-        //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-    }
-
-    public enum PowerUpHeld
-    {
-        SpeedBoost,
-        JumpBoost,
-        SpeedAndJumpBoost,
-        Peel,
-        Spikes,
-        PoisonCloud,
-        LavaPool,
-        None
-    }
+    //void HideUI()
+    //{
+    //    SpeedBoostIcon.SetActive(false);
+    //    //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    //}
 }
