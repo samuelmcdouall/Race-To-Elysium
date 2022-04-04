@@ -14,7 +14,7 @@ public class CGDPowerUp : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && false) //todo delete this script won't be used as pickup
         {
             if (other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld == CGDPowerUpManager.PowerUpHeld.None)
             {
@@ -30,6 +30,10 @@ public class CGDPowerUp : MonoBehaviour
                 float selfHeight = other.gameObject.transform.position.y;
                 float firstPlaceHeight = playerListHeights.Max();
                 bool selfInFirstPlace = false;
+                float lastPlaceHeight = playerListHeights.Min();
+                float distSelfToFirstPlace = firstPlaceHeight - selfHeight;
+                float distFirstToLastPlace = firstPlaceHeight - lastPlaceHeight;
+                float playerPosition = distSelfToFirstPlace / distFirstToLastPlace;
                 if (firstPlaceHeight - selfHeight < _tolerance)
                 {
                     selfInFirstPlace = true;
@@ -40,12 +44,10 @@ public class CGDPowerUp : MonoBehaviour
                 }
                 else 
                 {
-                    float lastPlaceHeight = playerListHeights.Min();
-                    float distSelfToFirstPlace = firstPlaceHeight - selfHeight;
-                    float distFirstToLastPlace = firstPlaceHeight - lastPlaceHeight;
-                    movementProbability = 0.5f * (distSelfToFirstPlace / distFirstToLastPlace);
+                    movementProbability = playerPosition; //todo was 0.5f * originally
                     movementProbability = Mathf.Max(movementProbability, 0.1f);
                 }
+                print("Movement Probability: " + movementProbability);
                 float randPowerUpType = Random.Range(0.0f, 1.0f);
 
                 bool giveMovementPowerUp = false;
@@ -53,27 +55,46 @@ public class CGDPowerUp : MonoBehaviour
                 {
                     giveMovementPowerUp = true;
                 }
-
                 if (giveMovementPowerUp)
                 {
-                    int randomMovementPowerUp = Random.Range(0, 3);
-                    switch (randomMovementPowerUp)
+                    float randomMovementPowerUp = Random.Range(0.0f, 1.0f);
+                    if (playerPosition > 0.7f)
                     {
-                        case 0:
+                        if (0.0f <= randomMovementPowerUp && randomMovementPowerUp < 0.2f)
+                        {
                             other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedBoost;
                             other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedBoost);
-                            break;
-                        case 1:
+                        }
+                        else if (0.2f <= randomMovementPowerUp && randomMovementPowerUp < 0.4f)
+                        {
                             other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.JumpBoost;
                             other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.JumpBoost);
-                            break;
-                        case 2:
+                        }
+                        else
+                        {
                             other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedAndJumpBoost;
                             other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedAndJumpBoost);
-                            break;
-                        default:
-                            break;
+                        }
                     }
+                    else
+                    {
+                        if (0.0f <= randomMovementPowerUp && randomMovementPowerUp < 0.45f)
+                        {
+                            other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedBoost;
+                            other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedBoost);
+                        }
+                        else if (0.45f <= randomMovementPowerUp && randomMovementPowerUp < 0.9f)
+                        {
+                            other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.JumpBoost;
+                            other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.JumpBoost);
+                        }
+                        else
+                        {
+                            other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedAndJumpBoost;
+                            other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedAndJumpBoost);
+                        }
+                    }
+
                 }
                 else
                 {
@@ -99,8 +120,8 @@ public class CGDPowerUp : MonoBehaviour
                         other.gameObject.GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.LavaPool);
                     }
                 }
-                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 }

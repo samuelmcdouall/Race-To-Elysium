@@ -45,19 +45,15 @@ public class CGDPowerUpManager : MonoBehaviour
 
     [Header("Peel")]
     public GameObject PeelIcon;
-    public AudioClip PeelSFX;
 
     [Header("Spikes")]
     public GameObject SpikesIcon;
-    public AudioClip SpikesSFX;
 
     [Header("Poison Cloud")]
     public GameObject PoisonCloudIcon;
-    public AudioClip PoisonCloudSFX;
 
     [Header("Lava Pool")]
     public GameObject LavaPoolIcon;
-    public AudioClip LavaPoolSFX;
 
     PhotonView _view;
 
@@ -135,28 +131,33 @@ public class CGDPowerUpManager : MonoBehaviour
         _powerUpHeld = PowerUpHeld.None;
         AudioSource.PlayClipAtPoint(AreaDenialProjectileLaunchSFX, transform.position, CGDGameSettings.SoundVolume);
         GameObject projectile = PhotonNetwork.Instantiate(AreaDenialProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
+        //GameObject projectile = Instantiate(AreaDenialProjectile, ProjectileSpawnPoint.position, Quaternion.identity); todo remove just for local version
         projectile.GetComponent<CGDAreaDenialProjectile>().OwnPlayer = gameObject;
         
         switch (areaDenialType)
         {
             case PowerUpHeld.Peel:
+                print("peel setting");
                 projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.Peel;
                 PeelIcon.SetActive(false);
                 break;
             case PowerUpHeld.Spikes:
+                print("spikes setting");
                 projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.Spikes;
                 SpikesIcon.SetActive(false);
                 break;
             case PowerUpHeld.PoisonCloud:
+                print("poison cloud setting");
                 projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.PoisonCloud;
                 PoisonCloudIcon.SetActive(false);
                 break;
             case PowerUpHeld.LavaPool:
+                print("lava pool setting");
                 projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.LavaPool;
                 LavaPoolIcon.SetActive(false);
                 break;
         }
-        
+
         Vector3 forwardDirection = new Vector3(_playerScript._cameraTr.forward.x, _playerScript._cameraTr.forward.y, _playerScript._cameraTr.forward.z);
         forwardDirection = forwardDirection.normalized;
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(forwardDirection.x, forwardDirection.y, forwardDirection.z) * _areaDenialProjectileSpeed;
