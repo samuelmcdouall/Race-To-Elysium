@@ -65,10 +65,10 @@ public class CGDMedusaPlayer : CGDPlayer
             UltimateBar.SetBar(UltimateCharge);
             AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
             RaycastHit hit;
-            Vector3 forwardDirection = new Vector3(_cameraTr.forward.x, 0.0f, _cameraTr.forward.z);
+            Vector3 forwardDirection = new Vector3(_cameraTr.forward.x, _cameraTr.forward.y, _cameraTr.forward.z);
             forwardDirection = forwardDirection.normalized;
-            Debug.DrawRay(transform.position, forwardDirection * _freezeRange, Color.cyan, 1.0f);
-            if (Physics.Raycast(transform.position, forwardDirection, out hit, _freezeRange))
+            Debug.DrawRay(_cameraTr.position, forwardDirection * _freezeRange, Color.red, 10.0f); //todo remove this eventually
+            if (Physics.Raycast(_cameraTr.position, forwardDirection, out hit, _freezeRange))
             {
                 if (hit.transform.gameObject.tag == "Player")
                 {
