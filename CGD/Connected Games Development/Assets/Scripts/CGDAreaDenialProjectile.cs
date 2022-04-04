@@ -7,11 +7,13 @@ public class CGDAreaDenialProjectile : MonoBehaviour
 {
     [SerializeField]
     float _lifetime;
+    [System.NonSerialized]
     public AreaDenialProjectileType ProjectileType;
     public GameObject PeelObject;
     public GameObject SpikesObject;
     public GameObject PoisonCloudObject;
     public GameObject LavaPoolObject;
+    public AudioClip CollideSFX;
     [System.NonSerialized]
     public GameObject OwnPlayer;
     int _invisibleColliderLayer;
@@ -20,7 +22,6 @@ public class CGDAreaDenialProjectile : MonoBehaviour
     {
         _invisibleColliderLayer = 6;
         _view = GetComponent<PhotonView>();
-        ProjectileType = AreaDenialProjectileType.Undefined;
         Destroy(gameObject, _lifetime);
     }
 
@@ -29,6 +30,7 @@ public class CGDAreaDenialProjectile : MonoBehaviour
         if (other.gameObject.layer != _invisibleColliderLayer && other.gameObject != OwnPlayer && _view.IsMine)
         {
             print("area denial projectile hit surface");
+            AudioSource.PlayClipAtPoint(CollideSFX, transform.position, CGDGameSettings.SoundVolume);
             switch (ProjectileType)
             {
                 case AreaDenialProjectileType.Peel:
