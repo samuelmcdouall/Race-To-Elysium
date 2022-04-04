@@ -16,6 +16,7 @@ public class CGDPlayer : MonoBehaviour
     public float _playerFallForce;
     [System.NonSerialized]
     public bool _ableToJumpOffGround;
+    bool _sliding = false;
     //[SerializeField]
     //float BounceForce;
     //float jump_delay_timer;
@@ -86,6 +87,10 @@ public class CGDPlayer : MonoBehaviour
             transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
         }
         LimitSpeedToMaximum();
+        if (_sliding) // todo, might be nicer way of doing this
+        {
+            PlayerRb.velocity = PlayerRb.velocity.normalized * _playerTopSpeed * 2.0f;
+        }
         HandleGroundCheckMechanics();
         if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
@@ -150,6 +155,18 @@ public class CGDPlayer : MonoBehaviour
         _enabledControls = true;
         print("returned to normal speed");
     }
+    public void StartSliding(float Duration)
+    {
+        _sliding = true;
+        print("now sliding");
+        Invoke("StopSliding", Duration);
+    }
+    public void StopSliding()
+    {
+        _sliding = false;
+        print("no longer sliding");
+    }
+
     public void ApplyJumpModifierForSeconds(float modiferPercentage, float duration)
     {
         //if (_speedModifier == 1.0f)
