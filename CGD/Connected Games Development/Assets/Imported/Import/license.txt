@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cosmic Web density field
+* source:	https://sketchfab.com/3d-models/cosmic-web-density-field-07d86ea6f79443769a8265ee423928b6
+* author:	chris (https://sketchfab.com/c.n.c.pichon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cosmic Web density field" (https://sketchfab.com/3d-models/cosmic-web-density-field-07d86ea6f79443769a8265ee423928b6) by chris (https://sketchfab.com/c.n.c.pichon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
