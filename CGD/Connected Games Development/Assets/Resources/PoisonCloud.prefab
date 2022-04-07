@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 653868391350825328}
   - component: {fileID: 5901039135771873703}
   - component: {fileID: 6994036614456818967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PoisonCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,3 +133,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   _selfImmuneDelay: 2
+  Hazard: 1

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7502098578384637029}
   - component: {fileID: 3525048480422325426}
   - component: {fileID: 6655158501543607514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArachneWeb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
