@@ -35,28 +35,28 @@ public class CGDAreaDenialProjectile : MonoBehaviour
             {
                 case AreaDenialProjectileType.Peel:
                     {
-                        GameObject peel = PhotonNetwork.Instantiate(PeelObject.name, transform.position, Quaternion.identity);
+                        GameObject peel = PhotonNetwork.Instantiate(PeelObject.name, PeelObject.transform.position + transform.position, PeelObject.transform.rotation);
                         peel.GetComponent<CGDPeel>().OwnPlayer = OwnPlayer;
                         break;
                     }
 
                 case AreaDenialProjectileType.Spikes:
                     {
-                        GameObject spikes = PhotonNetwork.Instantiate(SpikesObject.name, transform.position, Quaternion.identity);
+                        GameObject spikes = PhotonNetwork.Instantiate(SpikesObject.name, SpikesObject.transform.position + transform.position, SpikesObject.transform.rotation);
                         spikes.GetComponent<CGDSpikes>().OwnPlayer = OwnPlayer;
                         break;
                     }
 
                 case AreaDenialProjectileType.PoisonCloud:
                     {
-                        GameObject poisonCloud = PhotonNetwork.Instantiate(PoisonCloudObject.name, transform.position, Quaternion.identity);
+                        GameObject poisonCloud = PhotonNetwork.Instantiate(PoisonCloudObject.name, PoisonCloudObject.transform.position + transform.position, PoisonCloudObject.transform.rotation);
                         poisonCloud.GetComponent<CGDAreaDenialPowerUpHazard>().OwnPlayer = OwnPlayer;
                         break;
                     }
 
                 case AreaDenialProjectileType.LavaPool:
                     {
-                        GameObject lavaPool = PhotonNetwork.Instantiate(LavaPoolObject.name, transform.position, Quaternion.identity);
+                        GameObject lavaPool = PhotonNetwork.Instantiate(LavaPoolObject.name, LavaPoolObject.transform.position + transform.position, LavaPoolObject.transform.rotation);
                         lavaPool.GetComponent<CGDAreaDenialPowerUpHazard>().OwnPlayer = OwnPlayer;
                         break;
                     }
@@ -66,7 +66,7 @@ public class CGDAreaDenialProjectile : MonoBehaviour
                     break;
             }
 
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
