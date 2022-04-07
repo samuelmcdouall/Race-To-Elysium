@@ -23,6 +23,8 @@ public class CGDRotateCamera : MonoBehaviour
 
     float _maxPossibleCameraDistance;
 
+    int _hazardLayerIgnore = 7;
+
     //[Header("Menus")]
     //public GameObject pause_menu;
     //public GameObject options_menu;
@@ -46,7 +48,7 @@ public class CGDRotateCamera : MonoBehaviour
         Vector3 maxPossibleCameraPosition = OwnPlayer.transform.position + -cameraToPlayerDirection * _maxPossibleCameraDistance;
         Debug.DrawRay(maxPossibleCameraPosition, cameraToPlayerDirection * 10.0f, Color.cyan, 1.0f);
         
-        if (Physics.Raycast(maxPossibleCameraPosition, cameraToPlayerDirection, out hit, 10.0f))
+        if (Physics.Raycast(maxPossibleCameraPosition, cameraToPlayerDirection, out hit, 10.0f, _hazardLayerIgnore))
         {
             if (hit.transform.gameObject != OwnPlayer)
             {
