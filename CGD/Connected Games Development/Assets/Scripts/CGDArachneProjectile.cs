@@ -27,7 +27,7 @@ public class CGDArachneProjectile : MonoBehaviour
             print("web exploded");
             GameObject webObject = PhotonNetwork.Instantiate(WebObject.name, gameObject.transform.position, Quaternion.identity);
             webObject.GetComponent<CGDArachneWeb>().OwnPlayer = OwnPlayer;
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }
