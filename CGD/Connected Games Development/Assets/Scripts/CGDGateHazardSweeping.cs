@@ -73,6 +73,7 @@ public class CGDGateHazardSweeping : MonoBehaviour
             fadeInTimer += Time.deltaTime;
             yield return null;
         }
+        GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 1.0f);
         if (_hazardState == HazardState.WaitingAtStart)
         {
             _hazardState = HazardState.MovingToEnd;
@@ -106,6 +107,7 @@ public class CGDGateHazardSweeping : MonoBehaviour
             fadeOutTimer += Time.deltaTime;
             yield return null;
         }
+        GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 0.0f);
         if (Completed)
         {
             _hazardState = HazardState.Completed;
