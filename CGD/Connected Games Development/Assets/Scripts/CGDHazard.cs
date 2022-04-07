@@ -14,6 +14,10 @@ public class CGDHazard : MonoBehaviour
             //print("player in the lava");
             //other.gameObject.GetComponent<CGDPlayer>().UltimateCharge -= _ultPerDecrPerSecond * Time.fixedDeltaTime; todo shouldn't need this but double check with a test
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_ultPerDecrPerSecond * Time.fixedDeltaTime);
+            if (!other.gameObject.GetComponent<CGDPlayer>().LavaBurnFX.activeSelf)
+            {
+                other.gameObject.GetComponent<CGDPlayer>().LavaBurnFX.SetActive(true);
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -27,6 +31,7 @@ public class CGDHazard : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<CGDPlayer>().LavaBurnFX.SetActive(false);
             print("player exited the lava");
         }
     }
