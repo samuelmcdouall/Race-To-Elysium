@@ -45,6 +45,8 @@ public class CGDPlayer : MonoBehaviour
     float _checkpointOffset = 2.0f;
     public AudioClip JumpSFX;
     public AudioClip UltSFX;
+    public GameObject LavaBurnFX;
+    public GameObject PoisonBurnFX;
 
     // Animations
     //[System.NonSerialized]
