@@ -38,6 +38,8 @@ public class CGDMainMenuUserStatistics : MonoBehaviour
             else
             {
                 string jsonData = webRequest.downloadHandler.text;
+
+                // Input comes in with [] brackets around it, so just remove them to allow the Json converter to read the data
                 jsonData = jsonData.Remove(jsonData.Length - 1, 1);
                 jsonData = jsonData.Remove(0, 1);
                 CGDUserStatistics userStats = JsonConvert.DeserializeObject<CGDUserStatistics>(jsonData);
