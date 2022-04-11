@@ -13,6 +13,8 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
     public static float MouseSensitivity = -1.0f;
     public static float MusicVolume = -1.0f;
     public static float SoundVolume = -1.0f;
+    public static bool PlayingAsGuest = true;
+    public static string Username = "Guest";
     void Awake()
     {
         if (!Instance)

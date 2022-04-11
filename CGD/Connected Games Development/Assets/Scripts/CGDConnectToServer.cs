@@ -20,6 +20,6 @@ public class CGDConnectToServer : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         print("Successfuly connected to master!");
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("LoginScene");
     }
 }
