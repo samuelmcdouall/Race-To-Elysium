@@ -25,7 +25,7 @@ public class CGDPowerUpGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "GameScene" && _view.IsMine)
+        if (SceneManager.GetActiveScene().name == "GameScene" && _view.IsMine && CGDSpawnGateTimer._gameStarted)
         {
             if (_timer < _interval)
             {
