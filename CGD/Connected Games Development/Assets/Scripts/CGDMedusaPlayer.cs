@@ -16,6 +16,7 @@ public class CGDMedusaPlayer : CGDPlayer
     public GameObject MidasPlayer;
     public GameObject NarcissusPlayer;
     public GameObject ArachnePlayer;
+    public GameObject Crosshair;
 
     void Awake()
     {
@@ -136,6 +137,10 @@ public class CGDMedusaPlayer : CGDPlayer
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
         NewPlayer = PlayerToChangeTo.None;
+        if (!_view.IsMine)
+        {
+            Crosshair.SetActive(false);
+        }
         //if (SetupCameraPosition != Vector3.zero)
         //{
         //    print("changing to a new character");
