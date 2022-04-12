@@ -1,7 +1,9 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -67,6 +69,9 @@ public class CGDPlayer : MonoBehaviour
     //public GameObject options_menu;
     //public GameObject controls_menu;
 
+    public TextMeshProUGUI NameText;
+    //public CGDRotateNameTag NameTagScript;
+
     [Header("Debug Testing")]
     public bool _playerCanMoveFast;
     public float _playerTopFastMoveSpeed;
@@ -75,6 +80,9 @@ public class CGDPlayer : MonoBehaviour
 
     protected float _speedModifier;
     public float _jumpModifier;
+
+    [Header("Camera")]
+    public GameObject MainCamera;
 
     void Start()
     {
@@ -440,13 +448,21 @@ public class CGDPlayer : MonoBehaviour
     {
         if (_view.IsMine)
         {
-            Debug.Log("send victory instruction to other players, means i won");
+            Debug.Log("send victory instruction to other players, means i won"); //todo probably remove
+            if (!CGDGameSettings.PlayingAsGuest)
+            {
+                StartCoroutine(UpdateStats(CGDGameSettings.Username, true, 5));
+            }
             CGDGameOverScreenManager.DisplayWinScreen();
             //_view.RPC("GameOverScreen", RpcTarget.OthersBuffered);
         }
         else
         {
-            Debug.Log("Got this victory instruction from other player, means i lost");
+            Debug.Log("Got this victory instruction from other player, means i lost"); //todo same here
+            if (!CGDGameSettings.PlayingAsGuest)
+            {
+                StartCoroutine(UpdateStats(CGDGameSettings.Username, false, 1));
+            }
             CGDGameOverScreenManager.DisplayLossScreen();
             //LossScreen.SetActive(true);
             //Cursor.visible = true;
@@ -537,11 +553,11 @@ public class CGDPlayer : MonoBehaviour
             fadeOutTimer += Time.deltaTime;
             yield return null;
         }
-        SetToFullyTransparent();
+        SetBlindScreenToFullyTransparent();
         yield return null;
     }
 
-    void SetToFullyTransparent()
+    void SetBlindScreenToFullyTransparent()
     {
         print("No longer blinded");
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
@@ -562,4 +578,27 @@ public class CGDPlayer : MonoBehaviour
     //    SpeedBoostIcon.SetActive(false);
     //    //SpeedBoostIcon.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     //}
+
+    //todo might be better place to put this but static doesn't play nicely with coroutine
+    IEnumerator UpdateStats(string username, bool won, int silver)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("usernameupdatestats", username);
+        form.AddField("wonupdatestats", won.ToString());
+        form.AddField("silverupdatestats", silver.ToString());
+
+        using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost/CGDPHP/UpdateStats.php", form))
+        {
+            yield return webRequest.Send();
+            if (webRequest.isNetworkError || webRequest.isHttpError)
+            {
+                Debug.Log(webRequest.error);
+            }
+            else
+            {
+                string jsonData = webRequest.downloadHandler.text;
+                print("updated stats sent off to db " + jsonData);
+            }
+        }
+    }
 }
