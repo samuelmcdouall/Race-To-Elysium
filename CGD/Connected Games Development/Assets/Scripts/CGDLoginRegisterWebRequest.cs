@@ -11,7 +11,8 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
 {
     // Start is called before the first frame update
     public InputField UsernameField;
-    public InputField PasswordField; 
+    public InputField PasswordField;
+    public InputField GuestField;
     public AudioClip ClickSFX;
     public Text ErrorBox;
     GameObject _audioListenerPosition;
@@ -38,6 +39,7 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
     public void PlayAsGuestButtonClicked()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
+        CGDGameSettings.Username = GuestField.text;
         SceneManager.LoadScene("MainMenuScene");
     }
     public void QuitButtonClicked()
@@ -45,43 +47,6 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         Application.Quit();
     }
-
-    //IEnumerator GetText()
-    //{
-    //    using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost/GetDateTutorial/GetDate.php"))
-    //    {
-    //        yield return webRequest.Send();
-    //        if (webRequest.isNetworkError || webRequest.isHttpError)
-    //        {
-    //            Debug.Log(webRequest.error);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log(webRequest.downloadHandler.text);
-
-    //            byte[] results = webRequest.downloadHandler.data;
-    //        }
-    //    }
-
-    //}
-    //IEnumerator GetUsers()
-    //{
-    //    using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost/CGDPHP/GetUsers.php"))
-    //    {
-    //        yield return webRequest.Send();
-    //        if (webRequest.isNetworkError || webRequest.isHttpError)
-    //        {
-    //            Debug.Log(webRequest.error);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log(webRequest.downloadHandler.text);
-
-    //            byte[] results = webRequest.downloadHandler.data;
-    //        }
-    //    }
-
-    //}
 
     IEnumerator Login(string username, string password)
     {
