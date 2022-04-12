@@ -36,6 +36,7 @@ public class CGDGameSettings : MonoBehaviourPunCallbacks
     //todo debug only
     void Update()
     {
+        //todo probably just make this random on startup and disable this
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             CharacterNum = 1;
