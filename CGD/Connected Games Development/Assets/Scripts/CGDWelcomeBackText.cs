@@ -10,13 +10,13 @@ public class CGDWelcomeBackText : MonoBehaviour
     void Start()
     {
         _textBox = GetComponent<Text>();
-        if (CGDGameSettings.Username == "Guest")
+        if (CGDGameSettings.PlayingAsGuest)
         {
-            _textBox.text = "Welcome back!";
+            _textBox.text = "Welcome " + CGDGameSettings.Username + "!";
         }
         else
         {
-            _textBox.text = "Welcome back " + CGDGameSettings.Username + " !";
+            _textBox.text = "Welcome back " + CGDGameSettings.Username + "!";
         }
     }
 
