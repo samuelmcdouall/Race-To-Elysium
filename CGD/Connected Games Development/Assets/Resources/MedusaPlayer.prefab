@@ -882,6 +882,8 @@ MonoBehaviour:
   UltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
   LavaBurnFX: {fileID: 5084768422157133841}
   PoisonBurnFX: {fileID: 7755689583926597946}
+  NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+  NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
   NameText: {fileID: 720548085724599101}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
@@ -889,7 +891,6 @@ MonoBehaviour:
   _enabledControls: 1
   _jumpModifier: 0
   MainCamera: {fileID: 6945357730522883761}
-  SetupCameraPosition: {x: 0, y: 0, z: 0}
   _freezeDuration: 5
   _freezeRange: 20
   FreezeFX: {fileID: 1965343156803978, guid: bf082a81e768e374e8bb129ce6f07bfc, type: 3}

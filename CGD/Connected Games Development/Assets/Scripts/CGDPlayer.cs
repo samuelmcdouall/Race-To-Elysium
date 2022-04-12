@@ -49,6 +49,8 @@ public class CGDPlayer : MonoBehaviour
     public AudioClip UltSFX;
     public GameObject LavaBurnFX;
     public GameObject PoisonBurnFX;
+    public AudioClip NewPlayerSFX;
+    public GameObject NewPlayerFX;
 
     // Animations
     //[System.NonSerialized]
@@ -70,6 +72,8 @@ public class CGDPlayer : MonoBehaviour
     //public GameObject controls_menu;
 
     public TextMeshProUGUI NameText;
+    [System.NonSerialized]
+    public PlayerToChangeTo NewPlayer;
     //public CGDRotateNameTag NameTagScript;
 
     [Header("Debug Testing")]
@@ -600,5 +604,14 @@ public class CGDPlayer : MonoBehaviour
                 print("updated stats sent off to db " + jsonData);
             }
         }
+    }
+
+    public enum PlayerToChangeTo
+    {
+        Medusa,
+        Midas,
+        Narcissus,
+        Arachne,
+        None
     }
 }

@@ -31,27 +31,33 @@ public class CGDArachnePlayer : CGDPlayer
     {
         if (_view.IsMine)
         {
-            if (!CGDSpawnGateTimer._gameStarted && SceneManager.GetActiveScene().name == "GameScene")
+            if (SceneManager.GetActiveScene().name == "GameScene" &&!CGDSpawnGateTimer._gameStarted && Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (NewPlayer == PlayerToChangeTo.Medusa)
                 {
                     GameObject newPlayer = PhotonNetwork.Instantiate(MedusaPlayer.name, transform.position, transform.rotation);
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    AudioSource.PlayClipAtPoint(NewPlayerSFX, MainCamera.transform.position, CGDGameSettings.SoundVolume);
+                    Instantiate(NewPlayerFX, transform.position, Quaternion.identity);
                     PhotonNetwork.Destroy(gameObject);
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
+                if (NewPlayer == PlayerToChangeTo.Midas)
                 {
                     GameObject newPlayer = PhotonNetwork.Instantiate(MidasPlayer.name, transform.position, transform.rotation);
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    AudioSource.PlayClipAtPoint(NewPlayerSFX, MainCamera.transform.position, CGDGameSettings.SoundVolume);
+                    Instantiate(NewPlayerFX, transform.position, Quaternion.identity);
                     PhotonNetwork.Destroy(gameObject);
                 }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
+                if (NewPlayer == PlayerToChangeTo.Narcissus)
                 {
                     GameObject newPlayer = PhotonNetwork.Instantiate(NarcissusPlayer.name, transform.position, transform.rotation);
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
                     newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    AudioSource.PlayClipAtPoint(NewPlayerSFX, MainCamera.transform.position, CGDGameSettings.SoundVolume);
+                    Instantiate(NewPlayerFX, transform.position, Quaternion.identity);
                     PhotonNetwork.Destroy(gameObject);
                 }
             }
@@ -112,6 +118,7 @@ public class CGDArachnePlayer : CGDPlayer
         _jumpModifier = 1.0f;
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
+        NewPlayer = PlayerToChangeTo.None;
         //if (SetupCameraPosition != Vector3.zero)
         //{
         //    print("changing to a new character");

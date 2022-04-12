@@ -9,6 +9,8 @@ public class CGDSpawnGateTimer : MonoBehaviour
     [SerializeField]
     float _countDownTime;
     [SerializeField]
+    float _helpMessageVisible;
+    [SerializeField]
     float _countDownTimeVisible;
     float _countDownTimer;
     public Text _countDownText;
@@ -60,6 +62,10 @@ public class CGDSpawnGateTimer : MonoBehaviour
             else if (_countDownTimer <= _countDownTimeVisible)
             {
                 _countDownText.text = ((int)roundedCountDownTimer).ToString();
+            }
+            else if (_countDownTimer >= _helpMessageVisible)
+            {
+                _countDownText.text = "Press 'E' next to a totem to receive its blessing";
             }
             else
             {

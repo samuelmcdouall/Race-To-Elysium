@@ -1543,6 +1543,8 @@ MonoBehaviour:
   UltSFX: {fileID: 0}
   LavaBurnFX: {fileID: 8521315307896002207}
   PoisonBurnFX: {fileID: 4800880258748455948}
+  NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+  NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
   NameText: {fileID: 1762170030986799362}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
@@ -1550,7 +1552,6 @@ MonoBehaviour:
   _enabledControls: 1
   _jumpModifier: 0
   MainCamera: {fileID: 3046737628934525455}
-  SetupCameraPosition: {x: 0, y: 0, z: 0}
   ArachneProjectile: {fileID: 4676116622926333755, guid: d025523ac19933f44846ad199e537ce5, type: 3}
   ProjectileSpawnPoint: {fileID: 3074654814154593137}
   _projectileSpeed: 7.5

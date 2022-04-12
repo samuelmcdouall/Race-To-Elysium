@@ -1068,6 +1068,8 @@ MonoBehaviour:
   UltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   LavaBurnFX: {fileID: 8862628520877092388}
   PoisonBurnFX: {fileID: 7336297156798832681}
+  NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+  NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
   NameText: {fileID: 18397028877105103}
   _playerCanMoveFast: 0
   _playerTopFastMoveSpeed: 0
@@ -1075,7 +1077,6 @@ MonoBehaviour:
   _enabledControls: 1
   _jumpModifier: 0
   MainCamera: {fileID: 6968797991451875641}
-  SetupCameraPosition: {x: 0, y: 0, z: 0}
   UltimateCollider: {fileID: 59948497161882876}
   SlowFX: {fileID: 1845240806346120, guid: b4fec6f82dbd7cf48b43ca32dced3b5d, type: 3}
   MedusaPlayer: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}

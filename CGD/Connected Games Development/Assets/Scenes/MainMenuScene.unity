@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14951313, g: 0.014328464, b: 0.0459722, a: 1}
+  m_IndirectSpecularColor: {r: 0.1532509, g: 0.0077449735, b: 0.022441665, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -431,8 +431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -639, y: 310}
-  m_SizeDelta: {x: 561.6049, y: 220.9876}
+  m_AnchoredPosition: {x: -649, y: 322}
+  m_SizeDelta: {x: 671.6815, y: 451.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71644044
 MonoBehaviour:
@@ -3505,7 +3505,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 532.36, y: 225}
+  m_SizeDelta: {x: 532.36, y: 234.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629400977
 MonoBehaviour:
@@ -4816,6 +4816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UsernameField: {fileID: 0}
   PasswordField: {fileID: 0}
+  GuestField: {fileID: 0}
   ClickSFX: {fileID: 0}
   ErrorBox: {fileID: 0}
 --- !u!4 &2027521873
