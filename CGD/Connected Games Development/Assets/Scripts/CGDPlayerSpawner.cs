@@ -60,7 +60,8 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             
             Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), 2.0f, Random.Range(_minSpawnZ, _maxSpawnZ));
             Vector3 constantPos = new Vector3(0.0f, 2.0f, 0.0f);
-            PhotonNetwork.Instantiate(_chosenPrefab.name, randomPosition, Quaternion.identity);
+            GameObject player = PhotonNetwork.Instantiate(_chosenPrefab.name, randomPosition, Quaternion.identity);
+            player.GetComponent<CGDPlayer>()._view.Owner.NickName = CGDGameSettings.Username;
             if (playerCount == _maxPlayers)
             {
                 print("Enough players (" + _maxPlayers + ") to start the game");
@@ -72,8 +73,9 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
         else
         {
             //print("numBUH: " + PhotonNetwork.LocalPlayer.GetPlayerNumber());
-            Vector3 spawnPosition = new Vector3(_spawnPositions[CGDGameSettings.PlayerNum - 1].position.x, _chosenPrefab.transform.position.y, _spawnPositions[CGDGameSettings.PlayerNum - 1].position.z);
+            Vector3 spawnPosition = new Vector3(_spawnPositions[CGDGameSettings.PlayerNum - 1].position.x, _spawnPositions[CGDGameSettings.PlayerNum - 1].position.y, _spawnPositions[CGDGameSettings.PlayerNum - 1].position.z);
             PhotonNetwork.Instantiate(_chosenPrefab.name, spawnPosition, Quaternion.identity);
+            PhotonNetwork.CurrentRoom.IsOpen = false;
         }
     }
 
