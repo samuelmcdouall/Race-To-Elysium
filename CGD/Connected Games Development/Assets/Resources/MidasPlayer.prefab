@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae99fdd6e661a0246a39f420c3da177b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 2
+  _interval: 20
   GenerateSFX: {fileID: 8300000, guid: f9ce0bd536f6f4244b7151c5ba3c341e, type: 3}
 --- !u!1 &4180921894682528927
 GameObject:
