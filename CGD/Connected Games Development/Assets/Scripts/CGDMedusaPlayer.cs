@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class CGDMedusaPlayer : CGDPlayer
 {
-    [Header("Camera")]
-    public GameObject MainCamera;
     [Header("Ultimate Attack")]
     [SerializeField]
     float _freezeDuration;
@@ -14,6 +13,9 @@ public class CGDMedusaPlayer : CGDPlayer
     float _freezeRange;
     public GameObject FreezeFX;
     public AudioClip HitFreezeSFX;
+    public GameObject MidasPlayer;
+    public GameObject NarcissusPlayer;
+    public GameObject ArachnePlayer;
 
     void Awake()
     {
@@ -31,6 +33,30 @@ public class CGDMedusaPlayer : CGDPlayer
     {
         if (_view.IsMine)
         {
+            if (!CGDSpawnGateTimer._gameStarted && SceneManager.GetActiveScene().name == "GameScene")
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha2)) //todo this will be done via interacting with portraits, just do as number keys for proof of concept
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(MidasPlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(NarcissusPlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(ArachnePlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
             if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 HandleJumpMechanics();
@@ -103,6 +129,24 @@ public class CGDMedusaPlayer : CGDPlayer
         _jumpModifier = 1.0f;
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
+        //if (SetupCameraPosition != Vector3.zero)
+        //{
+        //    print("changing to a new character");
+        //    Camera.main.transform.position = SetupCameraPosition;
+        //}
+        //else
+        //{
+        //    print("this is the first character I'm playing");
+        //}
+        if (!_view.IsMine)
+        {
+            print(_view.Owner.NickName + " has joined the game");
+            NameText.text = _view.Owner.NickName;
+        }
+        else
+        {
+            NameText.text = "";
+        }
         if (!_view.IsMine)
         {
             Destroy(MainCamera);

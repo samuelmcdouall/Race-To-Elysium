@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class CGDMidasPlayer : CGDPlayer
 {
-    [Header("Camera")]
-    public GameObject MainCamera;
     [Header("Ultimate Attack")]
     public GameObject UltimateCollider;
     public GameObject SlowFX;
+    public GameObject MedusaPlayer;
+    public GameObject NarcissusPlayer;
+    public GameObject ArachnePlayer;
 
     void Awake()
     {
@@ -27,6 +29,30 @@ public class CGDMidasPlayer : CGDPlayer
     {
         if (_view.IsMine)
         {
+            if (!CGDSpawnGateTimer._gameStarted && SceneManager.GetActiveScene().name == "GameScene")
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(MedusaPlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(NarcissusPlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    GameObject newPlayer = PhotonNetwork.Instantiate(ArachnePlayer.name, transform.position, transform.rotation);
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+                    newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
             if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 HandleJumpMechanics();
@@ -81,6 +107,15 @@ public class CGDMidasPlayer : CGDPlayer
         _jumpModifier = 1.0f;
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
+        if (!_view.IsMine)
+        {
+            print(_view.Owner.NickName + " has joined the game");
+            NameText.text = _view.Owner.NickName;
+        }
+        else
+        {
+            NameText.text = "";
+        }
         if (!_view.IsMine)
         {
             Destroy(MainCamera);
