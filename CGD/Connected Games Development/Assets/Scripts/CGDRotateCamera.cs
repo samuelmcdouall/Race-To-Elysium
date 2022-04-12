@@ -9,8 +9,10 @@ public class CGDRotateCamera : MonoBehaviour
     //[SerializeField]
     //float RotationSpeed = 10.0f;
     public Transform CameraTargetToRotateAround;
-    float _mouseX;
-    float _mouseY;
+    [System.NonSerialized]
+    public float _mouseX;
+    [System.NonSerialized]
+    public float _mouseY;
 
     [Header("Vertical Mouse Limits")]
     [SerializeField]
