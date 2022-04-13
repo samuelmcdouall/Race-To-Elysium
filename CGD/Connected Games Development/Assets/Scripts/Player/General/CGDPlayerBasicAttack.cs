@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CDGMedusaBasicAttack : MonoBehaviour
+public class CGDPlayerBasicAttack : MonoBehaviour
 {
     // todo rename this because its being applied to everyone
     public GameObject OwnPlayer;

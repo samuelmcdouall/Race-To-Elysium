@@ -132,28 +132,28 @@ public class CGDPowerUpManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(AreaDenialProjectileLaunchSFX, transform.position, CGDGameSettings.SoundVolume);
         GameObject projectile = PhotonNetwork.Instantiate(AreaDenialProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
         //GameObject projectile = Instantiate(AreaDenialProjectile, ProjectileSpawnPoint.position, Quaternion.identity); todo remove just for local version
-        projectile.GetComponent<CGDAreaDenialProjectile>().OwnPlayer = gameObject;
+        projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().OwnPlayer = gameObject;
         
         switch (areaDenialType)
         {
             case PowerUpHeld.Peel:
                 print("peel setting");
-                projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.Peel;
+                projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.Peel;
                 PeelIcon.SetActive(false);
                 break;
             case PowerUpHeld.Spikes:
                 print("spikes setting");
-                projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.Spikes;
+                projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.Spikes;
                 SpikesIcon.SetActive(false);
                 break;
             case PowerUpHeld.PoisonCloud:
                 print("poison cloud setting");
-                projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.PoisonCloud;
+                projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.PoisonCloud;
                 PoisonCloudIcon.SetActive(false);
                 break;
             case PowerUpHeld.LavaPool:
                 print("lava pool setting");
-                projectile.GetComponent<CGDAreaDenialProjectile>().ProjectileType = CGDAreaDenialProjectile.AreaDenialProjectileType.LavaPool;
+                projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.LavaPool;
                 LavaPoolIcon.SetActive(false);
                 break;
         }
