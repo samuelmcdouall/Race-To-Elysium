@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class CGDPauseManager : MonoBehaviour
+public class CGDPauseManager : MonoBehaviourPunCallbacks
 {
     public GameObject PauseMenu;
     public GameObject SettingsMenu;
@@ -103,7 +104,7 @@ public class CGDPauseManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         print("leaving this room");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-        StartCoroutine(LeaveRoom());
+        LeaveRoom();
     }
     public void OnClickQuitToDesktopButton()
     {
@@ -133,15 +134,26 @@ public class CGDPauseManager : MonoBehaviour
         PlayerPrefs.SetFloat("SoundVolume", SoundVolumeSlider.value);
         PlayerPrefs.Save();
     }
-    IEnumerator LeaveRoom()
+    //IEnumerator LeaveRoom()
+    //{
+    //    PhotonNetwork.LeaveRoom(true);
+    //    while (PhotonNetwork.InRoom)
+    //    {
+    //        yield return null;
+    //    }
+    //    CGDGameOverScreenManager.GameOver = false;
+    //    PhotonNetwork.LoadLevel("MainMenuScene");
+    //}
+    public void LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom(true);
-        while (PhotonNetwork.InRoom)
-        {
-            yield return null;
-        }
-        CGDGameOverScreenManager.GameOver = false;
-        PhotonNetwork.LoadLevel("MainMenuScene");
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+
+        base.OnLeftRoom();
     }
     IEnumerator LeaveRoomAndQuitApplication()
     {
