@@ -1,6 +1,3 @@
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDUltimatePickupIncrease : MonoBehaviour
@@ -13,7 +10,7 @@ public class CGDUltimatePickupIncrease : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeUltPickup(_increasePercentage);
-            if (PickupPlatformSpawner) // this may not be used, trying to figure out other solution
+            if (PickupPlatformSpawner) // todo this may not be used, see whether this stuff will spawn in otherwise
             {
                 PickupPlatformSpawner.GetComponent<CGDPickupSpawner>().SpawnedPickup = false;
             }

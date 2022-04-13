@@ -1,6 +1,4 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +9,9 @@ public class CGDGameSceneLoader : MonoBehaviour
     float _countDownTimer;
     public Text _countDownText;
     bool _beginCountDown;
-    PhotonView _view;
     bool _begunLoadingLevel;
+    PhotonView _view;
+
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -23,10 +22,9 @@ public class CGDGameSceneLoader : MonoBehaviour
         _countDownTimer = _countDownTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient) // this is more of a debugging
+        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient) // todo decide whether to keep the L in to force a load / this is more of a debugging
         {
             BeginCountDownForAllPlayers();
         }
@@ -45,6 +43,7 @@ public class CGDGameSceneLoader : MonoBehaviour
                 if (PhotonNetwork.IsMasterClient)
                 {
                     _countDownTimer = _countDownTime;
+                    // todo not sure of the comment below, since this is determined in the Level Generator script, can probably just delete it
                     // here randomly determine the game preset + apply to the game settings + send to everyone, then in the game scene use that to enable the groups
                     
                     PhotonNetwork.LoadLevel("GameScene");
@@ -56,11 +55,13 @@ public class CGDGameSceneLoader : MonoBehaviour
             }
         }
     }
+
     public void BeginCountDownForAllPlayers()
     {
-        print("I'm the last player/the master host has told us to join, telling everyone to start counting down");
+        print("I'm the last player/the master host has told us to start the game, telling everyone to start counting down");
         _view.RPC("BeginCountDown", RpcTarget.AllBuffered);
     }
+
     [PunRPC]
     void BeginCountDown()
     {

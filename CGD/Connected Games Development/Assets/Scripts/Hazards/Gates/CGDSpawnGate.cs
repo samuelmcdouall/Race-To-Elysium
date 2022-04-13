@@ -1,26 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDSpawnGate : MonoBehaviour
 {
     [SerializeField]
     float _speed;
-    Rigidbody _rigidbody;
     public Transform EndPosition;
     [SerializeField]
     float _positionThreshold;
     [System.NonSerialized]
     public bool Moving;
-    // Start is called before the first frame update
+    Rigidbody _rigidbody;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         Moving = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Moving)
         {

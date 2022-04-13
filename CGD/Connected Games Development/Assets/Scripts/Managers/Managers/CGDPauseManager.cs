@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
@@ -13,20 +12,18 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
     public Slider MusicVolumeSlider;
     public Slider SoundVolumeSlider;
     public CGDMusicManager MusicManager;
+    public AudioClip ClickSFX;
     public static bool Paused;
     PhotonView _view;
-    public AudioClip ClickSFX;
     GameObject _audioListenerPosition;
-    // Start is called before the first frame update
+
     void Start()
     {
         Paused = false;
         _view = GetComponent<PhotonView>();
         MouseSensitivitySlider.value = CGDGameSettings.MouseSensitivity;
-        //MusicVolumeSlider.value = CGDGameSettings.MusicVolume;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!CGDGameOverScreenManager.GameOver)
@@ -47,13 +44,14 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
                 }
             }
         }
+        // Check needed if character changed as original Main Camera will not exist
         if (!_audioListenerPosition)
         {
             _audioListenerPosition = GameObject.FindGameObjectWithTag("MainCamera");
         }
     }
 
-    private void HideSettingsMenu()
+    void HideSettingsMenu()
     {
         SettingsMenu.SetActive(false);
         PauseMenu.SetActive(true);
@@ -67,7 +65,7 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void HidePauseMenu()
+    void HidePauseMenu()
     {
         PauseMenu.SetActive(false);
         Paused = false;
@@ -93,25 +91,19 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         HideSettingsMenu();
     }
 
-    private void ShowSettingsMenu()
-    {
-        PauseMenu.SetActive(false);
-        SettingsMenu.SetActive(true);
-    }
-
     public void OnClickQuitToMainMenuButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
-        print("leaving this room");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         LeaveRoom();
     }
     public void OnClickQuitToDesktopButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
-        print("leaving this room and quitting to desktop");
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-        StartCoroutine(LeaveRoomAndQuitApplication());
+        LeaveRoom();
+        Application.Quit();
+        //StartCoroutine(LeaveRoomAndQuitApplication()); //todo can remove when sure this works
     }
 
     public void OnChangeMouseSensivitySlider()
@@ -134,6 +126,7 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         PlayerPrefs.SetFloat("SoundVolume", SoundVolumeSlider.value);
         PlayerPrefs.Save();
     }
+    //todo can remove this once certain this way isn't the right way to do it
     //IEnumerator LeaveRoom()
     //{
     //    PhotonNetwork.LeaveRoom(true);
@@ -144,7 +137,13 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
     //    CGDGameOverScreenManager.GameOver = false;
     //    PhotonNetwork.LoadLevel("MainMenuScene");
     //}
-    public void LeaveRoom()
+
+    void ShowSettingsMenu()
+    {
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+    }
+    void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
     }
@@ -155,17 +154,19 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
 
         base.OnLeftRoom();
     }
-    IEnumerator LeaveRoomAndQuitApplication()
-    {
-        PhotonNetwork.LeaveRoom(true);
-        while (PhotonNetwork.InRoom)
-        {
-            yield return null;
-        }
-        Application.Quit();
-        //CGDGameOverScreenManager.GameOver = false;
-        //PhotonNetwork.LoadLevel("MainMenuScene");
-    }
+
+    //todo same with this one
+    //IEnumerator LeaveRoomAndQuitApplication()
+    //{
+    //    PhotonNetwork.LeaveRoom(true);
+    //    while (PhotonNetwork.InRoom)
+    //    {
+    //        yield return null;
+    //    }
+    //    Application.Quit();
+    //    //CGDGameOverScreenManager.GameOver = false;
+    //    //PhotonNetwork.LoadLevel("MainMenuScene");
+    //}
 
 
     //public override void OnDisconnected(DisconnectCause cause)

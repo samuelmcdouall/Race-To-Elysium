@@ -447,6 +447,13 @@ public class CGDPlayer : MonoBehaviour
     //    RotateCamera._enabledCameraControls = false;
         
     //}
+
+    public void DisplayGameOverScreenForEveryone()
+    {
+        DisplayGameOverScreen();
+        _view.RPC("DisplayGameOverScreen", RpcTarget.Others);
+    }
+
     [PunRPC]
     public void DisplayGameOverScreen() // gonna have to do it by ID
     {

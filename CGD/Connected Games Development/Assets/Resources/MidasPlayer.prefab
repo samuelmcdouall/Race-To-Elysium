@@ -1095,10 +1095,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileSpawnPoint: {fileID: 8987820751535821874}
-  _iconFlashRate: 0.5
   AreaDenialProjectile: {fileID: 7210207567869121406, guid: d80efe8a3766bd34f81b764cf5b59826, type: 3}
   _areaDenialProjectileSpeed: 5
   AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  _iconFlashRate: 0.5
   SpeedBoostIcon: {fileID: 4182879057863042448}
   _speedBoostPerModifier: 50
   _speedBoostDuration: 5

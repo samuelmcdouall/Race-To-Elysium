@@ -1,26 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDGateHazardSweeping : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     float _speed;
     [SerializeField]
     float _fadeInOutTime;
     [SerializeField]
     float _attackInterval;
-    Color _color;
-    HazardState _hazardState;
-    Rigidbody _rigidbody;
-    Collider _collider;
     public Transform StartPosition;
     public Transform EndPosition;
     [SerializeField]
     float _positionThreshold;
     [System.NonSerialized]
     public bool Completed;
+    Color _color;
+    HazardState _hazardState;
+    Rigidbody _rigidbody;
+    Collider _collider;
     void Awake()
     {
         _hazardState = HazardState.WaitingAtStart;
@@ -30,18 +28,14 @@ public class CGDGateHazardSweeping : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         Completed = false;
         gameObject.SetActive(false);
-        print("should see this on initial startup");
     }
     void Start()
     {
-        print("shouldn't see this on initial startup");
         StartCoroutine(WaitForNextAttack(_attackInterval));
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //GetComponent<Renderer>().material.color = new Color(1.0f,1.0f,0.4f,1.0f);
         if (_hazardState == HazardState.MovingToEnd)
         {
             if (Vector3.Distance(transform.position, EndPosition.position) <= _positionThreshold)
@@ -73,7 +67,9 @@ public class CGDGateHazardSweeping : MonoBehaviour
             fadeInTimer += Time.deltaTime;
             yield return null;
         }
+
         GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 1.0f);
+
         if (_hazardState == HazardState.WaitingAtStart)
         {
             _hazardState = HazardState.MovingToEnd;
@@ -107,7 +103,9 @@ public class CGDGateHazardSweeping : MonoBehaviour
             fadeOutTimer += Time.deltaTime;
             yield return null;
         }
+
         GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 0.0f);
+
         if (Completed)
         {
             _hazardState = HazardState.Completed;
@@ -132,6 +130,4 @@ public class CGDGateHazardSweeping : MonoBehaviour
         WaitingAtEnd,
         Completed
     }
-
-
 }

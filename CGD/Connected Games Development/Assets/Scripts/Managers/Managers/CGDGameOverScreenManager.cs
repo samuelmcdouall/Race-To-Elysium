@@ -1,11 +1,9 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
     public static GameObject WinScreen;
     public static GameObject LossScreen;
     public static GameObject PauseMenu;
@@ -38,7 +36,7 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
         LossScreen.SetActive(true);
     }
 
-    private static void TriggerGameOverState()
+    public static void TriggerGameOverState()
     {
         GameOver = true;
         Cursor.visible = true;
@@ -56,16 +54,29 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
     public void OnClickMainMenuButton()
     {
         //todo maybe add sfx here
-        StartCoroutine(LeaveRoom());
+        LeaveRoom();
     }
-    IEnumerator LeaveRoom()
+    public void LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom(true);
-        while (PhotonNetwork.InRoom)
-        {
-            yield return null;
-        }
-        GameOver = false;
-        PhotonNetwork.LoadLevel("MainMenuScene");
+        PhotonNetwork.LeaveRoom();
     }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+
+        base.OnLeftRoom();
+    }
+
+    //todo can remove this once certain this way isn't the right way to do it
+    //IEnumerator LeaveRoom()
+    //{
+    //    PhotonNetwork.LeaveRoom(true);
+    //    while (PhotonNetwork.InRoom)
+    //    {
+    //        yield return null;
+    //    }
+    //    GameOver = false;
+    //    PhotonNetwork.LoadLevel("MainMenuScene");
+    //}
 }

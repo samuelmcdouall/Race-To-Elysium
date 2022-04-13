@@ -1,11 +1,8 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDLevelGenerator : MonoBehaviour
 {
-    PhotonView _view;
     public GameObject TartarusPreset0;
     public GameObject TartarusPreset1;
     public GameObject TartarusPreset2;
@@ -15,7 +12,8 @@ public class CGDLevelGenerator : MonoBehaviour
     public GameObject ElysiumPreset0;
     public GameObject ElysiumPreset1;
     public GameObject ElysiumPreset2;
-    // Start is called before the first frame update
+    PhotonView _view;
+
     void Start()
     {
         _view = GetComponent<PhotonView>();
@@ -28,10 +26,10 @@ public class CGDLevelGenerator : MonoBehaviour
     void GenerateLevelForAllPlayers()
     {
         // random numbers generated here so same
-        int tartarusPreset = Random.Range(0, 1);
+        int tartarusPreset = Random.Range(0, 1); //todo change this to (0, 3) to include other variations
         int gaiaPreset = Random.Range(0, 1);
         int elysiumPreset = Random.Range(0, 1);
-        _view.RPC("GenerateLevel", RpcTarget.AllBufferedViaServer, tartarusPreset, gaiaPreset, elysiumPreset);
+        _view.RPC("GenerateLevel", RpcTarget.AllBufferedViaServer, tartarusPreset, gaiaPreset, elysiumPreset); //todo why not just all instead of allbuffereredviaserver?
     }
 
     [PunRPC]

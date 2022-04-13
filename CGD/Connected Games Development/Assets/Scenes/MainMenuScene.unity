@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1532509, g: 0.0077449735, b: 0.022441665, a: 1}
+  m_IndirectSpecularColor: {r: 0.07072262, g: 0.20651183, b: 0.588665, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,8 +207,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574245865}
-        m_TargetAssemblyTypeName: CGDCreateAndJoinRooms, Assembly-CSharp
-        m_MethodName: SettingsButton
+        m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
+        m_MethodName: OnClickSettingsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -636,7 +636,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 574245865}
         m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
-        m_MethodName: JoinRoomButton
+        m_MethodName: OnClickJoinRoomButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1105,8 +1105,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574245865}
-        m_TargetAssemblyTypeName: CGDCreateAndJoinRooms, Assembly-CSharp
-        m_MethodName: BackButton
+        m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
+        m_MethodName: OnClickBackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2361,7 +2361,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 574245865}
         m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
-        m_MethodName: CreateRoomButton
+        m_MethodName: OnClickCreateRoomButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2914,8 +2914,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574245865}
-        m_TargetAssemblyTypeName: CGDCreateAndJoinRooms, Assembly-CSharp
-        m_MethodName: QuitButton
+        m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
+        m_MethodName: OnClickQuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4737,7 +4737,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 574245865}
         m_TargetAssemblyTypeName: CGDMainMenuManager, Assembly-CSharp
-        m_MethodName: JoinRandomRoomButton
+        m_MethodName: OnClickJoinRandomRoomButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4785,54 +4785,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982311792}
   m_CullTransparentMesh: 1
---- !u!1 &2027521871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2027521873}
-  - component: {fileID: 2027521872}
-  m_Layer: 0
-  m_Name: test web stuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2027521872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027521871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7922c6c8fe27eb46b273c87fd34f7d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UsernameField: {fileID: 0}
-  PasswordField: {fileID: 0}
-  GuestField: {fileID: 0}
-  ClickSFX: {fileID: 0}
-  ErrorBox: {fileID: 0}
---- !u!4 &2027521873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027521871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1178565, y: 1.8853912, z: 3.4089308}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061406836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,6 +5048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e30f62699381be4c88d0a81c63349ee, type: 3}
     - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: MainMusic
       value: 

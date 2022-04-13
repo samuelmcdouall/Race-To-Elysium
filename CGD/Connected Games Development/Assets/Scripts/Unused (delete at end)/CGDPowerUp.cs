@@ -14,7 +14,7 @@ public class CGDPowerUp : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && false) //todo delete this script won't be used as pickup
+        if (other.gameObject.tag == "Player" && false) //todo delete this script won't be used as pickup is handled as generator
         {
             if (other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld == CGDPowerUpManager.PowerUpHeld.None)
             {

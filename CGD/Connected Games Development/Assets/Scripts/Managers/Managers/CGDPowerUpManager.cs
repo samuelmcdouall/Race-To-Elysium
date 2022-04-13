@@ -1,21 +1,21 @@
 using Photon.Pun;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDPowerUpManager : MonoBehaviour
 {
     [Header("General")]
-    [System.NonSerialized]
-    public PowerUpHeld _powerUpHeld;
-    CGDPlayer _playerScript;
     public Transform ProjectileSpawnPoint;
-    [SerializeField]
-    float _iconFlashRate;
     public GameObject AreaDenialProjectile;
     [SerializeField]
     float _areaDenialProjectileSpeed;
     public AudioClip AreaDenialProjectileLaunchSFX;
+    [SerializeField]
+    float _iconFlashRate;
+    [System.NonSerialized]
+    public PowerUpHeld _powerUpHeld;
+    CGDPlayer _playerScript;
+    PhotonView _view;
 
     [Header("Speed Boost")]
     public GameObject SpeedBoostIcon;
@@ -55,10 +55,6 @@ public class CGDPowerUpManager : MonoBehaviour
     [Header("Lava Pool")]
     public GameObject LavaPoolIcon;
 
-    PhotonView _view;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         _view = GetComponent<PhotonView>();
@@ -66,12 +62,11 @@ public class CGDPowerUpManager : MonoBehaviour
         _playerScript = GetComponent<CGDPlayer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_view.IsMine)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q)) // todo check with Kate that Q button is ok for power up deploy
             {
                 switch (_powerUpHeld)
                 {
@@ -131,30 +126,28 @@ public class CGDPowerUpManager : MonoBehaviour
         _powerUpHeld = PowerUpHeld.None;
         AudioSource.PlayClipAtPoint(AreaDenialProjectileLaunchSFX, transform.position, CGDGameSettings.SoundVolume);
         GameObject projectile = PhotonNetwork.Instantiate(AreaDenialProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
-        //GameObject projectile = Instantiate(AreaDenialProjectile, ProjectileSpawnPoint.position, Quaternion.identity); todo remove just for local version
         projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().OwnPlayer = gameObject;
         
         switch (areaDenialType)
         {
             case PowerUpHeld.Peel:
-                print("peel setting");
                 projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.Peel;
                 PeelIcon.SetActive(false);
                 break;
             case PowerUpHeld.Spikes:
-                print("spikes setting");
                 projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.Spikes;
                 SpikesIcon.SetActive(false);
                 break;
             case PowerUpHeld.PoisonCloud:
-                print("poison cloud setting");
                 projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.PoisonCloud;
                 PoisonCloudIcon.SetActive(false);
                 break;
             case PowerUpHeld.LavaPool:
-                print("lava pool setting");
                 projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().ProjectileType = CGDPowerUpAreaDenialProjectile.AreaDenialProjectileType.LavaPool;
                 LavaPoolIcon.SetActive(false);
+                break;
+            default:
+                print("Error, not an area denial projectile");
                 break;
         }
 

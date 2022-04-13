@@ -1,11 +1,8 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDPickupSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     float _minSpawnDelay;
     [SerializeField]
@@ -32,6 +29,9 @@ public class CGDPickupSpawner : MonoBehaviour
         //_spawnDelay = Random.Range(_minSpawnDelay, _maxSpawnDelay);
         //print("initial spawn delay for platform: " + _spawnDelay);
         //SpawnedPickup = false;
+
+        //todo may need to figure out exactly how it works, i.e. only spawn this if its the master client if just doing on start up, 
+        //or is it coming in continuously or what in which case we need to figure out more stuff
         float random_x_pos = Random.Range(_minXSpawnDis, _maxXSpawnDis);
         float random_z_pos = Random.Range(_minZSpawnDis, _maxZSpawnDis);
         Vector3 spawn_position = new Vector3(random_x_pos, 1.0f, random_z_pos) + gameObject.transform.position;

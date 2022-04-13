@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
 public class CGDMainMenuManager : MonoBehaviourPunCallbacks
 {
-    //todo rename to general main menu buttons manager
     public InputField CreateRoomInput;
     public InputField JoinRoomInput;
     public GameObject MainMenu;
@@ -17,7 +14,6 @@ public class CGDMainMenuManager : MonoBehaviourPunCallbacks
     public AudioClip ClickSFX;
     GameObject _audioListenerPosition;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = true;
@@ -25,27 +21,19 @@ public class CGDMainMenuManager : MonoBehaviourPunCallbacks
         _audioListenerPosition = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickJoinRandomRoomButton()
     {
-
-    }
-
-    public void JoinRandomRoomButton()
-    {
-        //list all avaliable rooms
-        //if none avaliable then 
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.JoinRandomOrCreateRoom();
     }
 
-    public void CreateRoomButton()
+    public void OnClickCreateRoomButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.CreateRoom(CreateRoomInput.text);
     }
 
-    public void JoinRoomButton()
+    public void OnClickJoinRoomButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         PhotonNetwork.JoinRoom(JoinRoomInput.text);
@@ -56,20 +44,20 @@ public class CGDMainMenuManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("PlayerLobbyScene");
     }
 
-    public void QuitButton()
+    public void OnClickQuitButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         Application.Quit();
     }
 
-    public void SettingsButton()
+    public void OnClickSettingsButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(true);
     }
 
-    public void BackButton()
+    public void OnClickBackButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         MainMenu.SetActive(true);
