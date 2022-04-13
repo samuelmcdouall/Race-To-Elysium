@@ -63,6 +63,7 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
+        GameOver = false;
         SceneManager.LoadScene("MainMenuScene");
 
         base.OnLeftRoom();
