@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDMainMenuCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     float _cameraMoveSpeed;
     public Transform StartPosition;
@@ -17,7 +14,6 @@ public class CGDMainMenuCamera : MonoBehaviour
         _movingTowardsEnd = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_movingTowardsEnd)
@@ -36,7 +32,9 @@ public class CGDMainMenuCamera : MonoBehaviour
                 _movingTowardsEnd = true;
             }
         }
-        float scaledColorPosition = transform.position.y / Vector3.Distance(StartPosition.position, EndPosition.position);
+
+        float scaledColorPosition = Vector3.Distance(StartPosition.position, transform.position) / Vector3.Distance(StartPosition.position, EndPosition.position);
+
         if (scaledColorPosition > 1.0f)
         {
             scaledColorPosition = 1.0f;
@@ -45,6 +43,7 @@ public class CGDMainMenuCamera : MonoBehaviour
         {
             scaledColorPosition = 0.0f;
         }
+
         Color tartarusColor = new Color(1.0f, 0.0f, 0.0f);
         Color normalColour = new Color(0.45f, 0.45f, 0.45f);
         Color skyboxColor = Color.Lerp(tartarusColor, normalColour, scaledColorPosition);

@@ -1,14 +1,10 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
 {
     [SerializeField]
     float _lifetime;
-    [System.NonSerialized]
-    public AreaDenialProjectileType ProjectileType;
     public GameObject PeelObject;
     public GameObject SpikesObject;
     public GameObject PoisonCloudObject;
@@ -16,6 +12,8 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
     public AudioClip CollideSFX;
     [System.NonSerialized]
     public GameObject OwnPlayer;
+    [System.NonSerialized]
+    public AreaDenialProjectileType ProjectileType;
     int _invisibleColliderLayer;
     PhotonView _view;
     void Start()
@@ -29,7 +27,6 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
     {
         if (other.gameObject.layer != _invisibleColliderLayer && other.gameObject != OwnPlayer && _view.IsMine)
         {
-            print("area denial projectile hit surface");
             AudioSource.PlayClipAtPoint(CollideSFX, transform.position, CGDGameSettings.SoundVolume);
             switch (ProjectileType)
             {
@@ -62,10 +59,9 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
                     }
 
                 default:
-                    print("ERROR, PROJECTILE UNDEFINED");
+                    print("Error, not an area denial projectile");
                     break;
             }
-
             PhotonNetwork.Destroy(gameObject);
         }
     }

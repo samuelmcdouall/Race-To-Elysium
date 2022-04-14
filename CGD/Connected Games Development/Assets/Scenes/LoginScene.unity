@@ -335,7 +335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 227180867}
         m_TargetAssemblyTypeName: CGDLoginRegisterWebRequest, Assembly-CSharp
-        m_MethodName: PlayAsGuestButtonClicked
+        m_MethodName: OnPlayAsGuestButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -754,7 +754,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 227180867}
         m_TargetAssemblyTypeName: CGDLoginRegisterWebRequest, Assembly-CSharp
-        m_MethodName: RegisterButtonClicked
+        m_MethodName: OnRegisterButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1527,7 +1527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 227180867}
         m_TargetAssemblyTypeName: CGDLoginRegisterWebRequest, Assembly-CSharp
-        m_MethodName: QuitButtonClicked
+        m_MethodName: OnQuitButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2378,7 +2378,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 227180867}
         m_TargetAssemblyTypeName: CGDLoginRegisterWebRequest, Assembly-CSharp
-        m_MethodName: LoginButtonClicked
+        m_MethodName: OnLoginButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

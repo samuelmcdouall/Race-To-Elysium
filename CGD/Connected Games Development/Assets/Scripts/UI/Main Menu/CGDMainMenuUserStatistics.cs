@@ -1,15 +1,12 @@
-using Newtonsoft.Json; //todo maybe check with Vasilis this is ok
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System.Collections;
+using Newtonsoft.Json;
 
 public class CGDMainMenuUserStatistics : MonoBehaviour
 {
-    // Start is called before the first frame update
     Text _stats;
-    string _formattedStats;
     void Start()
     {
         _stats = GetComponent<Text>();
@@ -30,16 +27,15 @@ public class CGDMainMenuUserStatistics : MonoBehaviour
 
         using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost/CGDPHP/GetStats.php", form))
         {
-            yield return webRequest.Send();
-            if (webRequest.isNetworkError || webRequest.isHttpError)
+            yield return webRequest.SendWebRequest();
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(webRequest.error);
             }
             else
             {
                 string jsonData = webRequest.downloadHandler.text;
-
-                // Input comes in with [] brackets around it, so just remove them to allow the Json converter to read the data
+                // Input comes in with square brackets around it, so just remove them to allow the Json converter to read the data
                 jsonData = jsonData.Remove(jsonData.Length - 1, 1);
                 jsonData = jsonData.Remove(0, 1);
                 CGDUserStatistics userStats = JsonConvert.DeserializeObject<CGDUserStatistics>(jsonData);

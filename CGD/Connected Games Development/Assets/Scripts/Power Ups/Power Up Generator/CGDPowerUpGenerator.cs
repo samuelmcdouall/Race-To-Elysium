@@ -1,20 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class CGDPowerUpGenerator : MonoBehaviour
 {
-    PhotonView _view;
     [SerializeField]
     float _interval;
     float _timer;
     public AudioClip GenerateSFX;
     float _tolerance;
+    PhotonView _view;
 
-    // Start is called before the first frame update
     void Start()
     {
         _view = GetComponent<PhotonView>();
@@ -22,7 +20,6 @@ public class CGDPowerUpGenerator : MonoBehaviour
         _timer = 0.0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "GameScene" && _view.IsMine && CGDSpawnGateTimer._gameStarted)
@@ -36,23 +33,23 @@ public class CGDPowerUpGenerator : MonoBehaviour
                 _timer = 0.0f;
                 if (GetComponent<CGDPowerUpManager>()._powerUpHeld == CGDPowerUpManager.PowerUpHeld.None)
                 {
-                    print("power up obtained");
+                    print("Power up obtained");
                     AudioSource.PlayClipAtPoint(GenerateSFX, transform.position, CGDGameSettings.SoundVolume);
                     GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-                    List<float> playerListHeights = new List<float>();
-                    foreach (GameObject p in players)
+                    List<float> playersVerticalPositions = new List<float>();
+                    foreach (GameObject player in players)
                     {
-                        playerListHeights.Add(p.transform.position.y);
+                        playersVerticalPositions.Add(player.transform.position.y);
                     }
                     float movementProbability;
                     float selfHeight = transform.position.y;
-                    float firstPlaceHeight = playerListHeights.Max();
+                    float firstPlaceHeight = playersVerticalPositions.Max();
                     bool selfInFirstPlace = false;
-                    float lastPlaceHeight = playerListHeights.Min();
+                    float lastPlaceHeight = playersVerticalPositions.Min();
                     float distSelfToFirstPlace = firstPlaceHeight - selfHeight;
                     float distFirstToLastPlace = firstPlaceHeight - lastPlaceHeight;
-                    float playerPosition = distSelfToFirstPlace / distFirstToLastPlace;
-                    if (firstPlaceHeight - selfHeight < _tolerance)
+                    float playerPosition = distSelfToFirstPlace / (distFirstToLastPlace + Mathf.Epsilon); // Epsilon used to avoid divide by 0 issue
+                    if (distSelfToFirstPlace < _tolerance)
                     {
                         selfInFirstPlace = true;
                     }
@@ -62,7 +59,7 @@ public class CGDPowerUpGenerator : MonoBehaviour
                     }
                     else
                     {
-                        movementProbability = playerPosition; //todo was 0.5f * originally
+                        movementProbability = playerPosition; //todo was 0.5f * originally, double check with Kate that should be * 1.0f
                         movementProbability = Mathf.Max(movementProbability, 0.1f);
                     }
                     print("Movement Probability: " + movementProbability);
@@ -78,12 +75,12 @@ public class CGDPowerUpGenerator : MonoBehaviour
                         float randomMovementPowerUp = Random.Range(0.0f, 1.0f);
                         if (playerPosition > 0.7f)
                         {
-                            if (0.0f <= randomMovementPowerUp && randomMovementPowerUp < 0.2f)
+                            if (randomMovementPowerUp < 0.2f)
                             {
                                 GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedBoost;
                                 GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedBoost);
                             }
-                            else if (0.2f <= randomMovementPowerUp && randomMovementPowerUp < 0.4f)
+                            else if (randomMovementPowerUp < 0.4f)
                             {
                                 GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.JumpBoost;
                                 GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.JumpBoost);
@@ -96,12 +93,12 @@ public class CGDPowerUpGenerator : MonoBehaviour
                         }
                         else
                         {
-                            if (0.0f <= randomMovementPowerUp && randomMovementPowerUp < 0.45f)
+                            if (randomMovementPowerUp < 0.45f)
                             {
                                 GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.SpeedBoost;
                                 GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.SpeedBoost);
                             }
-                            else if (0.45f <= randomMovementPowerUp && randomMovementPowerUp < 0.9f)
+                            else if (randomMovementPowerUp < 0.9f)
                             {
                                 GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.JumpBoost;
                                 GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.JumpBoost);
@@ -117,22 +114,22 @@ public class CGDPowerUpGenerator : MonoBehaviour
                     else
                     {
                         int randomAreaDenialPowerUp = Random.Range(0, 18);
-                        if (randomAreaDenialPowerUp <= 5)
+                        if (randomAreaDenialPowerUp < 6)
                         {
                             GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.Peel;
                             GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.Peel);
                         }
-                        else if (6 <= randomAreaDenialPowerUp && randomAreaDenialPowerUp <= 10)
+                        else if (randomAreaDenialPowerUp < 11)
                         {
                             GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.Spikes;
                             GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.Spikes);
                         }
-                        else if (11 <= randomAreaDenialPowerUp && randomAreaDenialPowerUp <= 14)
+                        else if (randomAreaDenialPowerUp < 15)
                         {
                             GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.PoisonCloud;
                             GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.PoisonCloud);
                         }
-                        else if (15 <= randomAreaDenialPowerUp && randomAreaDenialPowerUp <= 17)
+                        else
                         {
                             GetComponent<CGDPowerUpManager>()._powerUpHeld = CGDPowerUpManager.PowerUpHeld.LavaPool;
                             GetComponent<CGDPowerUpManager>().DisplayPowerUpIcon(CGDPowerUpManager.PowerUpHeld.LavaPool);

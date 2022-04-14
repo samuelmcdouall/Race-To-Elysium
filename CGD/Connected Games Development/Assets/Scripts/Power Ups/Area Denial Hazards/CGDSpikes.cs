@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDSpikes : MonoBehaviour
 {
     public AudioClip DestroySFX;
     public GameObject DestroyFX;
-    [System.NonSerialized]
-    public GameObject OwnPlayer;
     [SerializeField]
     float _ultPerDecr;
     [SerializeField]
     float _selfImmuneDelay;
+    [System.NonSerialized]
+    public GameObject OwnPlayer;
 
     void Update()
     {
@@ -28,7 +26,6 @@ public class CGDSpikes : MonoBehaviour
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_ultPerDecr);
             AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
             Instantiate(DestroyFX, transform.position, Quaternion.identity);
-            //todo fx and sfx
             Destroy(gameObject);
         }
     }

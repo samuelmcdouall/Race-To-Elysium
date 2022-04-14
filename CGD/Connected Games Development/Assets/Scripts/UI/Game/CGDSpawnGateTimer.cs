@@ -1,5 +1,3 @@
-using Photon.Pun;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,23 +12,16 @@ public class CGDSpawnGateTimer : MonoBehaviour
     float _countDownTimeVisible;
     float _countDownTimer;
     public Text _countDownText;
-    bool _beginCountDown;
-    PhotonView _view;
+    public List<GameObject> Gates;
     public static bool _gameStarted;
-    public GameObject Gate1;
-    public GameObject Gate2;
-    public GameObject Gate3;
-    public GameObject Gate4;
+
     void Start()
     {
-        _beginCountDown = false;
         _gameStarted = false;
-        //_view = GetComponent<PhotonView>();
         _countDownText.text = "";
         _countDownTimer = _countDownTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_gameStarted)
@@ -47,17 +38,10 @@ public class CGDSpawnGateTimer : MonoBehaviour
             {
                 _gameStarted = true;
                 _countDownText.text = "";
-                Gate1.GetComponent<CGDSpawnGate>().Moving = true;
-                Gate2.GetComponent<CGDSpawnGate>().Moving = true;
-                Gate3.GetComponent<CGDSpawnGate>().Moving = true;
-                Gate4.GetComponent<CGDSpawnGate>().Moving = true;
-                // move the gates
-
-                //if (PhotonNetwork.IsMasterClient)
-                //{
-                //    //_countDownTimer = _countDownTime; todo might not be needed
-
-                //}
+                foreach (GameObject gate in Gates)
+                {
+                    gate.GetComponent<CGDSpawnGate>().Moving = true;
+                }
             }
             else if (_countDownTimer <= _countDownTimeVisible)
             {
@@ -72,7 +56,5 @@ public class CGDSpawnGateTimer : MonoBehaviour
                 _countDownText.text = "";
             }
         }
-
-        
     }
 }

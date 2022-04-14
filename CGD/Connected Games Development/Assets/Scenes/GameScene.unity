@@ -8978,7 +8978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FillBar: {fileID: 123182814}
   SliderBar: {fileID: 1388438483}
-  HpBar: 1
+  GateHPBar: 1
 --- !u!114 &1388438483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12445,7 +12445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FillBar: {fileID: 664681472}
   SliderBar: {fileID: 1884224769}
-  HpBar: 1
+  GateHPBar: 1
 --- !u!114 &1884224769
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CGDUltimateBar : MonoBehaviour // todo rename to generic bar
+public class CGDUIBar : MonoBehaviour
 {
     public Image FillBar;
     public Slider SliderBar;
-    public bool HpBar;
+    public bool GateHPBar;
 
     public void SetBar(float value)
     {
         SliderBar.value = value;
-        if (HpBar)
+        if (GateHPBar)
         {
             FillBar.color = Color.Lerp(Color.red, Color.green, SliderBar.value / SliderBar.maxValue);
         }

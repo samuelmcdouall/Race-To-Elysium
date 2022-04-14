@@ -15,8 +15,8 @@ public class CGDGate : MonoBehaviour
     {
         _view = GetComponent<PhotonView>();
         _currHitPoints = _maxHitPoints;
-        HealthBar.GetComponent<CGDUltimateBar>().SliderBar.maxValue = _maxHitPoints;
-        HealthBar.GetComponent<CGDUltimateBar>().SetBar(_maxHitPoints);
+        HealthBar.GetComponent<CGDUIBar>().SliderBar.maxValue = _maxHitPoints;
+        HealthBar.GetComponent<CGDUIBar>().SetBar(_maxHitPoints);
     }
 
     public void ReduceHealthOfGateForAllPlayers()
@@ -41,7 +41,7 @@ public class CGDGate : MonoBehaviour
         }
         else
         {
-            HealthBar.GetComponent<CGDUltimateBar>().SetBar(_currHitPoints);
+            HealthBar.GetComponent<CGDUIBar>().SetBar(_currHitPoints);
         }
     }
 }

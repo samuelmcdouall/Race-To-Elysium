@@ -1,48 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+using System.Security.Cryptography;
+using System.Text;
 
 public class CGDLoginRegisterWebRequest : MonoBehaviour
 {
-    // Start is called before the first frame update
     public InputField UsernameField;
     public InputField PasswordField;
     public InputField GuestField;
     public AudioClip ClickSFX;
     public Text ErrorBox;
     GameObject _audioListenerPosition;
+
     void Start()
-    {
-        //string password = "bleh bleh";
-        //string encrypyedPassword = EncryptPassword(password);
-        //StartCoroutine(Login("testuser6", encrypyedPassword));        
+    {    
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         _audioListenerPosition = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    public void LoginButtonClicked()
+    public void OnLoginButtonClicked()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         StartCoroutine(Login(UsernameField.text, PasswordField.text));
     }
-    public void RegisterButtonClicked()
+    public void OnRegisterButtonClicked()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
-        StartCoroutine(Register(UsernameField.text, PasswordField.text));
+        StartCoroutine(RegisterAndLogin(UsernameField.text, PasswordField.text));
     }
-    public void PlayAsGuestButtonClicked()
+    public void OnPlayAsGuestButtonClicked()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         CGDGameSettings.Username = GuestField.text;
         SceneManager.LoadScene("MainMenuScene");
     }
-    public void QuitButtonClicked()
+    public void OnQuitButtonClicked()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         Application.Quit();
@@ -56,8 +52,8 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
 
         using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost/CGDPHP/Login.php", form))
         {
-            yield return webRequest.Send();
-            if (webRequest.isNetworkError || webRequest.isHttpError)
+            yield return webRequest.SendWebRequest();
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(webRequest.error);
                 ErrorBox.text = "Failed to connect. Try playing as guest";
@@ -87,7 +83,7 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
             }
         }
     }
-    IEnumerator Register(string username, string password)
+    IEnumerator RegisterAndLogin(string username, string password)
     {
         WWWForm form = new WWWForm();
         form.AddField("registerusername", username);
@@ -95,8 +91,8 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
 
         using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost/CGDPHP/Register.php", form))
         {
-            yield return webRequest.Send();
-            if (webRequest.isNetworkError || webRequest.isHttpError)
+            yield return webRequest.SendWebRequest();
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(webRequest.error);
                 ErrorBox.text = "Failed to connect. Try playing as guest";

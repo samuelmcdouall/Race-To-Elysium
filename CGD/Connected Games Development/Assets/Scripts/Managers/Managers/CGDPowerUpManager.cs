@@ -113,6 +113,7 @@ public class CGDPowerUpManager : MonoBehaviour
         StartCoroutine(DisplayFlashingIcon(JumpBoostIcon, duration));
         _playerScript.ApplyJumpModifierForSeconds(-modifier, duration);
     }
+
     void ActivateSpeedAndJumpBoost(float speedModifier, float jumpModifier, float duration)
     {
         _powerUpHeld = PowerUpHeld.None;
@@ -121,6 +122,7 @@ public class CGDPowerUpManager : MonoBehaviour
         _playerScript.ApplySpeedModifierForSeconds(-speedModifier, duration);
         _playerScript.ApplyJumpModifierForSeconds(-jumpModifier, duration);
     }
+
     void FireAreaDenialProjectile(PowerUpHeld areaDenialType)
     {
         _powerUpHeld = PowerUpHeld.None;

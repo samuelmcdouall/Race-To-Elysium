@@ -31,7 +31,7 @@ public class CGDPlayer : MonoBehaviour
     //public static Transform last_camera_tr;
     [System.NonSerialized]
     public float UltimateCharge;
-    public CGDUltimateBar UltimateBar;
+    public CGDUIBar UltimateBar;
     float _ultPickupDelay = 0.5f; // can't modifiy ult charge for at least 0.5 seconds, not brilliant but will do for now
     bool _ableToPickupUlt = true;
     [System.NonSerialized]
