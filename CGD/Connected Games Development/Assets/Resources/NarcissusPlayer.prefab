@@ -563,8 +563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargetToRotateAround: {fileID: 7565606035350587376}
-  MouseYMinClamp: -35
-  MouseYMaxClamp: 60
   View: {fileID: 6277248172693305327}
   OwnPlayer: {fileID: 8359134243737553029}
 --- !u!1 &3295224292353295808
@@ -931,7 +929,6 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
-  _readyToRepel: 0
   AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
   AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
@@ -1251,6 +1248,7 @@ GameObject:
   - component: {fileID: 5869918232156935207}
   - component: {fileID: 7506150996879742666}
   - component: {fileID: 5058592393126362604}
+  - component: {fileID: 7798798499105084821}
   m_Layer: 0
   m_Name: NarcissusPlayer
   m_TagString: Player
@@ -1520,6 +1518,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interval: 20
   GenerateSFX: {fileID: 8300000, guid: f9ce0bd536f6f4244b7151c5ba3c341e, type: 3}
+--- !u!114 &7798798499105084821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359134243737553029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.36862746, g: 0, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8610177388526079564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FillBar: {fileID: 4994654287811738750}
   SliderBar: {fileID: 7657268428179020064}
-  HpBar: 0
+  GateHPBar: 0
 --- !u!1001 &2281950070743712182
 PrefabInstance:
   m_ObjectHideFlags: 0

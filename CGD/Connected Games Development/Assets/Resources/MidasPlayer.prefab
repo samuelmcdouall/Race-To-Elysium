@@ -109,7 +109,6 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
-  _readyToRepel: 0
   AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
   AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
@@ -841,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FillBar: {fileID: 700041886160426248}
   SliderBar: {fileID: 2784221752068567126}
-  HpBar: 0
+  GateHPBar: 0
 --- !u!1 &4099968565272977907
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +860,7 @@ GameObject:
   - component: {fileID: 59948496826253197}
   - component: {fileID: 7325683611939404489}
   - component: {fileID: 2962810209673483106}
+  - component: {fileID: -6997660249604139626}
   m_Layer: 0
   m_Name: MidasPlayer
   m_TagString: Player
@@ -1130,6 +1130,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interval: 20
   GenerateSFX: {fileID: 8300000, guid: f9ce0bd536f6f4244b7151c5ba3c341e, type: 3}
+--- !u!114 &-6997660249604139626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099968565272977907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.36862746, g: 0, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4180921894682528927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,8 +1711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargetToRotateAround: {fileID: 2601375673981693574}
-  MouseYMinClamp: -35
-  MouseYMaxClamp: 60
   View: {fileID: 2016165719594524313}
   OwnPlayer: {fileID: 4099968565272977907}
 --- !u!1 &8291058988111148409
