@@ -201,13 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &21603761 stripped
 Transform:
@@ -390,13 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &32375977
 GameObject:
@@ -506,13 +492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &38586805 stripped
 Transform:
@@ -665,7 +644,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: Platform (23)
@@ -694,13 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &68341429
 GameObject:
@@ -882,13 +854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &95518268
 GameObject:
@@ -1835,13 +1800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &177902196
 GameObject:
@@ -2016,13 +1974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &187687662 stripped
 Transform:
@@ -2841,13 +2792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &367835854 stripped
 Transform:
@@ -2964,7 +2908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &412226684
 Transform:
   m_ObjectHideFlags: 0
@@ -3059,7 +3003,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: Platform (22)
@@ -3088,13 +3032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &432984433
 GameObject:
@@ -3531,13 +3468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &472529416 stripped
 Transform:
@@ -3676,13 +3606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &483175241 stripped
 Transform:
@@ -4001,13 +3924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &575983075
 GameObject:
@@ -4242,13 +4158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &611828029 stripped
 Transform:
@@ -4333,13 +4242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &613639613 stripped
 Transform:
@@ -4508,13 +4410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &649324992
 GameObject:
@@ -4827,7 +4722,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: VictoryPlatform
@@ -4865,7 +4760,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 711978226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386804cb6a7a8cd4f9cb06e487752bb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Pickup: {fileID: 3942596869525251780, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
@@ -4931,7 +4826,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: Platform (20)
@@ -4955,13 +4850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &717303017 stripped
 Transform:
@@ -5144,13 +5032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &731937573
 GameObject:
@@ -5632,13 +5513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &812546131
 GameObject:
@@ -5857,13 +5731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &861696231
 GameObject:
@@ -6009,13 +5876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &892459742
 GameObject:
@@ -6306,13 +6166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &966917263
 GameObject:
@@ -6485,13 +6338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &971664195 stripped
 Transform:
@@ -6920,13 +6766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1105705220 stripped
 Transform:
@@ -7112,13 +6951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1141145688 stripped
 Transform:
@@ -7208,13 +7040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1207014145
 GameObject:
@@ -9108,13 +8933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1399771188 stripped
 Transform:
@@ -9387,7 +9205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1433253231
 Transform:
   m_ObjectHideFlags: 0
@@ -9634,7 +9452,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: Platform (21)
@@ -9667,13 +9485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1462436908
 GameObject:
@@ -9943,13 +9754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1465593271 stripped
 Transform:
@@ -10030,13 +9834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1484665344 stripped
 Transform:
@@ -10362,13 +10159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1537877574 stripped
 GameObject:
@@ -10468,13 +10258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1562583835
 GameObject:
@@ -10922,13 +10705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1675391052 stripped
 Transform:
@@ -11013,13 +10789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1694695456 stripped
 Transform:
@@ -11344,13 +11113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1757861650
 GameObject:
@@ -11758,13 +11520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1794691907
 GameObject:
@@ -12157,13 +11912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1832520412
 GameObject:
@@ -12198,10 +11946,11 @@ MonoBehaviour:
   _helpMessageVisible: 20
   _countDownTimeVisible: 10
   _countDownText: {fileID: 632562965}
-  Gate1: {fileID: 1794691907}
-  Gate2: {fileID: 1325993398}
-  Gate3: {fileID: 1704082289}
-  Gate4: {fileID: 575983075}
+  Gates:
+  - {fileID: 1794691907}
+  - {fileID: 1325993398}
+  - {fileID: 1704082289}
+  - {fileID: 575983075}
 --- !u!4 &1832520414
 Transform:
   m_ObjectHideFlags: 0
@@ -12589,7 +12338,7 @@ PrefabInstance:
     - target: {fileID: 685976285395935724, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24669c1e35620c240b58cf12400e3bb8, type: 2}
+      objectReference: {fileID: 2100000, guid: de98b237c076ac14894968b7f38b502c, type: 2}
     - target: {fileID: 685976285395935726, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
       propertyPath: m_Name
       value: Platform (24)
@@ -12618,13 +12367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1001 &1906751084
 PrefabInstance:
@@ -12709,13 +12451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &1908162950
 GameObject:
@@ -12883,13 +12618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1001 &1962527990
 PrefabInstance:
@@ -12965,13 +12693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!4 &1962527993 stripped
 Transform:
@@ -13648,13 +13369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1 &2099273608
 GameObject:
@@ -13903,7 +13617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2121204635
 Transform:
   m_ObjectHideFlags: 0
@@ -14003,13 +13717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
 --- !u!1001 &2135614526
 PrefabInstance:
@@ -14098,11 +13805,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f688c6ec4ca06d7489628cddc50c06ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawnDelay: 3
-  _maxSpawnDelay: 12
-  _minXSpawnDis: -1.5
-  _maxXSpawnDis: 1.5
-  _minZSpawnDis: -1.5
-  _maxZSpawnDis: 1.5
-  SpawnedPickup: 0
   Pickup: {fileID: 4985776660736356016, guid: 422686dbeed89c545815ba029e2c16d7, type: 3}
