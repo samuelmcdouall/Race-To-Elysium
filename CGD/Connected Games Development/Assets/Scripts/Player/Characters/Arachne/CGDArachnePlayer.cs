@@ -119,6 +119,8 @@ public class CGDArachnePlayer : CGDPlayer
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
         NewPlayer = PlayerToChangeTo.None;
+        PlayerOutline = GetComponent<Outline>();
+        PlayerOutline.enabled = false;
         //if (SetupCameraPosition != Vector3.zero)
         //{
         //    print("changing to a new character");

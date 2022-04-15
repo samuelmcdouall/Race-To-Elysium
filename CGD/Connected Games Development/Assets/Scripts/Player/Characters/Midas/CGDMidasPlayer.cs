@@ -114,6 +114,8 @@ public class CGDMidasPlayer : CGDPlayer
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
         NewPlayer = PlayerToChangeTo.None;
+        PlayerOutline = GetComponent<Outline>();
+        PlayerOutline.enabled = false;
         if (!_view.IsMine)
         {
             print(_view.Owner.NickName + " has joined the game");

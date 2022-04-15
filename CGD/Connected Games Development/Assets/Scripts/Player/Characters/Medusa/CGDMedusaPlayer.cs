@@ -137,6 +137,8 @@ public class CGDMedusaPlayer : CGDPlayer
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
         NewPlayer = PlayerToChangeTo.None;
+        PlayerOutline = GetComponent<Outline>();
+        PlayerOutline.enabled = false;
         if (!_view.IsMine)
         {
             Crosshair.SetActive(false);
