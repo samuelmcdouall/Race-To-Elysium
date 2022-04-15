@@ -13,6 +13,7 @@ public class CGDArachnePlayer : CGDPlayer
     {
         InitialPlayerSetup();
     }
+
     public override void Update()
     {
         base.Update();

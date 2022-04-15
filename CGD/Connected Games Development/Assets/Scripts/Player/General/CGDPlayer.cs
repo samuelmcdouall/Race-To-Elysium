@@ -76,7 +76,7 @@ public class CGDPlayer : MonoBehaviour
         InitialPlayerSetup();
     }
 
-    public virtual void FixedUpdate()
+    void FixedUpdate()
     {
         if (View.IsMine)
         {
@@ -199,6 +199,7 @@ public class CGDPlayer : MonoBehaviour
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         _jumpModifier = 1.0f;
+        _enabledControls = true;
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
         NewCharacter = Character.None;
