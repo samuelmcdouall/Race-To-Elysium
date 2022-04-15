@@ -153,7 +153,7 @@ public class CGDPowerUpManager : MonoBehaviour
                 break;
         }
 
-        Vector3 forwardDirection = new Vector3(_playerScript._cameraTr.forward.x, _playerScript._cameraTr.forward.y, _playerScript._cameraTr.forward.z);
+        Vector3 forwardDirection = new Vector3(_playerScript.CameraTr.forward.x, _playerScript.CameraTr.forward.y, _playerScript.CameraTr.forward.z);
         forwardDirection = forwardDirection.normalized;
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(forwardDirection.x, forwardDirection.y, forwardDirection.z) * _areaDenialProjectileSpeed;
     }

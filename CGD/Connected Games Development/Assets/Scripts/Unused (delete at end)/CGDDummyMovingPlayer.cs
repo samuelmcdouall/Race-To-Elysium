@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CGDDummyMovingPlayer : CGDPlayer
 {
-    [Header("AI Moving")]
+    [Header("AI Moving")] //todo probably can be deleted as not using this
     public Transform StartPosition;
     public Transform EndPosition;
     bool _aiStartToEnd;
@@ -20,7 +20,7 @@ public class CGDDummyMovingPlayer : CGDPlayer
         if (_aiStartToEnd)
         {
             Vector3 DistanceToTarget = Vector3.Normalize(EndPosition.position - transform.position);
-            PlayerRb.AddForce(DistanceToTarget * PlayerMoveForce * _speedModifier);
+            //PlayerRb.AddForce(DistanceToTarget * PlayerMoveForce * _speedModifier);
             if (Vector3.Distance(transform.position, EndPosition.position) <= 0.1f)
             {
                 _aiStartToEnd = false;
@@ -29,7 +29,7 @@ public class CGDDummyMovingPlayer : CGDPlayer
         else
         {
             Vector3 DistanceToTarget = Vector3.Normalize(StartPosition.position - transform.position);
-            PlayerRb.AddForce(DistanceToTarget * PlayerMoveForce * _speedModifier);
+            //PlayerRb.AddForce(DistanceToTarget * PlayerMoveForce * _speedModifier);
             if (Vector3.Distance(transform.position, StartPosition.position) <= 0.1f)
             {
                 _aiStartToEnd = true;
@@ -40,8 +40,8 @@ public class CGDDummyMovingPlayer : CGDPlayer
 
     public override void InitialPlayerSetup()
     {
-        PlayerRb = GetComponent<Rigidbody>();
+        //PlayerRb = GetComponent<Rigidbody>();
         _aiStartToEnd = true;
-        _speedModifier = 1.0f;
+        //_speedModifier = 1.0f;
     }
 }

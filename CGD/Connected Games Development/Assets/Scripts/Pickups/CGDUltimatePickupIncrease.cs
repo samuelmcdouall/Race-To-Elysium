@@ -9,7 +9,7 @@ public class CGDUltimatePickupIncrease : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeUltPickup(_increasePercentage);
+            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeUltFromPickup(_increasePercentage);
             Destroy(transform.parent.gameObject);
         }
     }

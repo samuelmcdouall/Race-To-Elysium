@@ -12,22 +12,22 @@ public class CGDCharacterSelectTotem : MonoBehaviour
         {
             if (_character == TotemCharacter.Medusa)
             {
-                other.gameObject.GetComponent<CGDPlayer>().NewPlayer = CGDPlayer.PlayerToChangeTo.Medusa;
+                other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Medusa;
             }
 
             else if (_character == TotemCharacter.Midas)
             {
-                other.gameObject.GetComponent<CGDPlayer>().NewPlayer = CGDPlayer.PlayerToChangeTo.Midas;
+                other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Midas;
             }
 
             else if (_character == TotemCharacter.Narcissus)
             {
-                other.gameObject.GetComponent<CGDPlayer>().NewPlayer = CGDPlayer.PlayerToChangeTo.Narcissus;
+                other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Narcissus;
             }
 
             else if (_character == TotemCharacter.Arachne)
             {
-                other.gameObject.GetComponent<CGDPlayer>().NewPlayer = CGDPlayer.PlayerToChangeTo.Arachne;
+                other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Arachne;
             }
         }
     }
@@ -36,7 +36,7 @@ public class CGDCharacterSelectTotem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<CGDPlayer>().NewPlayer = CGDPlayer.PlayerToChangeTo.None;
+            other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.None;
         }
     }
 

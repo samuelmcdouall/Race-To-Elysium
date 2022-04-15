@@ -1441,35 +1441,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f8476390890f441915520b6995e12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMoveForce: 40
+  _playerMoveForce: 40
   _playerTopSpeed: 4
   _playerJumpForce: 9
   _playerFallForce: 0
-  UltimateBar: {fileID: 2032959661753328212}
   GroundCheck: {fileID: 9184926537948259416}
+  UltimateBar: {fileID: 2032959661753328212}
+  MedusaPlayer: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
+  MidasPlayer: {fileID: 4099968565272977907, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
+  NarcissusPlayer: {fileID: 8359134243737553029}
+  ArachnePlayer: {fileID: 8221330821640465093, guid: 711157b50fdc82a4eb2d1135b00998c2, type: 3}
   WonScreen: {fileID: 0}
   LossScreen: {fileID: 0}
-  RotateCamera: {fileID: 5982184592316836334}
   BlindScreen: {fileID: 836811451730255049}
-  CheckpointPosition: {x: 0, y: 0, z: 0}
+  NameText: {fileID: 1299421276988737037}
   JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
   UltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
   LavaBurnFX: {fileID: 5489952693477103455}
   PoisonBurnFX: {fileID: 2282724426845610126}
   NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
-  NameText: {fileID: 1299421276988737037}
-  _playerCanMoveFast: 0
-  _playerTopFastMoveSpeed: 0
-  _showCursor: 0
-  _enabledControls: 1
-  _jumpModifier: 0
   MainCamera: {fileID: 3193539389366677583}
   UltimateCollider: {fileID: 5490843599454987658}
   BlindFX: {fileID: 100004, guid: 60fd66ae32c81014e917f339de640e52, type: 3}
-  MedusaPlayer: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}
-  MidasPlayer: {fileID: 4099968565272977907, guid: 5211d7fed87ce7d48a9e24b51914d09d, type: 3}
-  ArachnePlayer: {fileID: 8221330821640465093, guid: 711157b50fdc82a4eb2d1135b00998c2, type: 3}
 --- !u!114 &7506150996879742666
 MonoBehaviour:
   m_ObjectHideFlags: 0

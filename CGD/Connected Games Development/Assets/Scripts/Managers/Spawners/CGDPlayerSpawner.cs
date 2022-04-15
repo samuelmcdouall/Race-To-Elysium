@@ -59,7 +59,7 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
             // Positioning slightly random so players don't spawn right on top of each other
             Vector3 randomPosition = new Vector3(Random.Range(_minSpawnX, _maxSpawnX), 2.0f, Random.Range(_minSpawnZ, _maxSpawnZ));
             GameObject player = PhotonNetwork.Instantiate(_chosenPrefab.name, randomPosition, Quaternion.identity);
-            player.GetComponent<CGDPlayer>()._view.Owner.NickName = CGDGameSettings.Username;
+            player.GetComponent<CGDPlayer>().View.Owner.NickName = CGDGameSettings.Username;
 
             if (playerCount == _maxPlayers)
             {
