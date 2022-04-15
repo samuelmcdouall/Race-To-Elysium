@@ -51,6 +51,8 @@ public class CGDPlayer : MonoBehaviour
     public GameObject PoisonBurnFX;
     public AudioClip NewPlayerSFX;
     public GameObject NewPlayerFX;
+    [System.NonSerialized]
+    public Outline PlayerOutline;
 
     // Animations
     //[System.NonSerialized]
