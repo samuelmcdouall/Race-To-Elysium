@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -12,7 +10,7 @@ public class CGDArachneWeb : MonoBehaviour
     [System.NonSerialized]
     public GameObject OwnPlayer;
 
-    private void Start()
+    void Start()
     {
         Destroy(gameObject, _lifetime);
     }
@@ -21,7 +19,7 @@ public class CGDArachneWeb : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject != OwnPlayer && OwnPlayer != null)
         {
-            print("stuck in the web");
+            print("Stuck in the web");
             int photonViewID = other.gameObject.GetComponent<PhotonView>().ViewID;
             other.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSecondsToGivenPlayer(_slowPerMod, 1.0f, photonViewID, true);
         }
@@ -30,14 +28,14 @@ public class CGDArachneWeb : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject != OwnPlayer)
         {
-            print("player entered the web");
+            print("Entered the web");
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player" && other.gameObject != OwnPlayer)
         {
-            print("player exited the web");
+            print("Exited the web");
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CGDCharacterSelectTotem : MonoBehaviour
@@ -14,17 +12,14 @@ public class CGDCharacterSelectTotem : MonoBehaviour
             {
                 other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Medusa;
             }
-
             else if (_character == TotemCharacter.Midas)
             {
                 other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Midas;
             }
-
             else if (_character == TotemCharacter.Narcissus)
             {
                 other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Narcissus;
             }
-
             else if (_character == TotemCharacter.Arachne)
             {
                 other.gameObject.GetComponent<CGDPlayer>().NewCharacter = CGDPlayer.Character.Arachne;
