@@ -23,6 +23,7 @@ public class CGDPlayer : MonoBehaviour
     bool _sliding = false;
     float _speedModifier;
     float _jumpModifier;
+    bool _shouldJumpUp;
     [System.NonSerialized]
     public bool _enabledControls;
 
@@ -30,7 +31,7 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public float UltimateCharge;
     public CGDUIBar UltimateBar;
-    float _ultPickupDelay = 0.5f; // precaution delay so multiple colliders don't get hit in same frame
+    float _ultPickupDelay = 0.5f; // precaution delay so multiple colliders don't get hit in same frame todo may remove this comment
     bool _ableToPickupUlt = true;
 
     [Header("General")]
@@ -80,95 +81,9 @@ public class CGDPlayer : MonoBehaviour
     {
         if (View.IsMine)
         {
-            if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
-            {
-                float randX = Random.Range(-5.0f, 5.0f);
-                transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
-            }
-            LimitSpeedToMaximum();
-            if (_sliding)
-            {
-                _playerRb.velocity = _playerRb.velocity.normalized * _playerTopSpeed * 2.0f;
-            }
-            HandleGroundCheckMechanics();
-            if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
-            {
-                HandleMovementMechanics();
-            }
+            MovePlayerToCheckpointIfBehind();
+            HandleMovementAndJumping();
         }
-    }
-
-    [PunRPC]
-    public void ApplySpeedModifierForSecondsToGivenPlayer(float modiferPercentage, float duration, int photonViewID, bool sendToOtherPlayers)
-    {
-        PhotonView photonView = PhotonView.Find(photonViewID);
-        photonView.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(modiferPercentage, duration);
-        if (sendToOtherPlayers)
-        {
-            Debug.Log("Send apply speed mod for seconds instruction to other players");
-            View.RPC("ApplySpeedModifierForSecondsToGivenPlayer", RpcTarget.OthersBuffered, modiferPercentage, duration, photonViewID, false);
-        }
-        else
-        {
-            Debug.Log("Got this apply speed mod for seconds instruction from other player");
-        }
-    }
-    public void ApplySpeedModifierForSeconds(float modiferPercentage, float duration)
-    {
-        _speedModifier = 1.0f - (modiferPercentage / 100.0f);
-        Invoke("ResetSpeedModifier", duration);
-    }
-    public void ResetSpeedModifier()
-    {
-        _speedModifier = 1.0f;
-        print("returned to normal speed");
-    }
-    [PunRPC]
-    public void DisableControlsForSecondsToGivenPlayer(float Duration, int photonViewID, bool sendToOtherPlayers)
-    {
-        PhotonView photonView = PhotonView.Find(photonViewID);
-        photonView.gameObject.GetComponent<CGDPlayer>().DisableControlsForSeconds(Duration);
-        if (sendToOtherPlayers)
-        {
-            Debug.Log("send disable controls for seconds instruction to other players");
-            View.RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
-        }
-        else
-        {
-            Debug.Log("Got this disable controls for seconds instruction from other player");
-        }
-    }
-    public void DisableControlsForSeconds(float Duration)
-    {
-        _enabledControls = false;
-        Invoke("EnableControls", Duration);
-    }
-    public void EnableControls()
-    {
-        _enabledControls = true;
-        print("returned to normal speed");
-    }
-    public void StartSliding(float Duration)
-    {
-        _sliding = true;
-        print("now sliding");
-        Invoke("StopSliding", Duration);
-    }
-    public void StopSliding()
-    {
-        _sliding = false;
-        print("no longer sliding");
-    }
-
-    public void ApplyJumpModifierForSeconds(float modiferPercentage, float duration)
-    {
-        _jumpModifier = 1.0f - (modiferPercentage / 100.0f);
-        Invoke("ResetJumpModifier", duration);
-    }
-    public void ResetJumpModifier()
-    {
-        _jumpModifier = 1.0f;
-        print("returned to normal jump power");
     }
     public virtual void Update()
     {
@@ -180,14 +95,10 @@ public class CGDPlayer : MonoBehaviour
             }
             if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
-                HandleJumpMechanics();
+                DetectJumpInput();
             }
             TintSkyboxBasedOnVerticalPosition();
         }
-    }
-    public virtual void UltimateAttack()
-    {
-        print("Player ultimate attack");
     }
 
     public virtual void InitialPlayerSetup()
@@ -199,6 +110,7 @@ public class CGDPlayer : MonoBehaviour
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         _jumpModifier = 1.0f;
+        _shouldJumpUp = false;
         _enabledControls = true;
         UltimateCharge = 0.0f;
         Cursor.lockState = CursorLockMode.Locked;
@@ -207,6 +119,7 @@ public class CGDPlayer : MonoBehaviour
         PlayerOutline.enabled = false;
         CheckpointPosition = new Vector3(0.0f, 0.0f, 0.0f);
         _checkpointOffset = 2.0f;
+
         if (!View.IsMine)
         {
             print(View.Owner.NickName + " has joined the game");
@@ -216,52 +129,55 @@ public class CGDPlayer : MonoBehaviour
         {
             NameText.text = "";
         }
+
         if (!View.IsMine)
         {
             Destroy(MainCamera);
         }
     }
 
-    public void LimitSpeedToMaximum()
+    // FixedUpdate functions
+    void MovePlayerToCheckpointIfBehind()
     {
-        //if (Input.GetKey(KeyCode.LeftShift) && _playerCanMoveFast)
-        //{
-        //    if (_playerRb.velocity.magnitude > _playerTopFastMoveSpeed)
-        //    {
-        //        float original_vertical_speed = _playerRb.velocity.y;
-        //        _playerRb.velocity = _playerRb.velocity.normalized * _playerTopFastMoveSpeed;
-        //        _playerRb.velocity = new Vector3(_playerRb.velocity.x, original_vertical_speed, _playerRb.velocity.z);
-        //    }
-        //}
-        //else
-        //{
+        if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
+        {
+            float randX = Random.Range(-5.0f, 5.0f);
+            transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
+        }
+    }
+
+    void HandleMovementAndJumping()
+    {
+        LimitSpeedToMaximum();
+        if (_sliding)
+        {
+            _playerRb.velocity = _playerRb.velocity.normalized * _playerTopSpeed * 2.0f;
+        }
+        if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
+        {
+            HandleMovementMechanics();
+        }
+        HandleGroundCheckMechanics();
+        if (_shouldJumpUp)
+        {
+            JumpUp();
+            AudioSource.PlayClipAtPoint(JumpSFX, transform.position, CGDGameSettings.SoundVolume);
+            _shouldJumpUp = false;
+            _ableToJumpOffGround = false;
+        }
+    }
+
+    void LimitSpeedToMaximum()
+    {
         if (_playerRb.velocity.magnitude > _playerTopSpeed * _speedModifier)
         {
             float original_vertical_speed = _playerRb.velocity.y;
             _playerRb.velocity = _playerRb.velocity.normalized * _playerTopSpeed * _speedModifier;
             _playerRb.velocity = new Vector3(_playerRb.velocity.x, original_vertical_speed, _playerRb.velocity.z);
         }
-        //}
     }
 
-    public void HandleGroundCheckMechanics()
-    {
-        if (GroundCheck.IsGrounded && !_ableToJumpOffGround)
-        {
-            _ableToJumpOffGround = true;
-        }
-        else if (_playerRb.velocity.y < -0.1f)
-        {
-            HandlePlayerFallingDown();
-        }
-    }
-
-    public void HandlePlayerFallingDown()
-    {
-        //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo keep this in as will need to do animation here as well
-    }
-
-    public void HandleMovementMechanics()
+    void HandleMovementMechanics()
     {
         if (Camera.main)
         {
@@ -269,7 +185,7 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    public void ApplyNormalAngleMovement()
+    void ApplyNormalAngleMovement()
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
@@ -309,150 +225,101 @@ public class CGDPlayer : MonoBehaviour
         }
         else
         {
-            //player_ani.SetBool(running_animation, false);
+            //player_ani.SetBool(running_animation, false); todo where animation set
         }
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    PlayerRb.AddForce(Vector3.forward * BounceForce);
-        //}
     }
 
-    public void DetermineYIndependentVelocity(Vector3 horizontal_direction)
+    void DetermineYIndependentVelocity(Vector3 horizontal_direction)
     {
         horizontal_direction = new Vector3(horizontal_direction.x, 0.0f, horizontal_direction.z);
         horizontal_direction = horizontal_direction.normalized * _playerMoveForce;
         _playerRb.AddForce(horizontal_direction);
     }
 
-    public void HandleJumpMechanics()
+    void HandleGroundCheckMechanics()
+    {
+        if (GroundCheck.IsGrounded && !_ableToJumpOffGround)
+        {
+            _ableToJumpOffGround = true;
+        }
+        else if (_playerRb.velocity.y < -0.1f)
+        {
+            HandlePlayerFallingDown();
+        }
+    }
+
+    void HandlePlayerFallingDown()
+    {
+        //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo keep this in as will need to do animation here as well
+    }
+
+    void JumpUp()
+    {
+        _playerRb.AddForce(0.0f, _playerJumpForce * _jumpModifier, 0.0f, ForceMode.Impulse);
+    }
+
+
+    // Update functions
+    void ChangeCharacter()
+    {
+        if (NewCharacter == Character.Medusa && ThisCharacter != Character.Medusa)
+        {
+            SwitchCharacterTo(MedusaPlayer.name);
+        }
+        if (NewCharacter == Character.Midas && ThisCharacter != Character.Midas)
+        {
+            SwitchCharacterTo(MidasPlayer.name);
+        }
+        if (NewCharacter == Character.Narcissus && ThisCharacter != Character.Narcissus)
+        {
+            SwitchCharacterTo(NarcissusPlayer.name);
+        }
+        if (NewCharacter == Character.Arachne && ThisCharacter != Character.Arachne)
+        {
+            SwitchCharacterTo(ArachnePlayer.name);
+        }
+    }
+
+    void SwitchCharacterTo(string newPlayerName)
+    {
+        GameObject newPlayer = PhotonNetwork.Instantiate(newPlayerName, transform.position, transform.rotation);
+        newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
+        newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
+        AudioSource.PlayClipAtPoint(NewPlayerSFX, MainCamera.transform.position, CGDGameSettings.SoundVolume);
+        Instantiate(NewPlayerFX, transform.position, Quaternion.identity);
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+    void DetectJumpInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (GroundCheck.IsGrounded && _ableToJumpOffGround)
             {
-                JumpUp();
-                AudioSource.PlayClipAtPoint(JumpSFX, transform.position, CGDGameSettings.SoundVolume);
-                //Invoke("JumpUp", 0.0f);
-                _ableToJumpOffGround = false;
+                _shouldJumpUp = true;
             }
-        }
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    PlayerRb.AddForce(Vector3.forward * BounceForce);
-        //}
-    }
-
-    public void JumpUp()
-    {
-        _playerRb.AddForce(0.0f, _playerJumpForce * _jumpModifier, 0.0f, ForceMode.Impulse);
-    }
-
-    public void ModifyUltimateChargeUltFromPickup(float chargeAmount)
-    {
-        if (_ableToPickupUlt)
-        {
-            _ableToPickupUlt = false;
-            Invoke("AbleToPickUltAgain", _ultPickupDelay);
-            if (chargeAmount > 0.0f)
-            {
-                print("Increased charge by: " + chargeAmount);
-            }
-            else
-            {
-                print("Decreased charge by: " + -chargeAmount);
-            }
-            UltimateCharge += chargeAmount;
-            if (UltimateCharge > 100.0f)
-            {
-                UltimateCharge = 100.0f;
-            }
-            else if (UltimateCharge < 0.0f)
-            {
-                UltimateCharge = 0.0f;
-            }
-            if (View.IsMine)
-            {
-                UltimateBar.SetBar(UltimateCharge);
-            }
-            print("Ultimate Charge: " + UltimateCharge);
         }
     }
 
-    public void ModifyUltimateCharge(float chargeAmount)
+    void TintSkyboxBasedOnVerticalPosition()
     {
-        if (chargeAmount > 0.0f)
+        float scaledColorPosition = transform.position.y / 50.0f;
+        if (scaledColorPosition > 1.0f)
         {
-            print("Increased charge by: " + chargeAmount);
+            scaledColorPosition = 1.0f;
         }
-        else
+        else if (scaledColorPosition < 0.0f)
         {
-            print("Decreased charge by: " + -chargeAmount);
+            scaledColorPosition = 0.0f;
         }
-        UltimateCharge += chargeAmount;
-        if (UltimateCharge > 100.0f)
-        {
-            UltimateCharge = 100.0f;
-        }
-        else if (UltimateCharge < 0.0f)
-        {
-            UltimateCharge = 0.0f;
-        }
-        if (View.IsMine)
-        {
-            UltimateBar.SetBar(UltimateCharge);
-        }
-        print("Ultimate Charge: " + UltimateCharge);
+
+        Color tartarusColor = new Color(1.0f, 0.0f, 0.0f);
+        Color normalColour = new Color(0.45f, 0.45f, 0.45f);
+        Color skyboxColor = Color.Lerp(tartarusColor, normalColour, scaledColorPosition);
+        RenderSettings.skybox.SetColor("_Tint", skyboxColor);
     }
 
-    void AbleToPickUltAgain()
-    {
-        _ableToPickupUlt = true;
-    }
-
-    public void DisplayGameOverScreenForEveryone()
-    {
-        DisplayGameOverScreen();
-        View.RPC("DisplayGameOverScreen", RpcTarget.Others);
-    }
-
-    [PunRPC]
-    public void DisplayGameOverScreen()
-    {
-        if (View.IsMine)
-        {
-            Debug.Log("send victory instruction to other players, means I won");
-            if (!CGDGameSettings.PlayingAsGuest)
-            {
-                StartCoroutine(UpdateStats(CGDGameSettings.Username, true, 5));
-            }
-            CGDGameOverScreenManager.DisplayWinScreen();
-        }
-        else
-        {
-            Debug.Log("Got this victory instruction from other player, means I lost");
-            if (!CGDGameSettings.PlayingAsGuest)
-            {
-                StartCoroutine(UpdateStats(CGDGameSettings.Username, false, 1));
-            }
-            CGDGameOverScreenManager.DisplayLossScreen();
-        }
-    }
-
-    public void OnCollisionEnter(Collision collision) //todo keep in if there will be moving platforms, otherwise scrap
-    {
-        if (collision.gameObject.tag == "MovingPlatform" && transform.position.y > collision.gameObject.transform.position.y)
-        {
-            transform.SetParent(collision.gameObject.transform);
-        }
-    }
-    public void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "MovingPlatform")
-        {
-            transform.SetParent(null);
-        }
-    }
-
+    // RPC functions
     [PunRPC]
     public void KnockbackOtherPlayer(Vector3 forceToAdd, int photonViewID)
     {
@@ -467,6 +334,62 @@ public class CGDPlayer : MonoBehaviour
         {
             Debug.Log("Got this instruction from other player");
         }
+    }
+
+    [PunRPC]
+    public void ApplySpeedModifierForSecondsToGivenPlayer(float modiferPercentage, float duration, int photonViewID, bool sendToOtherPlayers)
+    {
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(modiferPercentage, duration);
+        if (sendToOtherPlayers)
+        {
+            Debug.Log("Send apply speed mod for seconds instruction to other players");
+            View.RPC("ApplySpeedModifierForSecondsToGivenPlayer", RpcTarget.OthersBuffered, modiferPercentage, duration, photonViewID, false);
+        }
+        else
+        {
+            Debug.Log("Got this apply speed mod for seconds instruction from other player");
+        }
+    }
+
+    public void ApplySpeedModifierForSeconds(float modiferPercentage, float duration)
+    {
+        _speedModifier = 1.0f - (modiferPercentage / 100.0f);
+        Invoke("ResetSpeedModifier", duration);
+    }
+
+    public void ResetSpeedModifier()
+    {
+        _speedModifier = 1.0f;
+        print("returned to normal speed");
+    }
+
+    [PunRPC]
+    public void DisableControlsForSecondsToGivenPlayer(float Duration, int photonViewID, bool sendToOtherPlayers)
+    {
+        PhotonView photonView = PhotonView.Find(photonViewID);
+        photonView.gameObject.GetComponent<CGDPlayer>().DisableControlsForSeconds(Duration);
+        if (sendToOtherPlayers)
+        {
+            Debug.Log("send disable controls for seconds instruction to other players");
+            View.RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
+        }
+        else
+        {
+            Debug.Log("Got this disable controls for seconds instruction from other player");
+        }
+    }
+
+    public void DisableControlsForSeconds(float Duration)
+    {
+        _enabledControls = false;
+        Invoke("EnableControls", Duration);
+    }
+
+    void EnableControls()
+    {
+        _enabledControls = true;
+        print("returned to normal speed");
     }
 
     [PunRPC]
@@ -486,7 +409,8 @@ public class CGDPlayer : MonoBehaviour
             Debug.Log("Got this blind for seconds instruction from other player");
         }
     }
-    public void DisplayFullBlindScreenForSeconds(float fullBlindDuration, float fadeOutDuration)
+
+    void DisplayFullBlindScreenForSeconds(float fullBlindDuration, float fadeOutDuration)
     {
         print("Blinded!");
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
@@ -525,6 +449,128 @@ public class CGDPlayer : MonoBehaviour
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
+    public void DisplayGameOverScreenForEveryone()
+    {
+        DisplayGameOverScreen();
+        View.RPC("DisplayGameOverScreen", RpcTarget.Others);
+    }
+
+    [PunRPC]
+    void DisplayGameOverScreen()
+    {
+        if (View.IsMine)
+        {
+            Debug.Log("send victory instruction to other players, means I won");
+            if (!CGDGameSettings.PlayingAsGuest)
+            {
+                StartCoroutine(UpdateStats(CGDGameSettings.Username, true, 5));
+            }
+            CGDGameOverScreenManager.DisplayWinScreen();
+        }
+        else
+        {
+            Debug.Log("Got this victory instruction from other player, means I lost");
+            if (!CGDGameSettings.PlayingAsGuest)
+            {
+                StartCoroutine(UpdateStats(CGDGameSettings.Username, false, 1));
+            }
+            CGDGameOverScreenManager.DisplayLossScreen();
+        }
+    }
+
+    // Other helper functions
+    public void StartSliding(float Duration)
+    {
+        _sliding = true;
+        print("now sliding");
+        Invoke("StopSliding", Duration);
+    }
+
+    void StopSliding()
+    {
+        _sliding = false;
+        print("no longer sliding");
+    }
+
+    public void ApplyJumpModifierForSeconds(float modiferPercentage, float duration)
+    {
+        _jumpModifier = 1.0f - (modiferPercentage / 100.0f);
+        Invoke("ResetJumpModifier", duration);
+    }
+
+    void ResetJumpModifier()
+    {
+        _jumpModifier = 1.0f;
+        print("returned to normal jump power");
+    }
+
+    public virtual void UltimateAttack()
+    {
+        print("Player Ultimate Attack");
+    }
+
+    public void ModifyUltimateChargeUltFromPickup(float chargeAmount)
+    {
+        if (_ableToPickupUlt)
+        {
+            _ableToPickupUlt = false;
+            Invoke("AbleToPickUltAgain", _ultPickupDelay);
+            if (chargeAmount > 0.0f)
+            {
+                print("Increased charge by: " + chargeAmount);
+            }
+            else
+            {
+                print("Decreased charge by: " + -chargeAmount);
+            }
+            UltimateCharge += chargeAmount;
+            if (UltimateCharge > 100.0f)
+            {
+                UltimateCharge = 100.0f;
+            }
+            else if (UltimateCharge < 0.0f)
+            {
+                UltimateCharge = 0.0f;
+            }
+            if (View.IsMine)
+            {
+                UltimateBar.SetBar(UltimateCharge);
+            }
+            print("Ultimate Charge: " + UltimateCharge);
+        }
+    }
+
+    void AbleToPickUltAgain()
+    {
+        _ableToPickupUlt = true;
+    }
+
+    public void ModifyUltimateCharge(float chargeAmount)
+    {
+        if (chargeAmount > 0.0f)
+        {
+            print("Increased charge by: " + chargeAmount);
+        }
+        else
+        {
+            print("Decreased charge by: " + -chargeAmount);
+        }
+        UltimateCharge += chargeAmount;
+        if (UltimateCharge > 100.0f)
+        {
+            UltimateCharge = 100.0f;
+        }
+        else if (UltimateCharge < 0.0f)
+        {
+            UltimateCharge = 0.0f;
+        }
+        if (View.IsMine)
+        {
+            UltimateBar.SetBar(UltimateCharge);
+        }
+        print("Ultimate Charge: " + UltimateCharge);
+    }
+
     IEnumerator UpdateStats(string username, bool won, int silver)
     {
         WWWForm form = new WWWForm();
@@ -547,54 +593,7 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    public void TintSkyboxBasedOnVerticalPosition()
-    {
-        float scaledColorPosition = transform.position.y / 50.0f;
-        if (scaledColorPosition > 1.0f)
-        {
-            scaledColorPosition = 1.0f;
-        }
-        else if (scaledColorPosition < 0.0f)
-        {
-            scaledColorPosition = 0.0f;
-        }
-
-        Color tartarusColor = new Color(1.0f, 0.0f, 0.0f);
-        Color normalColour = new Color(0.45f, 0.45f, 0.45f);
-        Color skyboxColor = Color.Lerp(tartarusColor, normalColour, scaledColorPosition);
-        RenderSettings.skybox.SetColor("_Tint", skyboxColor);
-    }
-
-    public void ChangeCharacter()
-    {
-        if (NewCharacter == Character.Medusa && ThisCharacter != Character.Medusa)
-        {
-            SwitchCharacterTo(MedusaPlayer.name);
-        }
-        if (NewCharacter == Character.Midas && ThisCharacter != Character.Midas)
-        {
-            SwitchCharacterTo(MidasPlayer.name);
-        }
-        if (NewCharacter == Character.Narcissus && ThisCharacter != Character.Narcissus)
-        {
-            SwitchCharacterTo(NarcissusPlayer.name);
-        }
-        if (NewCharacter == Character.Arachne && ThisCharacter != Character.Arachne)
-        {
-            SwitchCharacterTo(ArachnePlayer.name);
-        }
-    }
-
-    void SwitchCharacterTo(string newPlayerName)
-    {
-        GameObject newPlayer = PhotonNetwork.Instantiate(newPlayerName, transform.position, transform.rotation);
-        newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseX = MainCamera.GetComponent<CGDRotateCamera>()._mouseX;
-        newPlayer.GetComponent<CGDPlayer>().MainCamera.GetComponent<CGDRotateCamera>()._mouseY = MainCamera.GetComponent<CGDRotateCamera>()._mouseY;
-        AudioSource.PlayClipAtPoint(NewPlayerSFX, MainCamera.transform.position, CGDGameSettings.SoundVolume);
-        Instantiate(NewPlayerFX, transform.position, Quaternion.identity);
-        PhotonNetwork.Destroy(gameObject);
-    }
-
+    // Enum
     public enum Character
     {
         Medusa,
