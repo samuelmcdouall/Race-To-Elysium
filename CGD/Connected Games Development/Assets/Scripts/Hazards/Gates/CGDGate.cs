@@ -25,7 +25,7 @@ public class CGDGate : MonoBehaviour
     }
 
     [PunRPC]
-    void ReduceHealthOfGate()
+    public void ReduceHealthOfGate()
     {
         _currHitPoints--;
         if (_currHitPoints == 0.0f)

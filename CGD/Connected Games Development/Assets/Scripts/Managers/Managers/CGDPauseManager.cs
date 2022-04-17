@@ -189,7 +189,7 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void ModifiyPlayerNum(int leftPlayerNum)
+    public void ModifiyPlayerNum(int leftPlayerNum)
     {
         print("Another player left the room, adjusting order");
         if (CGDGameSettings.PlayerNum > leftPlayerNum)

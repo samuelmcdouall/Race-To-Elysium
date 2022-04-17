@@ -120,8 +120,12 @@ public class CGDPlayerBasicAttack : MonoBehaviour
 
     void ApplyForceToPlayer(Collider collider, Vector3 forceToAdd)
     {
+        //Debug.LogError("apply force to player"); // todo once know this is the way to do it then can get rid of this
         int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
-        OwnPlayer.GetComponent<CGDPlayer>().KnockbackOtherPlayer(forceToAdd, photonViewID);
+        //Debug.LogError("This is my view id: " + OwnPlayer.GetComponent<CGDPlayer>().View.ViewID);
+        //Debug.LogError("This is my targets view id: " + collider.gameObject.GetComponent<PhotonView>().ViewID);
+        //Debug.LogError("This is my targets view id (other method): " + collider.gameObject.GetComponent<CGDPlayer>().View.ViewID);
+        OwnPlayer.GetComponent<CGDPlayer>().SendKnockbackCommandToOtherPlayers(forceToAdd, photonViewID);
         OwnPlayer.GetComponent<CGDPlayer>().ModifyUltimateCharge(20.0f);
         //collider.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(0.8f, photonViewID, true); //todo I don't think use this
     }

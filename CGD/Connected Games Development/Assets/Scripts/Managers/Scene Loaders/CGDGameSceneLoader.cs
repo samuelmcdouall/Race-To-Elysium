@@ -63,7 +63,7 @@ public class CGDGameSceneLoader : MonoBehaviour
     }
 
     [PunRPC]
-    void BeginCountDown()
+    public void BeginCountDown()
     {
         _beginCountDown = true;
     }

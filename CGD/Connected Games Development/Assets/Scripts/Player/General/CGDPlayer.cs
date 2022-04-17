@@ -72,10 +72,10 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public Transform CameraTr;
 
-    void Start()
-    {
-        InitialPlayerSetup();
-    }
+    //void Start() // todo this is getting called twice because you have a start and an awake change the awake to override or just don't bother with start here
+    //{
+    //    InitialPlayerSetup();
+    //}
 
     void FixedUpdate()
     {
@@ -320,20 +320,37 @@ public class CGDPlayer : MonoBehaviour
     }
 
     // RPC functions
-    [PunRPC]
-    public void KnockbackOtherPlayer(Vector3 forceToAdd, int photonViewID)
+    public void SendKnockbackCommandToOtherPlayers(Vector3 forceToAdd, int photonViewID)
     {
-        PhotonView photonView = PhotonView.Find(photonViewID);
-        photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
-        if (View.IsMine)
+        View.RPC("SearchOtherPlayersToKnockback", RpcTarget.Others, forceToAdd, photonViewID);
+    }
+
+    [PunRPC]
+    public void SearchOtherPlayersToKnockback(Vector3 forceToAdd, int photonViewID)
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach(GameObject player in players)
         {
-            Debug.Log("send message to other players");
-            View.RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
+            if (player.GetComponent<CGDPlayer>().View.IsMine && player.GetComponent<CGDPlayer>().View.ViewID == photonViewID)
+            {
+                player.GetComponent<Rigidbody>().AddForce(forceToAdd);
+            }
         }
-        else
-        {
-            Debug.Log("Got this instruction from other player");
-        }
+        ////PhotonView photonView = PhotonView.Find(photonViewID); //todo get rid of once know this is the way to do it
+        ////photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
+        //Debug.LogError("my id: " + View.ViewID);
+        //Debug.LogError("id to be knockbacked " + photonViewID);
+        //if (View.ViewID == photonViewID)
+        //{
+        //    Debug.Log("I'm the one that needs to be knockbacked");        
+        //    //PhotonView photonView = PhotonView.Find(photonViewID);
+        //    _playerRb.AddForce(forceToAdd);
+        //    //View.RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
+        //}
+        //else
+        //{
+        //    Debug.Log("Someone else needs to be knockbacked");
+        //}
     }
 
     [PunRPC]
@@ -456,7 +473,7 @@ public class CGDPlayer : MonoBehaviour
     }
 
     [PunRPC]
-    void DisplayGameOverScreen()
+    public void DisplayGameOverScreen()
     {
         if (View.IsMine)
         {

@@ -33,7 +33,7 @@ public class CGDLevelGenerator : MonoBehaviour
     }
 
     [PunRPC]
-    void GenerateLevel(int tartarusPreset, int gaiaPreset, int elysiumPreset)
+    public void GenerateLevel(int tartarusPreset, int gaiaPreset, int elysiumPreset)
     {
         print("Tartarus preset: " + tartarusPreset);
         print("Gaia preset: " + gaiaPreset);
