@@ -39,6 +39,9 @@ public class CGDMedusaPlayer : CGDPlayer
             print("Medusa Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
+            SwitchAnimationStateTo(_medusaUltimateAttackState, true);
+            _ignoreStateChange = true;
+            Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
             RaycastHit hit;
             Vector3 forwardDirection = new Vector3(CameraTr.forward.x, CameraTr.forward.y, CameraTr.forward.z);
@@ -74,5 +77,10 @@ public class CGDMedusaPlayer : CGDPlayer
         {
             Crosshair.SetActive(false);
         }
+    }
+
+    void UltimateAttackComplete()
+    {
+        _ignoreStateChange = false;
     }
 }

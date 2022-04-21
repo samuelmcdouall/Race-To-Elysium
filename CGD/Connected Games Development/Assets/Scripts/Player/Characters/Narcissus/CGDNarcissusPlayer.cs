@@ -34,6 +34,9 @@ public class CGDNarcissusPlayer : CGDPlayer
             print("Narcissus Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
+            SwitchAnimationStateTo(_narcissusUltimateAttackState, true);
+            _ignoreStateChange = true;
+            Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
             PhotonNetwork.Instantiate(BlindFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDNarcissusUltimateAttack>().ActivateUltimateCollider();
@@ -48,5 +51,10 @@ public class CGDNarcissusPlayer : CGDPlayer
     {
         base.InitialPlayerSetup();
         ThisCharacter = Character.Narcissus;
+    }
+
+    void UltimateAttackComplete()
+    {
+        _ignoreStateChange = false;
     }
 }

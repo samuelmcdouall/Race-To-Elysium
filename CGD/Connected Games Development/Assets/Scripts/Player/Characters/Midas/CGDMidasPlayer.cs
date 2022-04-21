@@ -34,6 +34,9 @@ public class CGDMidasPlayer : CGDPlayer
             print("Midas Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
+            SwitchAnimationStateTo(_midasUltimateAttackState, true);
+            _ignoreStateChange = true;
+            Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
             PhotonNetwork.Instantiate(SlowFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
@@ -48,5 +51,10 @@ public class CGDMidasPlayer : CGDPlayer
     {
         base.InitialPlayerSetup();
         ThisCharacter = Character.Midas;
+    }
+
+    void UltimateAttackComplete()
+    {
+        _ignoreStateChange = false;
     }
 }

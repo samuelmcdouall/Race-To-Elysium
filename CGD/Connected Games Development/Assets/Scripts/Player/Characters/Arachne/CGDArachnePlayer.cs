@@ -36,6 +36,9 @@ public class CGDArachnePlayer : CGDPlayer
             print("Arachne Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
+            SwitchAnimationStateTo(_arachneUltimateAttackState, true);
+            _ignoreStateChange = true;
+            Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             GameObject projectile = PhotonNetwork.Instantiate(ArachneProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
             projectile.GetComponent<CGDArachneProjectile>().OwnPlayer = gameObject;
             Vector3 forwardDirection = new Vector3(CameraTr.forward.x, CameraTr.forward.y, CameraTr.forward.z);
@@ -53,5 +56,10 @@ public class CGDArachnePlayer : CGDPlayer
     {
         base.InitialPlayerSetup();
         ThisCharacter = Character.Arachne;
+    }
+
+    void UltimateAttackComplete() //todo move to main player script
+    {
+        _ignoreStateChange = false;
     }
 }
