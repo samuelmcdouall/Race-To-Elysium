@@ -67,6 +67,36 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public Outline PlayerOutline;
 
+    [Header("Animation")]
+    public Animator PlayerAnimator;
+    string _currentState;
+    string _idleState = "Character Idle";
+    string _moveForwardsState = "Move Forwards";
+    string _moveBackwardsState = "Move Backwards";
+    string _moveLeftState = "Move Left";
+    string _moveRightState = "Move Right";
+    string _jumpUpState = "Jump Up";
+    string _fallDownState = "Fall Down";
+    string _getHitState = "Get Hit";
+    [System.NonSerialized]
+    public string _basicAttackState = "Basic Attack";
+    [System.NonSerialized]
+    public string _arachneUltimateAttackState = "Arachne Ultimate Attack";
+    [System.NonSerialized]
+    public string _midasUltimateAttackState = "Midas Ultimate Attack";
+    [System.NonSerialized]
+    public string _medusaUltimateAttackState = "Medusa Ultimate Attack";
+    [System.NonSerialized]
+    public string _narcissusUltimateAttackState = "Narcissus Ultimate Attack";
+    [System.NonSerialized]
+    public bool _ignoreStateChange = false;
+    [SerializeField]
+    float _getHitAnimationDelay;
+    public float UltAttackAnimationDelay;
+
+    string _moveForwards = "moveForwards";
+    string _moveBackwards = "moveBackwards";
+
     [Header("Camera")]
     public GameObject MainCamera;
     [System.NonSerialized]
@@ -76,6 +106,42 @@ public class CGDPlayer : MonoBehaviour
     //{
     //    InitialPlayerSetup();
     //}
+
+    [PunRPC]
+    public void SwitchAnimationStateTo(string newState, bool sendToOthers) //todo move down
+    {
+        if (newState != _currentState)
+        {
+            //PlayerAnimator.Play(newState); // can probably get rid of todo
+            if (_currentState == _fallDownState)
+            {
+                //if (newState == _idleState)   //todo not sure here
+                //{
+                //    print("fall to idle");
+                //    PlayerAnimator.CrossFade(newState, 0.01f);
+                //}
+                //else
+                //{
+                //    print("fall to moving");
+                //    PlayerAnimator.CrossFade(newState, 0.5f);
+                //}
+            }
+            if (_currentState == _idleState)
+            {
+                PlayerAnimator.CrossFade(newState, 0.02f);
+            }
+            else
+            {
+                PlayerAnimator.CrossFade(newState, 0.1f);
+            }
+            _currentState = newState;
+            print("New state: " + _currentState);
+            if (sendToOthers)
+            {
+                View.RPC("SwitchAnimationStateTo", RpcTarget.Others, newState, false);
+            }
+        }
+    }
 
     void FixedUpdate()
     {
@@ -98,6 +164,10 @@ public class CGDPlayer : MonoBehaviour
                 DetectJumpInput();
             }
             TintSkyboxBasedOnVerticalPosition();
+            if (Input.GetKeyDown(KeyCode.F)) //todo testing only
+            {
+                PlayHitAnimation();
+            }
         }
     }
 
@@ -106,7 +176,7 @@ public class CGDPlayer : MonoBehaviour
         _playerRb = GetComponent<Rigidbody>();
         View = GetComponent<PhotonView>();
         Cursor.visible = false;
-        CameraTr = Camera.main.transform;
+        CameraTr = MainCamera.transform;
         _ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         _jumpModifier = 1.0f;
@@ -119,6 +189,7 @@ public class CGDPlayer : MonoBehaviour
         PlayerOutline.enabled = false;
         CheckpointPosition = new Vector3(0.0f, 0.0f, 0.0f);
         _checkpointOffset = 2.0f;
+        _currentState = _idleState;
 
         if (!View.IsMine)
         {
@@ -189,43 +260,99 @@ public class CGDPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveForwardsState, true);
+            }
             DetermineYIndependentVelocity(CameraTr.forward - CameraTr.right);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveForwardsState, true);
+            }
             DetermineYIndependentVelocity(CameraTr.forward + CameraTr.right);
         }
-        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
-            DetermineYIndependentVelocity(CameraTr.forward - CameraTr.right);
+            //print("W + S");
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_idleState, true);
+            }
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveBackwardsState, true);
+            }
             DetermineYIndependentVelocity(-CameraTr.forward + CameraTr.right);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveBackwardsState, true);
+            }
             DetermineYIndependentVelocity(-CameraTr.forward - CameraTr.right);
+        }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_idleState, true);
+            }
         }
         else if (Input.GetKey(KeyCode.W))
         {
+            //print("W");
+            PhotonAnimatorView f;
+            //PlayerAnimator.SetBool(_moveForwards, true);
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                //print("play forwards state");
+                SwitchAnimationStateTo(_moveForwardsState, true);
+            }
             DetermineYIndependentVelocity(CameraTr.forward);
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            //PlayerAnimator.SetBool(_moveBackwards, true);
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveBackwardsState, true);
+            }
             DetermineYIndependentVelocity(-CameraTr.forward);
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_moveRightState, true);
+            }
             DetermineYIndependentVelocity(CameraTr.right);
         }
         else if (Input.GetKey(KeyCode.A))
         {
+            if (GroundCheck.IsGrounded && !_ignoreStateChange) //todo maybe move ignroe statechagne to actual switchanitamtion function
+            {
+                SwitchAnimationStateTo(_moveLeftState, true);
+            }
             DetermineYIndependentVelocity(-CameraTr.right);
         }
         else
         {
-            //player_ani.SetBool(running_animation, false); todo where animation set
+            //PlayerAnimator.SetBool(_moveForwards, false);
+            //PlayerAnimator.SetBool(_moveBackwards, false);
+            //print("standing still");
+            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            {
+                SwitchAnimationStateTo(_idleState, true);
+            }
+            //_playerRb.velocity = new Vector3(0.0f, _playerRb.velocity.y, 0.0f);
+            //Pl.SetBool(running_animation, false); todo where animation set
         }
     }
 
@@ -250,11 +377,18 @@ public class CGDPlayer : MonoBehaviour
 
     void HandlePlayerFallingDown()
     {
+        SwitchAnimationStateTo(_fallDownState, true);
+        if (_ignoreStateChange == true)
+        {
+            _ignoreStateChange = false;
+        }
         //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo keep this in as will need to do animation here as well
     }
 
     void JumpUp()
     {
+        SwitchAnimationStateTo(_jumpUpState, true);
+        _ignoreStateChange = true;
         _playerRb.AddForce(0.0f, _playerJumpForce * _jumpModifier, 0.0f, ForceMode.Impulse);
     }
 
@@ -334,6 +468,7 @@ public class CGDPlayer : MonoBehaviour
             if (player.GetComponent<CGDPlayer>().View.IsMine && player.GetComponent<CGDPlayer>().View.ViewID == photonViewID)
             {
                 player.GetComponent<Rigidbody>().AddForce(forceToAdd);
+                player.GetComponent<CGDPlayer>().PlayHitAnimation();
             }
         }
         ////PhotonView photonView = PhotonView.Find(photonViewID); //todo get rid of once know this is the way to do it
@@ -351,6 +486,17 @@ public class CGDPlayer : MonoBehaviour
         //{
         //    Debug.Log("Someone else needs to be knockbacked");
         //}
+    }
+
+    public void PlayHitAnimation()
+    {
+        SwitchAnimationStateTo(_getHitState, true);
+        _ignoreStateChange = true;
+        Invoke("GetHitComplete", _getHitAnimationDelay);
+    }
+    public void GetHitComplete()
+    {
+        _ignoreStateChange = false;
     }
 
     [PunRPC]
