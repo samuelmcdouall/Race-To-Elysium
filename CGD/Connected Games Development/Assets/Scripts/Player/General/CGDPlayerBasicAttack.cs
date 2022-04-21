@@ -19,6 +19,12 @@ public class CGDPlayerBasicAttack : MonoBehaviour
     bool _readyToRepel;
     Collider _repelCollider;
 
+
+    [SerializeField]
+    float _attackAnimationDelay;
+
+
+
     void Start()
     {
         _repelCollider = GetComponent<Collider>();
@@ -40,8 +46,9 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) 
             && _readyToRepel 
-            && OwnPlayer.GetComponent<CGDPlayer>()._enabledControls 
-            && !CGDGameOverScreenManager.GameOver 
+            && OwnPlayer.GetComponent<CGDPlayer>()._enabledControls
+            && OwnPlayer.GetComponent<CGDPlayer>().GroundCheck.IsGrounded
+            && !CGDGameOverScreenManager.GameOver
             && !CGDPauseManager.Paused
         )
         {
@@ -90,8 +97,20 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(AttackSFX2, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
         }
+        if (OwnPlayer.GetComponent<CGDPlayer>().GroundCheck.IsGrounded && !OwnPlayer.GetComponent<CGDPlayer>()._ignoreStateChange)
+        {
+            OwnPlayer.GetComponent<CGDPlayer>().SwitchAnimationStateTo(OwnPlayer.GetComponent<CGDPlayer>()._basicAttackState, true);
+            OwnPlayer.GetComponent<CGDPlayer>()._ignoreStateChange = true;
+            Invoke("AttackComplete", _attackAnimationDelay);
+
+        }
         _repelCollider.enabled = true;
         _readyToRepel = false;
+    }
+
+    void AttackComplete()
+    {
+        OwnPlayer.GetComponent<CGDPlayer>()._ignoreStateChange = false;
     }
 
     void OnTriggerEnter(Collider collider)
