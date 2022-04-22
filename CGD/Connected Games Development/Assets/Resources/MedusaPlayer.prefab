@@ -48,10 +48,6 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
-  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
-  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
-  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
-  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
   _attackAnimationDelay: 0.8
 --- !u!65 &2236836925217184053
 BoxCollider:
@@ -892,6 +888,12 @@ MonoBehaviour:
   MedusaUltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
   MidasUltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   NarcissusUltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
+  ArachneUltSFX: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   PlayerAnimator: {fileID: 6043288088529701782}
   _getHitAnimationDelay: 0.5
   UltAttackAnimationDelay: 0.5
@@ -989,7 +991,6 @@ MonoBehaviour:
   ProjectileSpawnPoint: {fileID: 2460181865995885871}
   AreaDenialProjectile: {fileID: 7210207567869121406, guid: d80efe8a3766bd34f81b764cf5b59826, type: 3}
   _areaDenialProjectileSpeed: 5
-  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   _iconFlashRate: 0.5
   SpeedBoostIcon: {fileID: 1877287682620588930}
   _speedBoostPerModifier: 50

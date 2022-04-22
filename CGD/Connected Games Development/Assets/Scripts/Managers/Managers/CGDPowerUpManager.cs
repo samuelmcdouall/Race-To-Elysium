@@ -9,12 +9,10 @@ public class CGDPowerUpManager : MonoBehaviour
     public GameObject AreaDenialProjectile;
     [SerializeField]
     float _areaDenialProjectileSpeed;
-    public AudioClip AreaDenialProjectileLaunchSFX;
     [SerializeField]
     float _iconFlashRate;
     [System.NonSerialized]
     public PowerUpHeld _powerUpHeld;
-    CGDPlayer _playerScript;
     PhotonView _view;
 
     [Header("Speed Boost")]
@@ -63,7 +61,6 @@ public class CGDPowerUpManager : MonoBehaviour
     {
         _view = GetComponent<PhotonView>();
         _powerUpHeld = PowerUpHeld.None;
-        _playerScript = GetComponent<CGDPlayer>();
     }
 
     void Update()
@@ -107,7 +104,7 @@ public class CGDPowerUpManager : MonoBehaviour
         _powerUpHeld = PowerUpHeld.None;
         AudioSource.PlayClipAtPoint(SpeedBoostSFX, transform.position, CGDGameSettings.SoundVolume);
         StartCoroutine(DisplayFlashingIcon(SpeedBoostIcon, duration));
-        _playerScript.ApplySpeedModifierForSeconds(-modifier, duration);
+        GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(-modifier, duration);
     }
 
     void ActivateJumpBoost(float modifier, float duration)
@@ -115,7 +112,7 @@ public class CGDPowerUpManager : MonoBehaviour
         _powerUpHeld = PowerUpHeld.None;
         AudioSource.PlayClipAtPoint(JumpBoostSFX, transform.position, CGDGameSettings.SoundVolume);
         StartCoroutine(DisplayFlashingIcon(JumpBoostIcon, duration));
-        _playerScript.ApplyJumpModifierForSeconds(-modifier, duration);
+        GetComponent<CGDPlayer>().ApplyJumpModifierForSeconds(-modifier, duration);
     }
 
     void ActivateSpeedAndJumpBoost(float speedModifier, float jumpModifier, float duration)
@@ -123,8 +120,8 @@ public class CGDPowerUpManager : MonoBehaviour
         _powerUpHeld = PowerUpHeld.None;
         AudioSource.PlayClipAtPoint(SpeedJumpBoostSFX, transform.position, CGDGameSettings.SoundVolume);
         StartCoroutine(DisplayFlashingIcon(SpeedJumpBoostIcon, duration));
-        _playerScript.ApplySpeedModifierForSeconds(-speedModifier, duration);
-        _playerScript.ApplyJumpModifierForSeconds(-jumpModifier, duration);
+        GetComponent<CGDPlayer>().ApplySpeedModifierForSeconds(-speedModifier, duration);
+        GetComponent<CGDPlayer>().ApplyJumpModifierForSeconds(-jumpModifier, duration);
     }
 
     void FireAreaDenialProjectile(PowerUpHeld areaDenialType)
@@ -133,7 +130,7 @@ public class CGDPowerUpManager : MonoBehaviour
         GetComponent<CGDPlayer>().SwitchAnimationStateTo(GetComponent<CGDPlayer>()._deployPowerUpState, true);
         GetComponent<CGDPlayer>()._ignoreStateChange = true;
         Invoke("DeployComplete", _powerUpAnimationDelay);
-        AudioSource.PlayClipAtPoint(AreaDenialProjectileLaunchSFX, transform.position, CGDGameSettings.SoundVolume);
+        GetComponent<CGDPlayer>().PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "AreaDenialProjectileLaunchSFX", true);
         GameObject projectile = PhotonNetwork.Instantiate(AreaDenialProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
         projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().OwnPlayer = gameObject;
         
@@ -160,7 +157,7 @@ public class CGDPowerUpManager : MonoBehaviour
                 break;
         }
 
-        Vector3 forwardDirection = new Vector3(_playerScript.CameraTr.forward.x, _playerScript.CameraTr.forward.y, _playerScript.CameraTr.forward.z);
+        Vector3 forwardDirection = new Vector3(GetComponent<CGDPlayer>().CameraTr.forward.x, GetComponent<CGDPlayer>().CameraTr.forward.y, GetComponent<CGDPlayer>().CameraTr.forward.z);
         forwardDirection = forwardDirection.normalized;
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(forwardDirection.x, forwardDirection.y, forwardDirection.z) * _areaDenialProjectileSpeed;
     }

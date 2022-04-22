@@ -12,18 +12,11 @@ public class CGDPlayerBasicAttack : MonoBehaviour
     [SerializeField]
     float _repelCooldown;
     float _repelCooldownTimer;
-    public AudioClip AttackSFX1;
-    public AudioClip AttackSFX2;
-    public AudioClip AttackHitPlayer;
-    public AudioClip AttackHitGate;
     bool _readyToRepel;
     Collider _repelCollider;
 
-
     [SerializeField]
     float _attackAnimationDelay;
-
-
 
     void Start()
     {
@@ -91,11 +84,19 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         int randSoundEffect = Random.Range(0, 2);
         if (randSoundEffect == 0)
         {
-            AudioSource.PlayClipAtPoint(AttackSFX1, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
+            OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x, 
+                                                                         OwnPlayer.transform.position.y, 
+                                                                         OwnPlayer.transform.position.z,
+                                                                         "AttackSFX1", 
+                                                                         true);
         }
         else
         {
-            AudioSource.PlayClipAtPoint(AttackSFX2, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
+            OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x,
+                                                             OwnPlayer.transform.position.y,
+                                                             OwnPlayer.transform.position.z,
+                                                             "AttackSFX2",
+                                                             true);
         }
         if (OwnPlayer.GetComponent<CGDPlayer>().GroundCheck.IsGrounded && !OwnPlayer.GetComponent<CGDPlayer>()._ignoreStateChange)
         {
@@ -118,14 +119,22 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
             print("Hit other player");
-            AudioSource.PlayClipAtPoint(AttackHitPlayer, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
+            OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x,
+                                                                         OwnPlayer.transform.position.y,
+                                                                         OwnPlayer.transform.position.z,
+                                                                         "AttackHitPlayer",
+                                                                         true);
             Vector3 forceToAdd = DetermineForceVectorToApply(collider);
             ApplyForceToPlayer(collider, forceToAdd);
         }
         else if (collider.tag == "Gate")
         {
             print("Hit gate");
-            AudioSource.PlayClipAtPoint(AttackHitGate, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
+            OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x,
+                                                                         OwnPlayer.transform.position.y,
+                                                                         OwnPlayer.transform.position.z,
+                                                                         "AttackHitGate",
+                                                                         true);
             collider.gameObject.GetComponent<CGDGate>().ReduceHealthOfGateForAllPlayers();
         }
     }

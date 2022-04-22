@@ -34,7 +34,7 @@ public class CGDMedusaPlayer : CGDPlayer
 
     public override void UltimateAttack()
     {
-        if (UltimateCharge == 0.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
+        if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             print("Medusa Ultimate Attack!");
             UltimateCharge = 0.0f;

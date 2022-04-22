@@ -68,6 +68,12 @@ public class CGDPlayer : MonoBehaviour
     public AudioClip MedusaUltSFX;
     public AudioClip MidasUltSFX;
     public AudioClip NarcissusUltSFX;
+    public AudioClip ArachneUltSFX;
+    public AudioClip AttackSFX1;
+    public AudioClip AttackSFX2;
+    public AudioClip AttackHitPlayer;
+    public AudioClip AttackHitGate;
+    public AudioClip AreaDenialProjectileLaunchSFX;
 
     [Header("Animation")]
     public Animator PlayerAnimator;
@@ -607,13 +613,6 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    
-    public void PlaySoundClipForEveryone()
-    {
-        //AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
-        //View.RPC
-    }
-
     [PunRPC]
     public void PlaySoundClipForEveryone(float xPos, float yPos, float zPos, string soundClipName, bool sendToOthers)
     {
@@ -631,8 +630,26 @@ public class CGDPlayer : MonoBehaviour
             case "NarcissusUltSFX":
                 chosenAudioClip = NarcissusUltSFX;
                 break;
+            case "ArachneUltSFX":
+                chosenAudioClip = ArachneUltSFX;
+                break;
             case "JumpSFX":
                 chosenAudioClip = JumpSFX;
+                break;
+            case "AttackSFX1":
+                chosenAudioClip = AttackSFX1;
+                break;
+            case "AttackSFX2":
+                chosenAudioClip = AttackSFX2;
+                break;
+            case "AttackHitPlayer":
+                chosenAudioClip = AttackHitPlayer;
+                break;
+            case "AttackHitGate":
+                chosenAudioClip = AttackHitGate;
+                break;
+            case "AreaDenialProjectileLaunchSFX":
+                chosenAudioClip = AreaDenialProjectileLaunchSFX;
                 break;
             default:
                 chosenAudioClip = null;

@@ -39,6 +39,7 @@ public class CGDArachnePlayer : CGDPlayer
             SwitchAnimationStateTo(_arachneUltimateAttackState, true);
             _ignoreStateChange = true;
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
+            PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "ArachneUltSFX", true);
             GameObject projectile = PhotonNetwork.Instantiate(ArachneProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
             projectile.GetComponent<CGDArachneProjectile>().OwnPlayer = gameObject;
             Vector3 forwardDirection = new Vector3(CameraTr.forward.x, CameraTr.forward.y, CameraTr.forward.z);

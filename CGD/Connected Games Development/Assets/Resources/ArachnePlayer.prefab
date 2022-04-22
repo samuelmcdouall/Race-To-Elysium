@@ -890,10 +890,6 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
-  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
-  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
-  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
-  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
   _attackAnimationDelay: 0.8
 --- !u!65 &6133945440047803787
 BoxCollider:
@@ -1551,6 +1547,12 @@ MonoBehaviour:
   MedusaUltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
   MidasUltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   NarcissusUltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
+  ArachneUltSFX: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+  AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   PlayerAnimator: {fileID: 2380217118654647509}
   _getHitAnimationDelay: 0.5
   UltAttackAnimationDelay: 0.5
@@ -1573,7 +1575,6 @@ MonoBehaviour:
   ProjectileSpawnPoint: {fileID: 3074654814154593137}
   AreaDenialProjectile: {fileID: 7210207567869121406, guid: d80efe8a3766bd34f81b764cf5b59826, type: 3}
   _areaDenialProjectileSpeed: 5
-  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   _iconFlashRate: 0.5
   SpeedBoostIcon: {fileID: 8890079744621520021}
   _speedBoostPerModifier: 50
@@ -1605,7 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae99fdd6e661a0246a39f420c3da177b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 20
+  _interval: 1
   GenerateSFX: {fileID: 8300000, guid: f9ce0bd536f6f4244b7151c5ba3c341e, type: 3}
 --- !u!114 &4818583080481268051
 MonoBehaviour:
