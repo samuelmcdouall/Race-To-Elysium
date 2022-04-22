@@ -57,6 +57,7 @@ MonoBehaviour:
   - SendKnockbackCommandToOtherPlayers
   - SearchOtherPlayersToKnockback
   - SwitchAnimationStateTo
+  - PlaySoundClipForEveryone
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

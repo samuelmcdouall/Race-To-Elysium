@@ -37,7 +37,7 @@ public class CGDNarcissusPlayer : CGDPlayer
             SwitchAnimationStateTo(_narcissusUltimateAttackState, true);
             _ignoreStateChange = true;
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
-            AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
+            PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "NarcissusUltSFX", true);
             PhotonNetwork.Instantiate(BlindFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDNarcissusUltimateAttack>().ActivateUltimateCollider();
         }

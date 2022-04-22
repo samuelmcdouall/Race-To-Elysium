@@ -59,13 +59,15 @@ public class CGDPlayer : MonoBehaviour
 
     [Header("FX/SFX")]
     public AudioClip JumpSFX;
-    public AudioClip UltSFX;
     public GameObject LavaBurnFX;
     public GameObject PoisonBurnFX;
     public AudioClip NewPlayerSFX;
     public GameObject NewPlayerFX;
     [System.NonSerialized]
     public Outline PlayerOutline;
+    public AudioClip MedusaUltSFX;
+    public AudioClip MidasUltSFX;
+    public AudioClip NarcissusUltSFX;
 
     [Header("Animation")]
     public Animator PlayerAnimator;
@@ -96,54 +98,10 @@ public class CGDPlayer : MonoBehaviour
     float _getHitAnimationDelay;
     public float UltAttackAnimationDelay;
 
-    string _moveForwards = "moveForwards";
-    string _moveBackwards = "moveBackwards";
-
     [Header("Camera")]
     public GameObject MainCamera;
     [System.NonSerialized]
     public Transform CameraTr;
-
-    //void Start() // todo this is getting called twice because you have a start and an awake change the awake to override or just don't bother with start here
-    //{
-    //    InitialPlayerSetup();
-    //}
-
-    [PunRPC]
-    public void SwitchAnimationStateTo(string newState, bool sendToOthers) //todo move down
-    {
-        if (newState != _currentState)
-        {
-            //PlayerAnimator.Play(newState); // can probably get rid of todo
-            if (_currentState == _fallDownState)
-            {
-                //if (newState == _idleState)   //todo not sure here
-                //{
-                //    print("fall to idle");
-                //    PlayerAnimator.CrossFade(newState, 0.01f);
-                //}
-                //else
-                //{
-                //    print("fall to moving");
-                //    PlayerAnimator.CrossFade(newState, 0.5f);
-                //}
-            }
-            if (_currentState == _idleState)
-            {
-                PlayerAnimator.CrossFade(newState, 0.02f);
-            }
-            else
-            {
-                PlayerAnimator.CrossFade(newState, 0.1f);
-            }
-            _currentState = newState;
-            print("New state: " + _currentState);
-            if (sendToOthers)
-            {
-                View.RPC("SwitchAnimationStateTo", RpcTarget.Others, newState, false);
-            }
-        }
-    }
 
     void FixedUpdate()
     {
@@ -234,7 +192,7 @@ public class CGDPlayer : MonoBehaviour
         if (_shouldJumpUp)
         {
             JumpUp();
-            AudioSource.PlayClipAtPoint(JumpSFX, transform.position, CGDGameSettings.SoundVolume);
+            PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "JumpSFX", true);
             _shouldJumpUp = false;
             _ableToJumpOffGround = false;
         }
@@ -262,7 +220,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
@@ -270,7 +228,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
@@ -278,15 +236,14 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
-            //print("W + S");
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -294,7 +251,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -302,27 +259,22 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            //print("W");
-            PhotonAnimatorView f;
-            //PlayerAnimator.SetBool(_moveForwards, true);
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
-                //print("play forwards state");
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
             DetermineYIndependentVelocity(CameraTr.forward);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            //PlayerAnimator.SetBool(_moveBackwards, true);
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -330,7 +282,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveRightState, true);
             }
@@ -338,7 +290,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded && !_ignoreStateChange) //todo maybe move ignroe statechagne to actual switchanitamtion function
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_moveLeftState, true);
             }
@@ -346,15 +298,10 @@ public class CGDPlayer : MonoBehaviour
         }
         else
         {
-            //PlayerAnimator.SetBool(_moveForwards, false);
-            //PlayerAnimator.SetBool(_moveBackwards, false);
-            //print("standing still");
-            if (GroundCheck.IsGrounded && !_ignoreStateChange)
+            if (GroundCheck.IsGrounded)
             {
                 SwitchAnimationStateTo(_idleState, true);
             }
-            //_playerRb.velocity = new Vector3(0.0f, _playerRb.velocity.y, 0.0f);
-            //Pl.SetBool(running_animation, false); todo where animation set
         }
     }
 
@@ -384,7 +331,7 @@ public class CGDPlayer : MonoBehaviour
         {
             _ignoreStateChange = false;
         }
-        //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo keep this in as will need to do animation here as well
+        //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo remove this if not needed in the end, probably won't
     }
 
     void JumpUp()
@@ -456,6 +403,38 @@ public class CGDPlayer : MonoBehaviour
     }
 
     // RPC functions
+    [PunRPC]
+    public void SwitchAnimationStateTo(string newState, bool sendToOthers)
+    {
+        if (newState != _currentState && !_ignoreStateChange)
+        {
+            if (_currentState == _fallDownState)
+            {
+                _ignoreStateChange = true;
+                Invoke("FallComplete", 0.1f);   // Delay to make falling to idle state not happen twice
+            }
+            if (_currentState == _idleState)
+            {
+                PlayerAnimator.CrossFade(newState, 0.02f);
+            }
+            else
+            {
+                PlayerAnimator.CrossFade(newState, 0.1f);
+            }
+            _currentState = newState;
+            print("New state: " + _currentState);
+            if (sendToOthers)
+            {
+                View.RPC("SwitchAnimationStateTo", RpcTarget.Others, newState, false);
+            }
+        }
+    }
+
+    public void FallComplete()
+    {
+        _ignoreStateChange = false;
+    }
+
     public void SendKnockbackCommandToOtherPlayers(Vector3 forceToAdd, int photonViewID)
     {
         View.RPC("SearchOtherPlayersToKnockback", RpcTarget.Others, forceToAdd, photonViewID);
@@ -473,21 +452,6 @@ public class CGDPlayer : MonoBehaviour
                 player.GetComponent<CGDPlayer>().PlayHitAnimation();
             }
         }
-        ////PhotonView photonView = PhotonView.Find(photonViewID); //todo get rid of once know this is the way to do it
-        ////photonView.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd);
-        //Debug.LogError("my id: " + View.ViewID);
-        //Debug.LogError("id to be knockbacked " + photonViewID);
-        //if (View.ViewID == photonViewID)
-        //{
-        //    Debug.Log("I'm the one that needs to be knockbacked");        
-        //    //PhotonView photonView = PhotonView.Find(photonViewID);
-        //    _playerRb.AddForce(forceToAdd);
-        //    //View.RPC("KnockbackOtherPlayer", RpcTarget.OthersBuffered, forceToAdd, photonViewID);
-        //}
-        //else
-        //{
-        //    Debug.Log("Someone else needs to be knockbacked");
-        //}
     }
 
     public void PlayHitAnimation()
@@ -640,6 +604,50 @@ public class CGDPlayer : MonoBehaviour
                 StartCoroutine(UpdateStats(CGDGameSettings.Username, false, 1));
             }
             CGDGameOverScreenManager.DisplayLossScreen();
+        }
+    }
+
+    
+    public void PlaySoundClipForEveryone()
+    {
+        //AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
+        //View.RPC
+    }
+
+    [PunRPC]
+    public void PlaySoundClipForEveryone(float xPos, float yPos, float zPos, string soundClipName, bool sendToOthers)
+    {
+        Vector3 soundPos = new Vector3(xPos, yPos, zPos);
+
+        AudioClip chosenAudioClip;
+        switch (soundClipName)
+        {
+            case "MedusaUltSFX":
+                chosenAudioClip = MedusaUltSFX;
+                break;
+            case "MidasUltSFX":
+                chosenAudioClip = MidasUltSFX;
+                break;
+            case "NarcissusUltSFX":
+                chosenAudioClip = NarcissusUltSFX;
+                break;
+            case "JumpSFX":
+                chosenAudioClip = JumpSFX;
+                break;
+            default:
+                chosenAudioClip = null;
+                print("error selecting clip");
+                break;
+        }
+
+        if (chosenAudioClip != null)
+        {
+            AudioSource.PlayClipAtPoint(chosenAudioClip, soundPos, CGDGameSettings.SoundVolume);
+        }
+
+        if (sendToOthers)
+        {
+            View.RPC("PlaySoundClipForEveryone", RpcTarget.Others, xPos, yPos, zPos, soundClipName, false);
         }
     }
 

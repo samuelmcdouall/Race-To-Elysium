@@ -91,11 +91,11 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         int randSoundEffect = Random.Range(0, 2);
         if (randSoundEffect == 0)
         {
-            AudioSource.PlayClipAtPoint(AttackSFX1, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            AudioSource.PlayClipAtPoint(AttackSFX1, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
         }
         else
         {
-            AudioSource.PlayClipAtPoint(AttackSFX2, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            AudioSource.PlayClipAtPoint(AttackSFX2, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
         }
         if (OwnPlayer.GetComponent<CGDPlayer>().GroundCheck.IsGrounded && !OwnPlayer.GetComponent<CGDPlayer>()._ignoreStateChange)
         {
@@ -118,14 +118,14 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
             print("Hit other player");
-            AudioSource.PlayClipAtPoint(AttackHitPlayer, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            AudioSource.PlayClipAtPoint(AttackHitPlayer, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
             Vector3 forceToAdd = DetermineForceVectorToApply(collider);
             ApplyForceToPlayer(collider, forceToAdd);
         }
         else if (collider.tag == "Gate")
         {
             print("Hit gate");
-            AudioSource.PlayClipAtPoint(AttackHitGate, OwnPlayer.transform.position, CGDGameSettings.SoundVolume);
+            AudioSource.PlayClipAtPoint(AttackHitGate, OwnPlayer.transform.position, CGDGameSettings.SoundVolume); //todo soundmul
             collider.gameObject.GetComponent<CGDGate>().ReduceHealthOfGateForAllPlayers();
         }
     }

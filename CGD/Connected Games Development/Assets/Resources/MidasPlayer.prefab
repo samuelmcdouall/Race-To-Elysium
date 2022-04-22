@@ -1090,11 +1090,13 @@ MonoBehaviour:
   BlindScreen: {fileID: 5150829804383548863}
   NameText: {fileID: 18397028877105103}
   JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
-  UltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   LavaBurnFX: {fileID: 8862628520877092388}
   PoisonBurnFX: {fileID: 7336297156798832681}
   NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
+  MedusaUltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
+  MidasUltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+  NarcissusUltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
   PlayerAnimator: {fileID: 1499184055287088563}
   _getHitAnimationDelay: 0.5
   UltAttackAnimationDelay: 0.5

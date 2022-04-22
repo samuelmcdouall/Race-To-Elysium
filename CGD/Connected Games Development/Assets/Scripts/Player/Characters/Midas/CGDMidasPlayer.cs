@@ -37,7 +37,7 @@ public class CGDMidasPlayer : CGDPlayer
             SwitchAnimationStateTo(_midasUltimateAttackState, true);
             _ignoreStateChange = true;
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
-            AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
+            PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "MidasUltSFX", true);
             PhotonNetwork.Instantiate(SlowFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
         }

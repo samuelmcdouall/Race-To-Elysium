@@ -34,7 +34,7 @@ public class CGDMedusaPlayer : CGDPlayer
 
     public override void UltimateAttack()
     {
-        if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
+        if (UltimateCharge == 0.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
             print("Medusa Ultimate Attack!");
             UltimateCharge = 0.0f;
@@ -42,7 +42,7 @@ public class CGDMedusaPlayer : CGDPlayer
             SwitchAnimationStateTo(_medusaUltimateAttackState, true);
             _ignoreStateChange = true;
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
-            AudioSource.PlayClipAtPoint(UltSFX, transform.position, CGDGameSettings.SoundVolume);
+            PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "MedusaUltSFX", true);
             RaycastHit hit;
             Vector3 forwardDirection = new Vector3(CameraTr.forward.x, CameraTr.forward.y, CameraTr.forward.z);
             forwardDirection = forwardDirection.normalized;
@@ -52,7 +52,6 @@ public class CGDMedusaPlayer : CGDPlayer
                 if (hit.transform.gameObject.tag == "Player")
                 {
                     print("I just hit a player, freeze them!");
-                    AudioSource.PlayClipAtPoint(HitFreezeSFX, transform.position, CGDGameSettings.SoundVolume);
                     int photonViewID = hit.transform.gameObject.GetComponent<PhotonView>().ViewID;
                     PhotonNetwork.Instantiate(FreezeFX.name, hit.transform.position, Quaternion.identity);
                     hit.transform.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(_freezeDuration, photonViewID, true);

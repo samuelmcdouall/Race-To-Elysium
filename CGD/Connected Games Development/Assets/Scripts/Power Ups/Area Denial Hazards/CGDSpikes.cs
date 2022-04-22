@@ -24,7 +24,7 @@ public class CGDSpikes : MonoBehaviour
         if (other.gameObject.tag == "Player" && (other.gameObject != OwnPlayer || _selfImmuneDelay <= 0.0f))
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_ultPerDecr);
-            AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
+            AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume); //todo soundmul maybe
             Instantiate(DestroyFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
