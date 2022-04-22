@@ -55,6 +55,10 @@ public class CGDPowerUpManager : MonoBehaviour
     [Header("Lava Pool")]
     public GameObject LavaPoolIcon;
 
+    [Header("Animation")]
+    [SerializeField]
+    float _powerUpAnimationDelay;
+
     void Start()
     {
         _view = GetComponent<PhotonView>();
@@ -126,6 +130,9 @@ public class CGDPowerUpManager : MonoBehaviour
     void FireAreaDenialProjectile(PowerUpHeld areaDenialType)
     {
         _powerUpHeld = PowerUpHeld.None;
+        GetComponent<CGDPlayer>().SwitchAnimationStateTo(GetComponent<CGDPlayer>()._deployPowerUpState, true);
+        GetComponent<CGDPlayer>()._ignoreStateChange = true;
+        Invoke("DeployComplete", _powerUpAnimationDelay);
         AudioSource.PlayClipAtPoint(AreaDenialProjectileLaunchSFX, transform.position, CGDGameSettings.SoundVolume);
         GameObject projectile = PhotonNetwork.Instantiate(AreaDenialProjectile.name, ProjectileSpawnPoint.position, Quaternion.identity);
         projectile.GetComponent<CGDPowerUpAreaDenialProjectile>().OwnPlayer = gameObject;
@@ -156,6 +163,10 @@ public class CGDPowerUpManager : MonoBehaviour
         Vector3 forwardDirection = new Vector3(_playerScript.CameraTr.forward.x, _playerScript.CameraTr.forward.y, _playerScript.CameraTr.forward.z);
         forwardDirection = forwardDirection.normalized;
         projectile.GetComponent<Rigidbody>().velocity = new Vector3(forwardDirection.x, forwardDirection.y, forwardDirection.z) * _areaDenialProjectileSpeed;
+    }
+    void DeployComplete()
+    {
+        GetComponent<CGDPlayer>()._ignoreStateChange = false;
     }
 
     public void DisplayPowerUpIcon(PowerUpHeld powerUp)

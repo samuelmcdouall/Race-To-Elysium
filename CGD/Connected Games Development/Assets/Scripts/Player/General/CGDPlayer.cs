@@ -89,6 +89,8 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public string _narcissusUltimateAttackState = "Narcissus Ultimate Attack";
     [System.NonSerialized]
+    public string _deployPowerUpState = "Deploy Power Up";
+    [System.NonSerialized]
     public bool _ignoreStateChange = false;
     [SerializeField]
     float _getHitAnimationDelay;

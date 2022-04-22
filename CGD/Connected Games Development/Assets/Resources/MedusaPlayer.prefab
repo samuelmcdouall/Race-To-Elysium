@@ -1006,6 +1006,7 @@ MonoBehaviour:
   SpikesIcon: {fileID: 6891274450498330741}
   PoisonCloudIcon: {fileID: 6913285073789248871}
   LavaPoolIcon: {fileID: 553932803479291899}
+  _powerUpAnimationDelay: 0.5
 --- !u!114 &1025557838821007145
 MonoBehaviour:
   m_ObjectHideFlags: 0
