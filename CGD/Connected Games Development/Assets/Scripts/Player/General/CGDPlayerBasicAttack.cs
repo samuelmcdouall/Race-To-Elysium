@@ -154,7 +154,7 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         //Debug.LogError("This is my targets view id: " + collider.gameObject.GetComponent<PhotonView>().ViewID);
         //Debug.LogError("This is my targets view id (other method): " + collider.gameObject.GetComponent<CGDPlayer>().View.ViewID);
         OwnPlayer.GetComponent<CGDPlayer>().SendKnockbackCommandToOtherPlayers(forceToAdd, photonViewID);
-        OwnPlayer.GetComponent<CGDPlayer>().ModifyUltimateCharge(20.0f);
+        OwnPlayer.GetComponent<CGDPlayer>().ModifyUltimateCharge(20.0f); //todo shouldn't hardcode this
         //collider.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(0.8f, photonViewID, true); //todo I don't think use this
     }
 }

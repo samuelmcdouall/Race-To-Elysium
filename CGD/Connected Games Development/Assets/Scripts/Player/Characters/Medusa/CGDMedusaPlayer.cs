@@ -53,7 +53,8 @@ public class CGDMedusaPlayer : CGDPlayer
                 {
                     print("I just hit a player, freeze them!");
                     int photonViewID = hit.transform.gameObject.GetComponent<PhotonView>().ViewID;
-                    PhotonNetwork.Instantiate(FreezeFX.name, hit.transform.position, Quaternion.identity);
+                    PlayFXForEveryone(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z, "MedusaUltFX", true);
+                    //PhotonNetwork.Instantiate(FreezeFX.name, hit.transform.position, Quaternion.identity);
                     hit.transform.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(_freezeDuration, photonViewID, true);
                 }
             }

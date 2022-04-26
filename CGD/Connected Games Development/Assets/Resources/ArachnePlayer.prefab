@@ -1545,8 +1545,11 @@ MonoBehaviour:
   NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   NewPlayerFX: {fileID: 6270364759097854158, guid: cfc035f6aa70d7243a41d2e070165b0b, type: 3}
   MedusaUltSFX: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
+  MedusaUltFX: {fileID: 1965343156803978, guid: bf082a81e768e374e8bb129ce6f07bfc, type: 3}
   MidasUltSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+  MidasUltFX: {fileID: 1845240806346120, guid: b4fec6f82dbd7cf48b43ca32dced3b5d, type: 3}
   NarcissusUltSFX: {fileID: 8300000, guid: 30dba348a205448f2999c128259b3012, type: 3}
+  NarcissusUltFX: {fileID: 100004, guid: 60fd66ae32c81014e917f339de640e52, type: 3}
   ArachneUltSFX: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
   AttackSFX1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
   AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}

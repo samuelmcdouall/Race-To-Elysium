@@ -66,8 +66,11 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public Outline PlayerOutline;
     public AudioClip MedusaUltSFX;
+    public GameObject MedusaUltFX;
     public AudioClip MidasUltSFX;
+    public GameObject MidasUltFX;
     public AudioClip NarcissusUltSFX;
+    public GameObject NarcissusUltFX;
     public AudioClip ArachneUltSFX;
     public AudioClip AttackSFX1;
     public AudioClip AttackSFX2;
@@ -190,7 +193,7 @@ public class CGDPlayer : MonoBehaviour
         {
             _playerRb.velocity = _playerRb.velocity.normalized * _playerTopSpeed * 2.0f;
         }
-        if (_enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
+        if (_enabledControls)
         {
             HandleMovementMechanics();
         }
@@ -226,7 +229,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
@@ -234,7 +237,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
@@ -242,14 +245,14 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -257,7 +260,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -265,14 +268,14 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveForwardsState, true);
             }
@@ -280,7 +283,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveBackwardsState, true);
             }
@@ -288,7 +291,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveRightState, true);
             }
@@ -296,7 +299,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (GroundCheck.IsGrounded)
+            if (GroundCheck.IsGrounded && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
             {
                 SwitchAnimationStateTo(_moveLeftState, true);
             }
@@ -306,6 +309,7 @@ public class CGDPlayer : MonoBehaviour
         {
             if (GroundCheck.IsGrounded)
             {
+                print("I have now landed");
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
@@ -313,14 +317,17 @@ public class CGDPlayer : MonoBehaviour
 
     void DetermineYIndependentVelocity(Vector3 horizontal_direction)
     {
-        horizontal_direction = new Vector3(horizontal_direction.x, 0.0f, horizontal_direction.z);
-        horizontal_direction = horizontal_direction.normalized * _playerMoveForce;
-        _playerRb.AddForce(horizontal_direction);
+        if (!CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
+        {
+            horizontal_direction = new Vector3(horizontal_direction.x, 0.0f, horizontal_direction.z);
+            horizontal_direction = horizontal_direction.normalized * _playerMoveForce;
+            _playerRb.AddForce(horizontal_direction);
+        }
     }
 
     void HandleGroundCheckMechanics()
     {
-        if (GroundCheck.IsGrounded && !_ableToJumpOffGround)
+        if (GroundCheck.IsGrounded && !_ableToJumpOffGround) //todo is the abletojumpoffground needed?
         {
             _ableToJumpOffGround = true;
         }
@@ -665,6 +672,40 @@ public class CGDPlayer : MonoBehaviour
         if (sendToOthers)
         {
             View.RPC("PlaySoundClipForEveryone", RpcTarget.Others, xPos, yPos, zPos, soundClipName, false);
+        }
+    }
+
+    [PunRPC] //todo done this way because photonnetwork instantitate buffers it which will make things appear after someone joins
+    public void PlayFXForEveryone(float xPos, float yPos, float zPos, string fxName, bool sendToOthers)
+    {
+        Vector3 fxPos = new Vector3(xPos, yPos, zPos);
+
+        GameObject chosenFX;
+        switch (fxName)
+        {
+            case "MedusaUltFX":
+                chosenFX = MedusaUltFX;
+                break;
+            case "MidasUltFX":
+                chosenFX = MidasUltFX;
+                break;
+            case "NarcissusUltFX":
+                chosenFX = NarcissusUltFX;
+                break;
+            default:
+                chosenFX = null;
+                print("error selecting fx");
+                break;
+        }
+
+        if (chosenFX)
+        {
+            Instantiate(chosenFX, fxPos, Quaternion.identity);
+        }
+
+        if (sendToOthers)
+        {
+            View.RPC("PlayFXForEveryone", RpcTarget.Others, xPos, yPos, zPos, fxName, false);
         }
     }
 
