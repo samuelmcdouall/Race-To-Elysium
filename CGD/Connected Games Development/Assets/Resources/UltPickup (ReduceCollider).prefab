@@ -344,8 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faff1541005b82042b8526f766dddbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reductionPercentage: 25
-  PickupPlatformSpawner: {fileID: 0}
+  _decrPer: 0
 --- !u!65 &4985776660736356017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -425,8 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0217772cd841246478a28802aa8a9f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _increasePercentage: 50
-  PickupPlatformSpawner: {fileID: 0}
+  _incrPer: 0
 --- !u!65 &4985776662720327221
 BoxCollider:
   m_ObjectHideFlags: 0

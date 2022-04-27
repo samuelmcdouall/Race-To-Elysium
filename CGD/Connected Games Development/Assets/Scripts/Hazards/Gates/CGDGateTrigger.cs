@@ -9,7 +9,10 @@ public class CGDGateTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Hazard.SetActive(true);
+            if (Hazard)
+            {
+                Hazard.SetActive(true);
+            }
             HealthBar.SetActive(true);
             Destroy(gameObject);
         }

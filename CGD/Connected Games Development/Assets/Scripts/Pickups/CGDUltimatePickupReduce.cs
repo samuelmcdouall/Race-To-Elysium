@@ -8,7 +8,7 @@ public class CGDUltimatePickupReduce : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeUltFromPickup(-_decrPer);
+            other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateChargeFromPickup(-_decrPer);
             Destroy(gameObject);
         }
     }

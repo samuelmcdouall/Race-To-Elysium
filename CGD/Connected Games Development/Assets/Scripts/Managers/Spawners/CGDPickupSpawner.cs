@@ -9,7 +9,7 @@ public class CGDPickupSpawner : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(Pickup.name, transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(Pickup.name, transform.position, Pickup.transform.rotation);
         }
     }
 }

@@ -181,7 +181,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
         {
-            float randX = Random.Range(-5.0f, 5.0f);
+            float randX = Random.Range(-1.0f, 1.0f);
             transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
         }
     }
@@ -740,7 +740,7 @@ public class CGDPlayer : MonoBehaviour
         print("Player Ultimate Attack");
     }
 
-    public void ModifyUltimateChargeUltFromPickup(float chargeAmount)
+    public void ModifyUltimateChargeFromPickup(float chargeAmount)
     {
         if (_ableToPickupUlt)
         {

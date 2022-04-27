@@ -36,7 +36,10 @@ public class CGDGate : MonoBehaviour
             {
                 player.GetComponent<CGDPlayer>().CheckpointPosition = Checkpoint.position;
             }
-            Hazard.GetComponent<CGDGateHazardSweeping>().Completed = true;
+            if (Hazard)
+            {
+                Hazard.GetComponent<CGDGateHazardSweeping>().Completed = true;
+            }
             Destroy(gameObject);
         }
         else
