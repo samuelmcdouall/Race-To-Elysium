@@ -488,6 +488,7 @@ public class CGDPlayer : MonoBehaviour
         }
         else
         {
+            print("dfg");
             Debug.Log("Got this apply speed mod for seconds instruction from other player");
         }
     }
