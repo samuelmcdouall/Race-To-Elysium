@@ -9,7 +9,7 @@ public class CGDFallingHazard : MonoBehaviour
     public AudioClip DestroySFX;
     public GameObject DestroyFX;
     Rigidbody _fallingHazardRB;
-    // Start is called before the first frame update
+
     void Start()
     {
         _fallingHazardRB = GetComponent<Rigidbody>();

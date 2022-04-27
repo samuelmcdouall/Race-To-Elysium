@@ -1601,7 +1601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargetToRotateAround: {fileID: 2651788621520097550}
-  View: {fileID: 1958545619369189649}
   OwnPlayer: {fileID: 4049573236163780219}
 --- !u!1 &7925936820996504702
 GameObject:
