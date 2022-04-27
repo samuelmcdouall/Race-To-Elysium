@@ -53,7 +53,6 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
 
     public void OnClickMainMenuButton()
     {
-        //todo maybe add sfx here
         LeaveRoom();
     }
     public void LeaveRoom()
@@ -68,16 +67,4 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
 
         base.OnLeftRoom();
     }
-
-    //todo can remove this once certain this way isn't the right way to do it
-    //IEnumerator LeaveRoom()
-    //{
-    //    PhotonNetwork.LeaveRoom(true);
-    //    while (PhotonNetwork.InRoom)
-    //    {
-    //        yield return null;
-    //    }
-    //    GameOver = false;
-    //    PhotonNetwork.LoadLevel("MainMenuScene");
-    //}
 }

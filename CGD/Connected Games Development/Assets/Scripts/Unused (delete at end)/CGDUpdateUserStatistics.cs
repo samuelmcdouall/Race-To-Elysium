@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class CGDUpdateUserStatistics : MonoBehaviour
 {
-    //todo may not use this, currently done in the player class
+    // may not use this, currently done in the player class
     //public static void UpdateStats(string username, bool won, int silver)
     //{
     //    StartCoroutine(UpdateStatsOfDatabase(username, won, silver));

@@ -16,8 +16,6 @@ public class CGDPlayer : MonoBehaviour
     float _playerTopSpeed;
     [SerializeField]
     float _playerJumpForce;
-    [SerializeField]
-    float _playerFallForce;
     public CGDGroundCheck GroundCheck;
     bool _ableToJumpOffGround;
     bool _sliding = false;
@@ -31,7 +29,7 @@ public class CGDPlayer : MonoBehaviour
     [System.NonSerialized]
     public float UltimateCharge;
     public CGDUIBar UltimateBar;
-    float _ultPickupDelay = 0.5f; // precaution delay so multiple colliders don't get hit in same frame todo may remove this comment
+    float _ultPickupDelay = 0.5f; // Precaution delay so multiple colliders don't get hit in same frame
     bool _ableToPickupUlt = true;
 
     [Header("General")]
@@ -133,9 +131,18 @@ public class CGDPlayer : MonoBehaviour
                 DetectJumpInput();
             }
             TintSkyboxBasedOnVerticalPosition();
-            if (Input.GetKeyDown(KeyCode.F)) //todo testing only
+        }
+
+        if (NameText.text == "Player Name") // Done here to avoid race condition with username not being given in time to player to display nametag
+        {
+            if (!View.IsMine)
             {
-                PlayHitAnimation();
+                print(View.Owner.NickName + " has joined the game");
+                NameText.text = View.Owner.NickName;
+            }
+            else
+            {
+                NameText.text = "";
             }
         }
     }
@@ -160,15 +167,7 @@ public class CGDPlayer : MonoBehaviour
         _checkpointOffset = 2.0f;
         _currentState = _idleState;
 
-        if (!View.IsMine)
-        {
-            print(View.Owner.NickName + " has joined the game");
-            NameText.text = View.Owner.NickName;
-        }
-        else
-        {
-            NameText.text = "";
-        }
+
 
         if (!View.IsMine)
         {
@@ -344,7 +343,6 @@ public class CGDPlayer : MonoBehaviour
         {
             _ignoreStateChange = false;
         }
-        //PlayerRb.AddForce(0.0f, -PlayerFallForce, 0.0f); //todo remove this if not needed in the end, probably won't
     }
 
     void JumpUp()
@@ -675,7 +673,7 @@ public class CGDPlayer : MonoBehaviour
         }
     }
 
-    [PunRPC] //todo done this way because photonnetwork instantitate buffers it which will make things appear after someone joins
+    [PunRPC]
     public void PlayFXForEveryone(float xPos, float yPos, float zPos, string fxName, bool sendToOthers)
     {
         Vector3 fxPos = new Vector3(xPos, yPos, zPos);

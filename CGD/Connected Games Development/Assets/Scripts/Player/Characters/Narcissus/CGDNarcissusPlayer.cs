@@ -38,7 +38,6 @@ public class CGDNarcissusPlayer : CGDPlayer
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "NarcissusUltSFX", true);
             PlayFXForEveryone(transform.position.x, transform.position.y, transform.position.z, "NarcissusUltFX", true);
-            //PhotonNetwork.Instantiate(NarcissusUltFX.name, transform.position, Quaternion.identity); //todo may not need to put fx into resources
             UltimateCollider.GetComponent<CGDNarcissusUltimateAttack>().ActivateUltimateCollider();
         }
         else

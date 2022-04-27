@@ -16913,8 +16913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b04eebaa9d61ba4b9559bb96e332a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countDownTime: 2
-  _helpMessageVisible: 1.5
+  _countDownTime: 5
+  _helpMessageVisible: 2
   _countDownTimeVisible: 1
   _countDownText: {fileID: 632562965}
   Gates:

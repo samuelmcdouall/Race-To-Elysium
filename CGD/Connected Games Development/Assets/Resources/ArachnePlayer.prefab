@@ -735,7 +735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargetToRotateAround: {fileID: 7991630969222325680}
-  View: {fileID: 5838027862200079791}
   OwnPlayer: {fileID: 8221330821640465093}
 --- !u!1 &3627394822091690843
 GameObject:
@@ -890,6 +889,7 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
+  _ultChargeGain: 20
   _attackAnimationDelay: 0.8
 --- !u!65 &6133945440047803787
 BoxCollider:
@@ -1574,7 +1574,6 @@ MonoBehaviour:
   _playerMoveForce: 40
   _playerTopSpeed: 4
   _playerJumpForce: 9
-  _playerFallForce: 0
   GroundCheck: {fileID: 8750211059134531096}
   UltimateBar: {fileID: 1886747205128093716}
   MedusaPlayer: {fileID: 4049573236163780219, guid: 1c08023644034d64d973d6eb83f9b9bc, type: 3}

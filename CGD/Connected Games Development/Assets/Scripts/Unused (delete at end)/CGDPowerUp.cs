@@ -14,7 +14,7 @@ public class CGDPowerUp : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && false) //todo delete this script won't be used as pickup is handled as generator
+        if (other.gameObject.tag == "Player" && false) //delete this script won't be used as pickup is handled as generator
         {
             if (other.gameObject.GetComponent<CGDPowerUpManager>()._powerUpHeld == CGDPowerUpManager.PowerUpHeld.None)
             {
@@ -44,7 +44,7 @@ public class CGDPowerUp : MonoBehaviour
                 }
                 else 
                 {
-                    movementProbability = playerPosition; //todo was 0.5f * originally
+                    movementProbability = playerPosition;
                     movementProbability = Mathf.Max(movementProbability, 0.1f);
                 }
                 print("Movement Probability: " + movementProbability);

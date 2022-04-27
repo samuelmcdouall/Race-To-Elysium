@@ -46,7 +46,6 @@ public class CGDMedusaPlayer : CGDPlayer
             RaycastHit hit;
             Vector3 forwardDirection = new Vector3(CameraTr.forward.x, CameraTr.forward.y, CameraTr.forward.z);
             forwardDirection = forwardDirection.normalized;
-            Debug.DrawRay(CameraTr.position, forwardDirection * _freezeRange, Color.red, 10.0f); //todo remove this eventually
             if (Physics.Raycast(CameraTr.position, forwardDirection, out hit, _freezeRange))
             {
                 if (hit.transform.gameObject.tag == "Player")

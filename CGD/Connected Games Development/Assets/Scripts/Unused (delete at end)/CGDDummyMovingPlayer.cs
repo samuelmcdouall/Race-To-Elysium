@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CGDDummyMovingPlayer : CGDPlayer
 {
-    [Header("AI Moving")] //todo probably can be deleted as not using this
+    [Header("AI Moving")]
     public Transform StartPosition;
     public Transform EndPosition;
     bool _aiStartToEnd;

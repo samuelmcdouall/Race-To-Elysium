@@ -67,7 +67,7 @@ public class CGDPowerUpManager : MonoBehaviour
     {
         if (_view.IsMine)
         {
-            if (Input.GetKeyDown(KeyCode.Q)) // todo check with Kate that Q button is ok for power up deploy
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 switch (_powerUpHeld)
                 {

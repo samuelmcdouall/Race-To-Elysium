@@ -59,7 +59,7 @@ public class CGDArachnePlayer : CGDPlayer
         ThisCharacter = Character.Arachne;
     }
 
-    void UltimateAttackComplete() //todo move to main player script
+    void UltimateAttackComplete()
     {
         _ignoreStateChange = false;
     }

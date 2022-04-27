@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1821199131382445806}
   - component: {fileID: 2236836925217184053}
   m_Layer: 6
-  m_Name: MedusaBasicAttackCollider
+  m_Name: BasicAttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   _repelBubbleDuration: 0.1
   _repelForce: 400
   _repelCooldown: 1
+  _ultChargeGain: 20
   _attackAnimationDelay: 0.8
 --- !u!65 &2236836925217184053
 BoxCollider:
@@ -870,7 +871,6 @@ MonoBehaviour:
   _playerMoveForce: 40
   _playerTopSpeed: 4
   _playerJumpForce: 9
-  _playerFallForce: 0
   GroundCheck: {fileID: 3694094280244703910}
   UltimateBar: {fileID: 5766264640925217962}
   MedusaPlayer: {fileID: 4049573236163780219}

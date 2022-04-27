@@ -27,7 +27,6 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
     {
         if (other.gameObject.layer != _invisibleColliderLayer && other.gameObject != OwnPlayer && _view.IsMine)
         {
-            //AudioSource.PlayClipAtPoint(CollideSFX, transform.position, CGDGameSettings.SoundVolume); //todo soundmul maybe
             switch (ProjectileType)
             {
                 case AreaDenialProjectileType.Peel:

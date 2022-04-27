@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
@@ -97,13 +96,13 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         LeaveRoom();
     }
+
     public void OnClickQuitToDesktopButton()
     {
         AudioSource.PlayClipAtPoint(ClickSFX, _audioListenerPosition.transform.position, CGDGameSettings.SoundVolume);
         ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
         LeaveRoom();
         Application.Quit();
-        //StartCoroutine(LeaveRoomAndQuitApplication()); //todo can remove when sure this works
     }
 
     public void OnChangeMouseSensivitySlider()
@@ -112,6 +111,7 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         PlayerPrefs.SetFloat("Sensitivity", MouseSensitivitySlider.value);
         PlayerPrefs.Save();
     }
+
     public void OnChangeMusicVolumeSlider()
     {
         CGDGameSettings.MusicVolume = MusicVolumeSlider.value;
@@ -126,23 +126,13 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
         PlayerPrefs.SetFloat("SoundVolume", SoundVolumeSlider.value);
         PlayerPrefs.Save();
     }
-    //todo can remove this once certain this way isn't the right way to do it
-    //IEnumerator LeaveRoom()
-    //{
-    //    PhotonNetwork.LeaveRoom(true);
-    //    while (PhotonNetwork.InRoom)
-    //    {
-    //        yield return null;
-    //    }
-    //    CGDGameOverScreenManager.GameOver = false;
-    //    PhotonNetwork.LoadLevel("MainMenuScene");
-    //}
 
     void ShowSettingsMenu()
     {
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(true);
     }
+
     void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
@@ -155,32 +145,6 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
 
         base.OnLeftRoom();
     }
-
-    //todo same with this one
-    //IEnumerator LeaveRoomAndQuitApplication()
-    //{
-    //    PhotonNetwork.LeaveRoom(true);
-    //    while (PhotonNetwork.InRoom)
-    //    {
-    //        yield return null;
-    //    }
-    //    Application.Quit();
-    //    //CGDGameOverScreenManager.GameOver = false;
-    //    //PhotonNetwork.LoadLevel("MainMenuScene");
-    //}
-
-
-    //public override void OnDisconnected(DisconnectCause cause)
-    //{
-    //    print("leaving this room (disconnected from server)");
-    //    ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-    //    base.OnDisconnected(cause);
-    //}
-    //void OnApplicationQuit()
-    //{
-    //    print("leaving this room (disconnected from server)");
-    //    ModifiyPlayerNumForAllPlayers(CGDGameSettings.PlayerNum);
-    //}
 
     void ModifiyPlayerNumForAllPlayers(int leftPlayerNum)
     {

@@ -24,7 +24,9 @@ public class CGDGameSceneLoader : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient) // todo decide whether to keep the L in to force a load / this is more of a debugging
+        // Force load into a game with lower than 4 players 
+        // NOTE: This is used as a debug tool. In a real game this would be taken out but has been left in here to help with play testing
+        if (Input.GetKeyDown(KeyCode.L) && PhotonNetwork.IsMasterClient)
         {
             BeginCountDownForAllPlayers();
         }
@@ -43,8 +45,6 @@ public class CGDGameSceneLoader : MonoBehaviour
                 if (PhotonNetwork.IsMasterClient)
                 {
                     _countDownTimer = _countDownTime;
-                    // todo not sure of the comment below, since this is determined in the Level Generator script, can probably just delete it
-                    // here randomly determine the game preset + apply to the game settings + send to everyone, then in the game scene use that to enable the groups
                     
                     PhotonNetwork.LoadLevel("GameScene");
                 }

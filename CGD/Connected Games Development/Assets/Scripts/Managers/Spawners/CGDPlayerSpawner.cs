@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,12 +24,9 @@ public class CGDPlayerSpawner : MonoBehaviourPunCallbacks
 
     int _maxPlayers = 4;
     GameObject _gameSceneLoader;
-    PhotonView _view;
 
     void Start()
     {
-        _view = GetComponent<PhotonView>();
-        //todo may randomly determine this when the CGDGameSettings is first made + remove this as its really just a debugging thing
         if (CGDGameSettings.CharacterNum == 1)
         {
             _chosenPrefab = MedusaPrefab;

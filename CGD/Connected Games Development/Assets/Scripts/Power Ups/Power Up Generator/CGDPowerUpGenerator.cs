@@ -59,7 +59,7 @@ public class CGDPowerUpGenerator : MonoBehaviour
                     }
                     else
                     {
-                        movementProbability = playerPosition; //todo was 0.5f * originally, double check with Kate that should be * 1.0f
+                        movementProbability = playerPosition;
                         movementProbability = Mathf.Max(movementProbability, 0.1f);
                     }
                     print("Movement Probability: " + movementProbability);

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CGDUIDisplay : MonoBehaviour
 {
-    PhotonView _view; //todo may just remove this script
+    PhotonView _view; // may just remove this script
 
     private void Start()
     {
