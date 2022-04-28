@@ -19,7 +19,10 @@ public class CGDFallingHazardSpawner : MonoBehaviour
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                PhotonNetwork.Instantiate(FallingHazard.name, transform.position, FallingHazard.transform.rotation);
+                float randSpawnX = Random.Range(0.0f, 1.5f);
+                float randSpawnZ = Random.Range(0.0f, 1.5f);
+                Vector3 spawnPosition = new Vector3(randSpawnX, 0.0f, randSpawnZ) + transform.position;
+                PhotonNetwork.Instantiate(FallingHazard.name, spawnPosition, FallingHazard.transform.rotation);
             }
             _spawnIntervalTimer = 0.0f;
         }
