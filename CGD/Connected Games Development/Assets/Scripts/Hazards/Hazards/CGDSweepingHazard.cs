@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CGDGateHazardSweeping : MonoBehaviour
+public class CGDSweepingHazard : MonoBehaviour
 {
     [SerializeField]
     float _speed;
@@ -13,8 +13,6 @@ public class CGDGateHazardSweeping : MonoBehaviour
     public Transform EndPosition;
     [SerializeField]
     float _positionThreshold;
-    [System.NonSerialized]
-    public bool Completed;
     Color _color;
     HazardState _hazardState;
     Rigidbody _rigidbody;
@@ -26,8 +24,6 @@ public class CGDGateHazardSweeping : MonoBehaviour
         _collider = GetComponent<Collider>();
         GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 0.0f);
         _rigidbody = GetComponent<Rigidbody>();
-        Completed = false;
-        gameObject.SetActive(false);
     }
     void Start()
     {
@@ -70,15 +66,16 @@ public class CGDGateHazardSweeping : MonoBehaviour
 
         GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 1.0f);
 
+        Vector3 startToEndDirection = (EndPosition.position - StartPosition.position).normalized;
         if (_hazardState == HazardState.WaitingAtStart)
         {
             _hazardState = HazardState.MovingToEnd;
-            _rigidbody.velocity = new Vector3(-_speed, 0.0f, 0.0f);
+            _rigidbody.velocity = startToEndDirection * _speed;
         }
         else
         {
             _hazardState = HazardState.MovingToStart;
-            _rigidbody.velocity = new Vector3(_speed, 0.0f, 0.0f);
+            _rigidbody.velocity = -startToEndDirection * _speed;
         }
         _collider.enabled = true;
         yield return null;
@@ -105,16 +102,7 @@ public class CGDGateHazardSweeping : MonoBehaviour
         }
 
         GetComponent<Renderer>().material.color = new Color(_color.r, _color.g, _color.b, 0.0f);
-
-        if (Completed)
-        {
-            _hazardState = HazardState.Completed;
-            yield return null;
-        }
-        else
-        {
-            yield return WaitForNextAttack(_attackInterval);
-        }
+        yield return WaitForNextAttack(_attackInterval);
     }
 
     IEnumerator WaitForNextAttack(float attackInterval)
@@ -127,7 +115,6 @@ public class CGDGateHazardSweeping : MonoBehaviour
         MovingToEnd,
         MovingToStart,
         WaitingAtStart,
-        WaitingAtEnd,
-        Completed
+        WaitingAtEnd
     }
 }
