@@ -9,6 +9,7 @@ public class CGDFallingHazard : MonoBehaviour
     public AudioClip DestroySFX;
     public GameObject DestroyFX;
     Rigidbody _fallingHazardRB;
+    int IgnoreFallingHazardLayer = 8;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class CGDFallingHazard : MonoBehaviour
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_decrPer);
         }
-        if (other.gameObject.tag != "Gate")
+        if (other.gameObject.layer != IgnoreFallingHazardLayer)
         {
             AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
             Instantiate(DestroyFX, transform.position, Quaternion.identity);
