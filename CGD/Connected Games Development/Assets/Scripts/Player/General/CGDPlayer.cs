@@ -17,7 +17,6 @@ public class CGDPlayer : MonoBehaviour
     [SerializeField]
     float _playerJumpForce;
     public CGDGroundCheck GroundCheck;
-    //bool _ableToJumpOffGround;
     bool _sliding = false;
     float _speedModifier;
     float _jumpModifier;
@@ -153,7 +152,6 @@ public class CGDPlayer : MonoBehaviour
         View = GetComponent<PhotonView>();
         Cursor.visible = false;
         CameraTr = MainCamera.transform;
-        //_ableToJumpOffGround = true;
         _speedModifier = 1.0f;
         _jumpModifier = 1.0f;
         _shouldJumpUp = false;
@@ -202,7 +200,6 @@ public class CGDPlayer : MonoBehaviour
             JumpUp();
             PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "JumpSFX", true);
             _shouldJumpUp = false;
-            //_ableToJumpOffGround = false;
         }
     }
 
@@ -326,11 +323,7 @@ public class CGDPlayer : MonoBehaviour
 
     void HandleGroundCheckMechanics()
     {
-        if (GroundCheck.IsGrounded)// && !_ableToJumpOffGround) //todo is the abletojumpoffground needed?
-        {
-            //_ableToJumpOffGround = true;
-        }
-        else if (_playerRb.velocity.y < -0.1f)
+        if (_playerRb.velocity.y < -0.1f)
         {
             HandlePlayerFallingDown();
         }
@@ -388,7 +381,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (GroundCheck.IsGrounded)// && _ableToJumpOffGround)
+            if (GroundCheck.IsGrounded)
             {
                 _shouldJumpUp = true;
             }
@@ -397,7 +390,7 @@ public class CGDPlayer : MonoBehaviour
 
     void TintSkyboxBasedOnVerticalPosition()
     {
-        float scaledColorPosition = transform.position.y / 50.0f;
+        float scaledColorPosition = transform.position.y / 180.0f; // 180 is approximately as high as the map goes
         if (scaledColorPosition > 1.0f)
         {
             scaledColorPosition = 1.0f;
