@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 144950352}
   - component: {fileID: 144950351}
   - component: {fileID: 144950353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First checkpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5049,7 +5049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324583274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 2.335}
+  m_LocalPosition: {x: -0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1777056734}
@@ -7029,6 +7029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5x5 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
 --- !u!1 &455092677 stripped
@@ -7911,6 +7915,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_Name
       value: 5x5 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
@@ -11285,7 +11293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793588156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 1.868}
+  m_LocalPosition: {x: -0, y: -0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1698523553}
@@ -11951,7 +11959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873597398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 3.231}
+  m_LocalPosition: {x: -0, y: -0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1947075362}
@@ -14072,6 +14080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5x5 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
 --- !u!4 &1096509080 stripped
@@ -15227,7 +15239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223050674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 2.771}
+  m_LocalPosition: {x: -0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828197756}
@@ -16711,6 +16723,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_Name
       value: 5x5 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
@@ -19687,6 +19703,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_Name
       value: 5x5 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
@@ -24853,6 +24873,10 @@ PrefabInstance:
       value: TartarusBossRock
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 17cdbf5cbb5b7654dbcad9c820d485f2, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17cdbf5cbb5b7654dbcad9c820d485f2, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -27560,7 +27584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014656967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00182, y: -0, z: 1.473}
+  m_LocalPosition: {x: 0.00182, y: -0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 975290174}
@@ -28088,6 +28112,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_Name
       value: 5x5 (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
@@ -29057,7 +29085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6460427641305103632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
