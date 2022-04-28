@@ -18,6 +18,7 @@ TagManager:
   - BlindScreen
   - Gate
   - FxTemporaire
+  - Boulder
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - InvisibleColliders
   - CameraCorrectionIgnore
-  - 
+  - IgnoreFallingHazard
   - 
   - 
   - 
