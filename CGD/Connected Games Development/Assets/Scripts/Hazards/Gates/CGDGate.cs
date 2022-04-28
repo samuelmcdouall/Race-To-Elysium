@@ -8,7 +8,6 @@ public class CGDGate : MonoBehaviour
     float _currHitPoints;
     public GameObject HealthBar;
     public Transform Checkpoint;
-    public GameObject Hazard;
     PhotonView _view;
 
     void Start()
@@ -35,10 +34,6 @@ public class CGDGate : MonoBehaviour
             foreach(GameObject player in players)
             {
                 player.GetComponent<CGDPlayer>().CheckpointPosition = Checkpoint.position;
-            }
-            if (Hazard)
-            {
-                Hazard.GetComponent<CGDGateHazardSweeping>().Completed = true;
             }
             Destroy(gameObject);
         }
