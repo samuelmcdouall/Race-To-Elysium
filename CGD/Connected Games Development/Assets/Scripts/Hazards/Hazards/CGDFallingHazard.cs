@@ -22,8 +22,11 @@ public class CGDFallingHazard : MonoBehaviour
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_decrPer);
         }
-        AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
-        Instantiate(DestroyFX, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (other.gameObject.tag != "Gate")
+        {
+            AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
+            Instantiate(DestroyFX, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
