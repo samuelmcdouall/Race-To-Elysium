@@ -6,7 +6,7 @@ public class CGDGroundCheck : MonoBehaviour
 
     void OnTriggerStay(Collider collider)
     {
-        if (collider != null)
+        if (collider != null && collider.gameObject.tag != "Cloud")
         {
             IsGrounded = true;
         }
