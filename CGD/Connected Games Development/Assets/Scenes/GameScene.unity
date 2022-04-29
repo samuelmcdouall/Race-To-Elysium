@@ -190,13 +190,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1969444 stripped
 Transform:
@@ -222,6 +231,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1969447
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &2885537
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,13 +356,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &5114280 stripped
 Transform:
@@ -365,6 +397,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &5114283
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &7267353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,6 +484,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
+      value: Cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
       value: Cloud
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -626,7 +676,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 137
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -1011,13 +1061,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &40828448 stripped
 Transform:
@@ -1043,6 +1102,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &40828451
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40828449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &48212870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
@@ -1272,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9128948814030960129, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 9128948814030960129, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1459,7 +1536,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 119
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -1764,7 +1841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &71672161
 GameObject:
@@ -2113,13 +2190,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &81396420 stripped
 Transform:
@@ -2145,6 +2231,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &81396423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81396421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &81578944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2219,6 +2319,10 @@ PrefabInstance:
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Cloud (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
@@ -2390,13 +2494,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &82973191 stripped
 Transform:
@@ -2422,6 +2535,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &82973194
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82973192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &95518268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,7 +2906,7 @@ Transform:
   - {fileID: 1581283452}
   - {fileID: 1037340582}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &105887628
 GameObject:
@@ -3150,7 +3277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.64
+      value: 81.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3736,13 +3863,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &150681848 stripped
 Transform:
@@ -3768,6 +3904,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &150681851
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150681849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &151017625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4277,7 +4427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &172505198
 PrefabInstance:
@@ -5417,7 +5567,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224398932}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -5577,7 +5727,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 125
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -5755,7 +5905,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236355384}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -6367,15 +6517,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.21
+      value: 7.213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 70.31
+      value: 70.079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.58
+      value: 11.582
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6432,13 +6582,58 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275200089}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6536406627573639702, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+--- !u!1 &280735477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280735479}
+  - component: {fileID: 280735478}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &280735478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280735477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 3
+--- !u!4 &280735479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280735477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.02, y: 156.14, z: -27.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289011832
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,7 +6774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 136
+      value: 133
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -6696,7 +6891,7 @@ Transform:
   m_Children:
   - {fileID: 1675391052}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291926128
 GameObject:
@@ -7210,15 +7405,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.14
+      value: 33.19
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 104.87
+      value: 104.84
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.82
+      value: 4.94
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7252,13 +7447,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &300383112 stripped
 Transform:
@@ -7284,6 +7488,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &300383115
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300383113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &313456279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8013,7 +8231,7 @@ RectTransform:
   - {fileID: 1884224767}
   - {fileID: 1388438481}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8169,7 +8387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 127
+      value: 124
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -8722,6 +8940,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FallingHazard: {fileID: 4401054615086041830, guid: 471ba785b76a8704daf98b419125c111, type: 3}
   _spawnInterval: 8
+--- !u!1 &402592022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402592024}
+  - component: {fileID: 402592023}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &402592023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402592022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 3
+--- !u!4 &402592024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402592022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.318, y: 157.818, z: -32.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403527545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8866,7 +9129,7 @@ Transform:
   - {fileID: 1417279560}
   - {fileID: 2009361789}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &406834738
 GameObject:
@@ -9067,7 +9330,7 @@ Transform:
   - {fileID: 300383112}
   - {fileID: 1050257119}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 39.599, z: 0}
 --- !u!1001 &412857873
 PrefabInstance:
@@ -9492,7 +9755,7 @@ Transform:
   m_Children:
   - {fileID: 1962527993}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &440553510
 PrefabInstance:
@@ -9658,13 +9921,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &442772836 stripped
 Transform:
@@ -9690,6 +9962,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &442772839
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442772837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &443543160
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,13 +10325,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &456936844 stripped
 Transform:
@@ -10071,6 +10366,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &456936847
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456936845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &464790402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10887,7 +11196,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500334814}
-  m_LocalRotation: {x: -0.6096798, y: 0.35817677, z: 0.35817668, w: 0.60967976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 37.137, z: -0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11016,15 +11325,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.01
+      value: 32.888
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 103.74
+      value: 103.804
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.96
+      value: 9.687
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11058,13 +11367,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &507169424 stripped
 Transform:
@@ -11090,6 +11408,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &507169427
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507169425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &511864394
 GameObject:
   m_ObjectHideFlags: 0
@@ -11453,7 +11785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34864d86ddb70e4eb9b869dfc5df24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHitPoints: 24
+  _maxHitPoints: 2
   HealthBar: {fileID: 1388438480}
   Checkpoint: {fileID: 698900127}
 --- !u!114 &528643979
@@ -12125,7 +12457,7 @@ Transform:
   m_Children:
   - {fileID: 971664195}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &586913025
 PrefabInstance:
@@ -12194,13 +12526,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &586913026 stripped
 Transform:
@@ -12226,6 +12567,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &586913029
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586913027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &603159890
 GameObject:
   m_ObjectHideFlags: 0
@@ -12544,7 +12899,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607184211}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -12717,13 +13072,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &608550691 stripped
 Transform:
@@ -12749,6 +13113,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &608550694
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608550692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &609714290
 GameObject:
   m_ObjectHideFlags: 0
@@ -13908,31 +14286,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.94
+      value: 26.66
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100.92
+      value: 100.99
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.03
+      value: 12.97
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6726229
+      value: -0.67631954
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7289426
+      value: 0.72159946
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.10530423
+      value: 0.078141145
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.071639664
+      value: 0.12561837
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13940,7 +14318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -23.673004
+      value: -54.65
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -13950,13 +14328,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &679170848 stripped
 Transform:
@@ -13982,6 +14369,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &679170851
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679170849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &689036238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14317,9 +14718,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698900126}
-  m_LocalRotation: {x: -0.44672543, y: 0.548121, z: 0.5481206, w: 0.44672543}
-  m_LocalPosition: {x: 3.44, y: 86.786, z: -4.06}
-  m_LocalScale: {x: 284.92892, y: 308.74747, z: 3.279823}
+  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901161, w: 1}
+  m_LocalPosition: {x: 4.320001, y: 82.39, z: -4.2400007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 412226684}
   m_RootOrder: 1
@@ -14333,7 +14734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 120
+      value: 117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -14529,103 +14930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pickup: {fileID: 3942596869525251780, guid: 3f2f6cf40d1172844ba638004f6dc249, type: 3}
---- !u!1001 &716246761
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1433253231}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_RootOrder
-      value: 114
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 134.01918
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 170.66147
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0136075
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.37
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 150.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.78
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.005850928
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0223494
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7299308
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6831305
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -94.022
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -341.724
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 519.438
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 354165bdf57e55845950eb97a91b9bd0, type: 2}
-    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Name
-      value: 5x5 (68)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
---- !u!4 &716246762 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 716246761}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &716246763 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 716246761}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &716246764
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716246763}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6536406627573639702, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
 --- !u!1001 &717303014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14952,103 +15256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pickup: {fileID: 3798105773997956588, guid: 9a80680e0f8e7014cbd0ca7c0e77f0d9, type: 3}
---- !u!1001 &728767682
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1433253231}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_RootOrder
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 134.01918
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 170.66147
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0136075
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 147.7
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0065165483
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.20849472
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7026335
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.68028945
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -106.523
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -285.15
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 447.475
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 354165bdf57e55845950eb97a91b9bd0, type: 2}
-    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Name
-      value: 5x5 (69)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
---- !u!4 &728767683 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 728767682}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &728767684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 728767682}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &728767685
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728767684}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6536406627573639702, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
 --- !u!1001 &735905175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15534,7 +15741,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 118
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -15675,7 +15882,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 117
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -16002,7 +16209,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802307933}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -16076,13 +16283,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &805966485 stripped
 Transform:
@@ -16108,6 +16324,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &805966488
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805966486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &816618827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16175,13 +16405,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &816618828 stripped
 Transform:
@@ -16207,6 +16446,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &816618831
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816618829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &818875887
 GameObject:
   m_ObjectHideFlags: 0
@@ -16592,6 +16845,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838965436}
   m_Mesh: {fileID: 2572314415821226600, guid: ff48ef7df56224f47a72568dc0f2cc19, type: 3}
+--- !u!1 &841415555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841415557}
+  - component: {fileID: 841415556}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &841415556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841415555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 3
+--- !u!4 &841415557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841415555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.06, y: 154.138, z: -20.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &843160863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16973,7 +17271,7 @@ Transform:
   m_Children:
   - {fileID: 483175241}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &873597398
 GameObject:
@@ -17087,13 +17385,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &873837593 stripped
 Transform:
@@ -17119,6 +17426,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &873837596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873837594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &874560705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17769,7 +18090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 134
+      value: 131
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -17974,7 +18295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &900302407
 GameObject:
@@ -18320,13 +18641,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &921713170 stripped
 Transform:
@@ -18352,6 +18682,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &921713173
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921713171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &922191528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18838,7 +19182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 132
+      value: 129
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -19683,7 +20027,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996391328}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -19887,7 +20231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 135
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -20210,6 +20554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
@@ -20346,7 +20694,7 @@ Transform:
   - {fileID: 472529416}
   - {fileID: 1260684165}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1063873473
 PrefabInstance:
@@ -20592,7 +20940,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 130
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -21881,6 +22229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
@@ -21900,7 +22252,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 133
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -22363,7 +22715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 128
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -22518,13 +22870,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1215617447 stripped
 Transform:
@@ -22550,6 +22911,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1215617450
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215617448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1216145227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22559,7 +22934,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 123
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -23124,7 +23499,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 121
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -23548,13 +23923,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1239669676 stripped
 Transform:
@@ -23580,6 +23964,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1239669679
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239669677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1240975204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23971,13 +24369,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1244315757 stripped
 Transform:
@@ -24003,6 +24410,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1244315760
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244315758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1244925132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24290,103 +24711,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
   m_PrefabInstance: {fileID: 1248050196}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1253113407
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1433253231}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_RootOrder
-      value: 113
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 134.01918
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 170.66147
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0136075
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.38
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 141.33
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.42
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.005850928
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0223494
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7299308
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6831305
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -94.022
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -341.724
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 519.438
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 354165bdf57e55845950eb97a91b9bd0, type: 2}
-    - target: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-      propertyPath: m_Name
-      value: 5x5 (67)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
---- !u!4 &1253113408 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 1253113407}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1253113409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
-  m_PrefabInstance: {fileID: 1253113407}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1253113410
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253113409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6536406627573639702, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
 --- !u!1001 &1258962905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24982,6 +25306,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296268109}
   m_Mesh: {fileID: 3687509337930656698, guid: d36c03a29fc98bf4299345be925d5bfb, type: 3}
+--- !u!1 &1296380024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296380026}
+  - component: {fileID: 1296380025}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1296380025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296380024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 5
+--- !u!4 &1296380026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296380024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.173, y: 163.403, z: -45.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1305347685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305347687}
+  - component: {fileID: 1305347686}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1305347686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305347685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 3
+--- !u!4 &1305347687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305347685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.68, y: 154.789, z: -21.289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1309014623
 GameObject:
   m_ObjectHideFlags: 0
@@ -25531,6 +25945,51 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6536406627573639702, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
+--- !u!1 &1336647867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336647869}
+  - component: {fileID: 1336647868}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1336647868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336647867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 5
+--- !u!4 &1336647869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336647867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.88, y: 161.61, z: -39.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339390517
 GameObject:
   m_ObjectHideFlags: 0
@@ -25701,15 +26160,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.08
+      value: 10.083
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 68.42
+      value: 68.229
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.16
+      value: 10.161
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25766,7 +26225,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350872446}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -26133,7 +26592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 116
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -26427,13 +26886,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1375596606 stripped
 Transform:
@@ -26459,6 +26927,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1375596609
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375596607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &1377852437
 GameObject:
   m_ObjectHideFlags: 0
@@ -26922,7 +27404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 129
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -27491,7 +27973,7 @@ Transform:
   m_Children:
   - {fileID: 1484665344}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408554631
 GameObject:
@@ -27657,7 +28139,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409903541}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -27874,7 +28356,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 138
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -28102,9 +28584,6 @@ Transform:
   - {fileID: 604661977}
   - {fileID: 198201781}
   - {fileID: 224380460}
-  - {fileID: 1253113408}
-  - {fileID: 716246762}
-  - {fileID: 728767683}
   - {fileID: 1370012332}
   - {fileID: 786053684}
   - {fileID: 754728500}
@@ -28129,7 +28608,7 @@ Transform:
   - {fileID: 12069876}
   - {fileID: 1423538151}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1440830055
 PrefabInstance:
@@ -28728,13 +29207,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1459383794 stripped
 Transform:
@@ -28760,6 +29248,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1459383797
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459383795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1465593268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28911,13 +29413,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1471591366 stripped
 Transform:
@@ -28943,6 +29454,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1471591369
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471591367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1484665341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29350,7 +29875,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500600824}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -29399,7 +29924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 153.158, z: 0}
 --- !u!1001 &1513890847
 PrefabInstance:
@@ -30229,13 +30754,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1540954206 stripped
 Transform:
@@ -30261,6 +30795,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1540954209
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540954207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1551522281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30351,7 +30899,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551522283}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -30425,13 +30973,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1556241854 stripped
 Transform:
@@ -30457,6 +31014,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1556241857
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556241855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1 &1561860993
 GameObject:
   m_ObjectHideFlags: 0
@@ -31021,13 +31592,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586967570}
-  m_LocalRotation: {x: 0, y: -0.7535549, z: -0, w: 0.65738493}
-  m_LocalPosition: {x: 15.5, y: 108.18, z: 13.21}
-  m_LocalScale: {x: 20.57, y: 17, z: 0.04729921}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 15.5, y: 96.62, z: 9.32}
+  m_LocalScale: {x: 48.15, y: 61.14, z: 0.04729921}
   m_Children: []
   m_Father: {fileID: 412226684}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -58.2, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1586967572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31543,7 +32114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 122
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -31698,13 +32269,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!1 &1607041220 stripped
 GameObject:
@@ -31730,6 +32310,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_PrefabInstance: {fileID: 1607041219}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1607041223
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607041220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1609444849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31797,13 +32391,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1609444850 stripped
 Transform:
@@ -31829,6 +32432,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1609444853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609444851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1611245215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31919,7 +32536,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611245217}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -31993,13 +32610,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1612362067 stripped
 Transform:
@@ -32025,6 +32651,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1612362070
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612362068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1631927953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32115,7 +32755,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631927955}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -32131,7 +32771,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 124
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -32506,6 +33146,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pickup: {fileID: 3798105773997956588, guid: 9a80680e0f8e7014cbd0ca7c0e77f0d9, type: 3}
+--- !u!1 &1647827946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647827948}
+  - component: {fileID: 1647827947}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1647827947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647827946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 5
+--- !u!4 &1647827948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647827946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.595, y: 157.896, z: -27.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652397752
 GameObject:
   m_ObjectHideFlags: 0
@@ -32695,13 +33380,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1666013710 stripped
 Transform:
@@ -32727,6 +33421,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1666013713
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666013711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1675391049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32807,6 +33515,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 685976285395935722, guid: 0e37b47482818d044b6d524f176456fb, type: 3}
   m_PrefabInstance: {fileID: 1675391049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1681234296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681234298}
+  - component: {fileID: 1681234297}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1681234297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681234296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 5
+--- !u!4 &1681234298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681234296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.257, y: 154.004, z: -25.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1682820482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33653,7 +34406,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732801289}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -34291,7 +35044,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 126
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -34664,7 +35417,7 @@ Transform:
   - {fileID: 102271027}
   - {fileID: 1076108713}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!1001 &1819326248
 PrefabInstance:
@@ -35150,7 +35903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833249505
 GameObject:
@@ -35394,6 +36147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
@@ -35471,13 +36228,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1857050320 stripped
 Transform:
@@ -35503,6 +36269,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1857050323
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857050321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1862369330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35593,7 +36373,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862369332}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -35925,6 +36705,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1899215033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899215035}
+  - component: {fileID: 1899215034}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1899215034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899215033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 5
+--- !u!4 &1899215035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899215033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.187, y: 153.16, z: -21.913}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1903916493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36240,7 +37065,7 @@ Transform:
   - {fileID: 861696232}
   - {fileID: 1562583836}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1908162952
 MonoBehaviour:
@@ -36356,13 +37181,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1915234550 stripped
 Transform:
@@ -36388,6 +37222,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1915234553
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915234551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1923568464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36478,7 +37326,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923568466}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6bafc1f01e9918441b96faa9206235ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -36510,15 +37358,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.9
+      value: 31.19
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 99.57
+      value: 100.47
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.14
+      value: 13.79
       objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293914, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36552,13 +37400,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &1923901791 stripped
 Transform:
@@ -36584,6 +37441,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &1923901794
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923901792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &1936397835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38098,11 +38969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 78.5
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4969
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38326,13 +39197,22 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
       propertyPath: m_Name
       value: Poison Cloud Hazard (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+      propertyPath: m_TagString
+      value: Cloud
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5783760718336293918, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
     - {fileID: 5783760718336293985, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
+    - {fileID: 5783760718336293919, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
 --- !u!4 &2006845326 stripped
 Transform:
@@ -38358,6 +39238,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ultPerDecrPerSecond: 5
   HazardType: 1
+--- !u!64 &2006845329
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006845327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7545762965820161845, guid: d9b9d089b2e1cfd4986002c69450a4db, type: 3}
 --- !u!1001 &2009361788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38667,7 +39561,7 @@ Transform:
   - {fileID: 2117565795}
   - {fileID: 1268288727}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 225, z: 0}
 --- !u!1001 &2021157754
 PrefabInstance:
@@ -39005,7 +39899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021948483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18, y: 3.5, z: -18}
+  m_LocalPosition: {x: -12.12, y: 115.423, z: -12.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1908162951}
@@ -39040,7 +39934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2023677635
 MonoBehaviour:
@@ -39856,7 +40750,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_RootOrder
-      value: 131
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalScale.x
@@ -40181,7 +41075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 222708914670753959, guid: cba48b46d173c074abb730e775e69397, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 222708914670753959, guid: cba48b46d173c074abb730e775e69397, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40329,6 +41223,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
   m_PrefabInstance: {fileID: 2108697526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2110407622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110407624}
+  - component: {fileID: 2110407623}
+  m_Layer: 0
+  m_Name: FallingHazardSpawner (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2110407623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110407622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72af8771e63518b4c94cedff2f6de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingHazard: {fileID: 9124090833073223820, guid: ba7a17c31e5b0b44c85679ed5b7d93de, type: 3}
+  _spawnInterval: 3
+--- !u!4 &2110407624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110407622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.958, y: 163.159, z: -43.919}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116989984
 GameObject:
   m_ObjectHideFlags: 0
@@ -40358,7 +41297,7 @@ Transform:
   m_Children:
   - {fileID: 1105705220}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2117565794
 PrefabInstance:
@@ -40593,7 +41532,7 @@ Transform:
   - {fileID: 1903916494}
   - {fileID: 711978225}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2135614526
 PrefabInstance:
@@ -40712,15 +41651,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.999745
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 80.17027
+      value: 79.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9084568
+      value: -3.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e65977c815618d4ba5d056e3ad8aab7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40962,7 +41901,7 @@ Transform:
   - {fileID: 1545618174845363585}
   - {fileID: 3996060661125929388}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 70.668, z: 0}
 --- !u!33 &445540814350665060
 MeshFilter:
@@ -41252,7 +42191,7 @@ Transform:
   - {fileID: 1872089345}
   - {fileID: 299129046}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2374605899022636858
 MeshFilter:
