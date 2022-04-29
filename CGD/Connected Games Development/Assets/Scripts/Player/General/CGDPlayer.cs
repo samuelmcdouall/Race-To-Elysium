@@ -178,6 +178,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
         {
+            print("move me back to checkpoint");
             float randX = Random.Range(-1.0f, 1.0f);
             transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
         }
@@ -322,7 +323,7 @@ public class CGDPlayer : MonoBehaviour
 
     void HandleGroundCheckMechanics()
     {
-        if (_playerRb.velocity.y < -0.1f)
+        if (!GroundCheck.IsGrounded && _playerRb.velocity.y < -0.1f)
         {
             HandlePlayerFallingDown();
         }
