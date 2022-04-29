@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class CGDFallingHazard : MonoBehaviour
@@ -9,7 +10,8 @@ public class CGDFallingHazard : MonoBehaviour
     public AudioClip DestroySFX;
     public GameObject DestroyFX;
     Rigidbody _fallingHazardRB;
-    int IgnoreFallingHazardLayer = 8;
+    int IgnoreFallingHazardLayer1 = 8;
+    int IgnoreFallingHazardLayer2 = 7;
 
     void Start()
     {
@@ -23,11 +25,21 @@ public class CGDFallingHazard : MonoBehaviour
         {
             other.gameObject.GetComponent<CGDPlayer>().ModifyUltimateCharge(-_decrPer);
         }
-        if (other.gameObject.layer != IgnoreFallingHazardLayer)
+        if (other.gameObject.layer != IgnoreFallingHazardLayer1 && other.gameObject.layer != IgnoreFallingHazardLayer2)
         {
-            AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
-            Instantiate(DestroyFX, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            DestroyHazard(true);
+        }
+    }
+
+    [PunRPC]
+    public void DestroyHazard(bool sendToOthers)
+    {
+        AudioSource.PlayClipAtPoint(DestroySFX, transform.position, CGDGameSettings.SoundVolume);
+        Instantiate(DestroyFX, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        if (sendToOthers)
+        {
+            GetComponent<PhotonView>().RPC("DestroyHazard", RpcTarget.Others, false);
         }
     }
 }
