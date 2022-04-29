@@ -19,6 +19,7 @@ TagManager:
   - Gate
   - FxTemporaire
   - Boulder
+  - Cloud
   layers:
   - Default
   - TransparentFX
