@@ -14,10 +14,13 @@ public class CGDSpawnGateTimer : MonoBehaviour
     public Text _countDownText;
     public List<GameObject> Gates;
     public static bool _gameStarted;
+    [System.NonSerialized]
+    public bool TextFreeForCharDesc;
 
     void Start()
     {
         _gameStarted = false;
+        TextFreeForCharDesc = false;
         _countDownText.text = "";
         _countDownTimer = _countDownTime;
     }
@@ -37,6 +40,7 @@ public class CGDSpawnGateTimer : MonoBehaviour
             if (_countDownTimer <= 0.0f)
             {
                 _gameStarted = true;
+                TextFreeForCharDesc = false;
                 _countDownText.text = "";
                 foreach (GameObject gate in Gates)
                 {
@@ -46,14 +50,17 @@ public class CGDSpawnGateTimer : MonoBehaviour
             else if (_countDownTimer <= _countDownTimeVisible)
             {
                 _countDownText.text = ((int)roundedCountDownTimer).ToString();
+                TextFreeForCharDesc = false;
             }
             else if (_countDownTimer >= _helpMessageVisible)
             {
-                _countDownText.text = "Press 'E' next to a totem to receive its blessing";
+                _countDownText.text = "Press 'E' next to a statue to receive its blessing...";
+                TextFreeForCharDesc = false;
             }
             else
             {
                 _countDownText.text = "";
+                TextFreeForCharDesc = true;
             }
         }
     }
