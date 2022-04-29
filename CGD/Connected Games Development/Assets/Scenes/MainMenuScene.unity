@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15601745, g: 0.002881711, b: 0.008321012, a: 1}
+  m_IndirectSpecularColor: {r: 0.15095523, g: 0.011705492, b: 0.03588305, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31211,7 +31211,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1e30f62699381be4c88d0a81c63349ee, type: 3}
     - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
+      propertyPath: LoopMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e30f62699381be4c88d0a81c63349ee, type: 3}
+    - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
       propertyPath: MainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e30f62699381be4c88d0a81c63349ee, type: 3}
+    - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
+      propertyPath: IntroMusic
       value: 
       objectReference: {fileID: 8300000, guid: 1e30f62699381be4c88d0a81c63349ee, type: 3}
     - target: {fileID: 9128948814030960131, guid: 21bf89e6dcb01dc48bc28000434e4e46, type: 3}
