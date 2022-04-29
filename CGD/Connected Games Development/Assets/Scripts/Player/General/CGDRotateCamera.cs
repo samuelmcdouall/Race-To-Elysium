@@ -15,6 +15,7 @@ public class CGDRotateCamera : MonoBehaviour
     float MouseYMaxClamp = 60.0f;
 
     public GameObject OwnPlayer;
+    int _cameraLayerIgnore = 7;
 
     void Update()
     {
@@ -38,7 +39,7 @@ public class CGDRotateCamera : MonoBehaviour
         Vector3 cameraToPlayerDirection = (OwnPlayer.transform.position - transform.position).normalized;
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, cameraToPlayerDirection, out hit, 10.0f))
+        if (Physics.Raycast(transform.position, cameraToPlayerDirection, out hit, 10.0f, _cameraLayerIgnore))
         {
             if (hit.transform.gameObject != OwnPlayer)
             {
