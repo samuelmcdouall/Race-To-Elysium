@@ -132,7 +132,7 @@ public class CGDPlayer : MonoBehaviour
             TintSkyboxBasedOnVerticalPosition();
         }
 
-        if (NameText.text == "Player Name") // Done here to avoid race condition with username not being given in time to player to display nametag
+        if (NameText.text == "") // Done here to avoid race condition with username not being given in time to player to display nametag
         {
             if (!View.IsMine)
             {
@@ -305,7 +305,6 @@ public class CGDPlayer : MonoBehaviour
         {
             if (GroundCheck.IsGrounded)
             {
-                print("I have now landed");
                 SwitchAnimationStateTo(_idleState, true);
             }
         }
