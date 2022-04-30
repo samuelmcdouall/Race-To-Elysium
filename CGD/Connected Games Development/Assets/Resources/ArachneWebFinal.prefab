@@ -855,7 +855,7 @@ GameObject:
   - component: {fileID: 371703285418284726}
   m_Layer: 0
   m_Name: ArachneWebFinal
-  m_TagString: Untagged
+  m_TagString: ArachneWeb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

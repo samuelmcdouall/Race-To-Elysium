@@ -1740,7 +1740,7 @@ MonoBehaviour:
   ArachnePlayer: {fileID: 8221330821640465093}
   BlindScreen: {fileID: 974298179849830025}
   NameText: {fileID: 1762170030986799362}
-  JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
+  JumpSFX: {fileID: 8300000, guid: 86170c0cfa71a9d4383f3e37e70b40ee, type: 3}
   LavaBurnFX: {fileID: 8521315307896002207}
   PoisonBurnFX: {fileID: 4800880258748455948}
   NewPlayerSFX: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   AttackSFX2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   AttackHitPlayer: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   AttackHitGate: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
-  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  AreaDenialProjectileLaunchSFX: {fileID: 8300000, guid: 4e07825ad2daaf9409f13f6472fbd024, type: 3}
   PlayerAnimator: {fileID: 2380217118654647509}
   _getHitAnimationDelay: 0.5
   UltAttackAnimationDelay: 0.5

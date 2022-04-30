@@ -20,6 +20,10 @@ TagManager:
   - FxTemporaire
   - Boulder
   - Cloud
+  - CharacterSelect
+  - ArachneWeb
+  - AreaDenialHazard
+  - UltPickup
   layers:
   - Default
   - TransparentFX
