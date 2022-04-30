@@ -1185,8 +1185,6 @@ MonoBehaviour:
   MidasPlayer: {fileID: 4099968565272977907}
   NarcissusPlayer: {fileID: 8359134243737553029, guid: c387be2afcaf8fb418e29cb99606ca8d, type: 3}
   ArachnePlayer: {fileID: 8221330821640465093, guid: 711157b50fdc82a4eb2d1135b00998c2, type: 3}
-  WonScreen: {fileID: 0}
-  LossScreen: {fileID: 0}
   BlindScreen: {fileID: 5150829804383548863}
   NameText: {fileID: 18397028877105103}
   JumpSFX: {fileID: 8300000, guid: 1552692ea72704a318dd896eedb1b81a, type: 3}
