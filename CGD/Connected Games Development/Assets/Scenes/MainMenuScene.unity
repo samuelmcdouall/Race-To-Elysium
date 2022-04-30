@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15274683, g: 0.00861054, b: 0.025136357, a: 1}
+  m_IndirectSpecularColor: {r: 0.0866972, g: 0.16644463, b: 0.47836906, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9657,7 +9657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 661, y: 88.99585}
+  m_AnchoredPosition: {x: 664.7, y: 239.5}
   m_SizeDelta: {x: 561.6049, y: 796.016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683624820
@@ -14709,7 +14709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.4647649, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14717,11 +14717,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 954746d370bc8934299c8c8267543f4f, type: 3}
-    m_FontSize: 97
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 34e95ae8d4960ce43a817400835a62a6, type: 3}
+    m_FontSize: 54
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 143
     m_Alignment: 4
     m_AlignByGeometry: 0

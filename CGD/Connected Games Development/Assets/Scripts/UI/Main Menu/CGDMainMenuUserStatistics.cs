@@ -56,9 +56,9 @@ public class CGDMainMenuUserStatistics : MonoBehaviour
                     float winRateFloat = ((float)userStats.Wins / ((float)userStats.Losses + (float)userStats.Wins)) * 100.0f;
                     winRate = winRateFloat.ToString("F2") + "%";
                 }
-                _stats.text = "Silver: " + userStats.Silver + "\n" + "\n"
+                _stats.text = "Silver: " + userStats.Silver + "\n"
                             + "Wins: " + userStats.Wins + "\n"
-                            + "Losses: " + userStats.Losses + "\n" + "\n"
+                            + "Losses: " + userStats.Losses + "\n"
                             + "Win Rate: " + winRate;
             }
         }
