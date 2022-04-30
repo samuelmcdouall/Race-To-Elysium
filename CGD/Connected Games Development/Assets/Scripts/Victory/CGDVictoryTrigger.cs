@@ -1,7 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class CGDVictoryPickup : MonoBehaviour
+public class CGDVictoryTrigger : MonoBehaviour
 {
     bool _hit = false;
     PhotonView _view;
@@ -15,9 +15,8 @@ public class CGDVictoryPickup : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") && !_hit && _view.IsMine)
         {
             _hit = true;
-            int winnerPhotonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
             collider.gameObject.GetComponent<CGDPlayer>().DisplayGameOverScreenForEveryone();
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
