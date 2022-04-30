@@ -492,7 +492,6 @@ public class CGDPlayer : MonoBehaviour
     public void ResetSpeedModifier()
     {
         _speedModifier = 1.0f;
-        print("returned to normal speed");
     }
 
     [PunRPC]
@@ -680,7 +679,7 @@ public class CGDPlayer : MonoBehaviour
                 break;
             default:
                 chosenFX = null;
-                print("error selecting fx");
+                Debug.Log("error selecting fx");
                 break;
         }
 

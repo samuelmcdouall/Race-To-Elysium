@@ -47,7 +47,7 @@ public class CGDPlayerBasicAttack : MonoBehaviour
             && !CGDPauseManager.Paused
         )
         {
-            print("Basic attack pressed");
+            Debug.Log("Basic attack pressed");
             PeformBasicAttack();
         }
     }
