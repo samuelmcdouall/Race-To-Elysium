@@ -44,8 +44,6 @@ public class CGDPlayer : MonoBehaviour
     public GameObject ArachnePlayer;
 
     [Header("UI")]
-    public GameObject WonScreen;
-    public GameObject LossScreen;
     public GameObject BlindScreen;
     public TextMeshProUGUI NameText;
 
