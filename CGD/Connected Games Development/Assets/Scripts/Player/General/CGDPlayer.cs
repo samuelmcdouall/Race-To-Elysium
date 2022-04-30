@@ -645,7 +645,7 @@ public class CGDPlayer : MonoBehaviour
                 break;
             default:
                 chosenAudioClip = null;
-                Debug.Log("error selecting clip");
+                Debug.Log("Error selecting clip");
                 break;
         }
 
@@ -679,7 +679,7 @@ public class CGDPlayer : MonoBehaviour
                 break;
             default:
                 chosenFX = null;
-                Debug.Log("error selecting fx");
+                Debug.Log("Error selecting fx");
                 break;
         }
 

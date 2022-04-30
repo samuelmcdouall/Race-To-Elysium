@@ -120,7 +120,6 @@ public class CGDPlayerBasicAttack : MonoBehaviour
     {
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
-            print("Hit other player");
             OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x,
                                                                          OwnPlayer.transform.position.y,
                                                                          OwnPlayer.transform.position.z,
@@ -131,7 +130,6 @@ public class CGDPlayerBasicAttack : MonoBehaviour
         }
         else if (collider.tag == "Gate")
         {
-            print("Hit gate");
             OwnPlayer.GetComponent<CGDPlayer>().PlaySoundClipForEveryone(OwnPlayer.transform.position.x,
                                                                          OwnPlayer.transform.position.y,
                                                                          OwnPlayer.transform.position.z,
