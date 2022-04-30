@@ -56,7 +56,7 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
             if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(webRequest.error);
-                ErrorBox.text = "Failed to connect. Try playing as guest";
+                ErrorBox.text = "Failed to connect." + "\n" + "Try playing as guest";
             }
             else
             {
@@ -70,15 +70,15 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
                 }
                 else if (returnText.Contains("(WC)"))
                 {
-                    ErrorBox.text = "Wrong credentials entered";
+                    ErrorBox.text = "Wrong credentials" + "\n" + " entered";
                 }
                 else if (returnText.Contains("(UDNE)"))
                 {
-                    ErrorBox.text = "Username does not exist";
+                    ErrorBox.text = "Username does" + "\n" + " not exist";
                 }
                 else
                 {
-                    ErrorBox.text = "Error logging in. Please try again";
+                    ErrorBox.text = "Error logging in." + "\n" + "Please try again";
                 }
             }
         }
@@ -95,7 +95,7 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
             if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(webRequest.error);
-                ErrorBox.text = "Failed to connect. Try playing as guest";
+                ErrorBox.text = "Failed to connect." +"\n"+ "Try playing as guest";
             }
             else
             {
@@ -109,11 +109,11 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
                 }
                 else if (returnText.Contains("(UAT)"))
                 {
-                    ErrorBox.text = "Username is already taken";
+                    ErrorBox.text = "Username is already" + "\n" + " taken";
                 }
                 else
                 {
-                    ErrorBox.text = "Error creating account. Please try again";
+                    ErrorBox.text = "Error creating account." + "\n" + "Please try again";
                 }
             }
         }
