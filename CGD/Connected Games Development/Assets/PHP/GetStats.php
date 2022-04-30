@@ -14,7 +14,6 @@ if ($conn->connect_error) {
 }
 
 $sqlGetStats = "SELECT silver, wins, losses FROM users WHERE username = '" . $usernameGetStats . "'";
-//$sql = "INSERT INTO users (username, password, silver, wins, losses) VALUES ('" . $registerusername . "'");
 $results = $conn->query($sqlGetStats);
 
 if ($results->num_rows > 0) {

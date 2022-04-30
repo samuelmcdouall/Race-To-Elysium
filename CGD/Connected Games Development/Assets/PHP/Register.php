@@ -16,11 +16,9 @@ if ($conn->connect_error) {
 echo "connected successfully <br>";
 
 $sqlLoginCheck = "SELECT password FROM users WHERE username = '" . $registerusername . "'";
-//$sql = "INSERT INTO users (username, password, silver, wins, losses) VALUES ('" . $registerusername . "'");
 $results = $conn->query($sqlLoginCheck);
 
 if ($results->num_rows > 0) {
-    // Username is already taken
     echo "Username already taken (UAT)";
 }
 else {
