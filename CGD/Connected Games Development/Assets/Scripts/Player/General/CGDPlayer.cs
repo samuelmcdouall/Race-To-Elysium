@@ -136,7 +136,7 @@ public class CGDPlayer : MonoBehaviour
         {
             if (!View.IsMine)
             {
-                print(View.Owner.NickName + " has joined the game");
+                Debug.Log(View.Owner.NickName + " has joined the game");
                 NameText.text = View.Owner.NickName;
             }
             else
@@ -178,7 +178,6 @@ public class CGDPlayer : MonoBehaviour
     {
         if (transform.position.y < CheckpointPosition.y - _checkpointOffset)
         {
-            print("move me back to checkpoint");
             float randX = Random.Range(-1.0f, 1.0f);
             transform.position = new Vector3(CheckpointPosition.x + randX, CheckpointPosition.y, CheckpointPosition.z);
         }
@@ -426,7 +425,6 @@ public class CGDPlayer : MonoBehaviour
                 PlayerAnimator.CrossFade(newState, 0.1f);
             }
             _currentState = newState;
-            print("New state: " + _currentState);
             if (sendToOthers)
             {
                 View.RPC("SwitchAnimationStateTo", RpcTarget.Others, newState, false);
@@ -481,7 +479,6 @@ public class CGDPlayer : MonoBehaviour
         }
         else
         {
-            print("dfg");
             Debug.Log("Got this apply speed mod for seconds instruction from other player");
         }
     }
@@ -505,7 +502,7 @@ public class CGDPlayer : MonoBehaviour
         photonView.gameObject.GetComponent<CGDPlayer>().DisableControlsForSeconds(Duration);
         if (sendToOtherPlayers)
         {
-            Debug.Log("send disable controls for seconds instruction to other players");
+            Debug.Log("Send disable controls for seconds instruction to other players");
             View.RPC("DisableControlsForSecondsToGivenPlayer", RpcTarget.OthersBuffered, Duration, photonViewID, false);
         }
         else
@@ -523,7 +520,6 @@ public class CGDPlayer : MonoBehaviour
     void EnableControls()
     {
         _enabledControls = true;
-        print("returned to normal speed");
     }
 
     [PunRPC]
@@ -535,7 +531,7 @@ public class CGDPlayer : MonoBehaviour
         }
         if (sendToOtherPlayers)
         {
-            Debug.Log("send blind for seconds instruction to other players");
+            Debug.Log("Send blind for seconds instruction to other players");
             View.RPC("DisplayBlindScreenForSecondsToGivenPlayer", RpcTarget.OthersBuffered, fullBlindDuration, fadeOutDuration, photonViewID, false);
         }
         else
@@ -546,7 +542,6 @@ public class CGDPlayer : MonoBehaviour
 
     void DisplayFullBlindScreenForSeconds(float fullBlindDuration, float fadeOutDuration)
     {
-        print("Blinded!");
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         HoldAndFadeOutBlindScreen(fullBlindDuration, fadeOutDuration);
     }
@@ -579,7 +574,6 @@ public class CGDPlayer : MonoBehaviour
 
     void SetBlindScreenToFullyTransparent()
     {
-        print("No longer blinded");
         BlindScreen.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
@@ -594,7 +588,7 @@ public class CGDPlayer : MonoBehaviour
     {
         if (View.IsMine)
         {
-            Debug.Log("send victory instruction to other players, means I won");
+            Debug.Log("Send victory instruction to other players, means I won");
             if (!CGDGameSettings.PlayingAsGuest)
             {
                 StartCoroutine(UpdateStats(CGDGameSettings.Username, true, 5));
@@ -652,7 +646,7 @@ public class CGDPlayer : MonoBehaviour
                 break;
             default:
                 chosenAudioClip = null;
-                print("error selecting clip");
+                Debug.Log("error selecting clip");
                 break;
         }
 
@@ -705,14 +699,12 @@ public class CGDPlayer : MonoBehaviour
     public void StartSliding(float Duration)
     {
         _sliding = true;
-        print("now sliding");
         Invoke("StopSliding", Duration);
     }
 
     void StopSliding()
     {
         _sliding = false;
-        print("no longer sliding");
     }
 
     public void ApplyJumpModifierForSeconds(float modiferPercentage, float duration)
@@ -724,12 +716,11 @@ public class CGDPlayer : MonoBehaviour
     void ResetJumpModifier()
     {
         _jumpModifier = 1.0f;
-        print("returned to normal jump power");
     }
 
     public virtual void UltimateAttack()
     {
-        print("Player Ultimate Attack");
+        Debug.Log("Player Ultimate Attack");
     }
 
     public void ModifyUltimateChargeFromPickup(float chargeAmount)
@@ -740,11 +731,11 @@ public class CGDPlayer : MonoBehaviour
             Invoke("AbleToPickUltAgain", _ultPickupDelay);
             if (chargeAmount > 0.0f)
             {
-                print("Increased charge by: " + chargeAmount);
+                Debug.Log("Increased charge by: " + chargeAmount);
             }
             else
             {
-                print("Decreased charge by: " + -chargeAmount);
+                Debug.Log("Decreased charge by: " + -chargeAmount);
             }
             UltimateCharge += chargeAmount;
             if (UltimateCharge > 100.0f)
@@ -759,7 +750,7 @@ public class CGDPlayer : MonoBehaviour
             {
                 UltimateBar.SetBar(UltimateCharge);
             }
-            print("Ultimate Charge: " + UltimateCharge);
+            Debug.Log("Ultimate Charge: " + UltimateCharge);
         }
     }
 
@@ -772,11 +763,11 @@ public class CGDPlayer : MonoBehaviour
     {
         if (chargeAmount > 0.0f)
         {
-            print("Increased charge by: " + chargeAmount);
+            Debug.Log("Increased charge by: " + chargeAmount);
         }
         else
         {
-            print("Decreased charge by: " + -chargeAmount);
+            Debug.Log("Decreased charge by: " + -chargeAmount);
         }
         UltimateCharge += chargeAmount;
         if (UltimateCharge > 100.0f)
@@ -791,7 +782,7 @@ public class CGDPlayer : MonoBehaviour
         {
             UltimateBar.SetBar(UltimateCharge);
         }
-        print("Ultimate Charge: " + UltimateCharge);
+        Debug.Log("Ultimate Charge: " + UltimateCharge);
     }
 
     IEnumerator UpdateStats(string username, bool won, int silver)
@@ -811,7 +802,7 @@ public class CGDPlayer : MonoBehaviour
             else
             {
                 string jsonData = webRequest.downloadHandler.text;
-                print("Updated stats sent off to database " + jsonData);
+                Debug.Log("Updated stats sent off to database " + jsonData);
             }
         }
     }

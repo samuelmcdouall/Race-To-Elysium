@@ -25,7 +25,7 @@ public class CGDHazard : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            print("player entered the hazard");
+            Debug.Log("Player entered the hazard");
         }
     }
     void OnTriggerExit(Collider other)
@@ -34,7 +34,7 @@ public class CGDHazard : MonoBehaviour
         {
             other.gameObject.GetComponent<CGDPlayer>().LavaBurnFX.SetActive(false);
             other.gameObject.GetComponent<CGDPlayer>().PoisonBurnFX.SetActive(false);
-            print("player exited the hazard");
+            Debug.Log("Player exited the hazard");
         }
     }
 

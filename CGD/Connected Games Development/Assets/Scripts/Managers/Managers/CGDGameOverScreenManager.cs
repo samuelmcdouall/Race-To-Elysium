@@ -25,13 +25,11 @@ public class CGDGameOverScreenManager : MonoBehaviourPunCallbacks
     }
     public static void DisplayWinScreen()
     {
-        print("DISPLAY WIN SCREEN");
         TriggerGameOverState();
         WinScreen.SetActive(true);
     }
     public static void DisplayLossScreen()
     {
-        print("DISPLAY LOSS SCREEN");
         TriggerGameOverState();
         LossScreen.SetActive(true);
     }

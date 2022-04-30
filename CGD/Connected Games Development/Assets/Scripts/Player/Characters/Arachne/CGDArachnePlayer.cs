@@ -33,7 +33,7 @@ public class CGDArachnePlayer : CGDPlayer
     {
         if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
-            print("Arachne Ultimate Attack!");
+            Debug.Log("Arachne Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
             SwitchAnimationStateTo(_arachneUltimateAttackState, true);
@@ -49,7 +49,7 @@ public class CGDArachnePlayer : CGDPlayer
         }
         else
         {
-            print("Not enough charge!");
+            Debug.Log("Not enough charge!");
         }
     }
 

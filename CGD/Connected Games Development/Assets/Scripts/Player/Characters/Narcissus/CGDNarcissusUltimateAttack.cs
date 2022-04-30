@@ -33,7 +33,6 @@ public class CGDNarcissusUltimateAttack : MonoBehaviour
     {
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
-            print("Blind affected other player");
             int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
             collider.gameObject.GetComponent<CGDPlayer>().DisplayBlindScreenForSecondsToGivenPlayer(_fullBlindDuration, _fadeOutDuration, photonViewID, true);
         }

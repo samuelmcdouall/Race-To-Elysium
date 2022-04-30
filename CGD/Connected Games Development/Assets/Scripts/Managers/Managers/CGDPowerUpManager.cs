@@ -153,7 +153,7 @@ public class CGDPowerUpManager : MonoBehaviour
                 LavaPoolIcon.SetActive(false);
                 break;
             default:
-                print("Error, not an area denial projectile");
+                Debug.Log("Error, not an area denial projectile");
                 break;
         }
 

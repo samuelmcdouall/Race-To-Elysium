@@ -62,8 +62,6 @@ public class CGDCharacterSelectStatue : MonoBehaviour
         }
     }
 
-
-
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

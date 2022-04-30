@@ -31,17 +31,13 @@ public class CGDAreaDenialPowerUpHazard : MonoBehaviour
             {
                 other.gameObject.GetComponent<CGDPlayer>().PoisonBurnFX.SetActive(true);
             }
-            else
-            {
-                print("no effects");
-            }
         }
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && (other.gameObject != OwnPlayer || _selfImmuneDelay <= 0.0f))
         {
-            print("player entered the area denial hazard");
+            Debug.Log("Player entered the area denial hazard");
         }
     }
     void OnTriggerExit(Collider other)
@@ -56,11 +52,7 @@ public class CGDAreaDenialPowerUpHazard : MonoBehaviour
             {
                 other.gameObject.GetComponent<CGDPlayer>().PoisonBurnFX.SetActive(false);
             }
-            else
-            {
-                print("no effects");
-            }
-            print("player exited the area denial hazard");
+            Debug.Log("Player exited the area denial hazard");
         }
     }
 

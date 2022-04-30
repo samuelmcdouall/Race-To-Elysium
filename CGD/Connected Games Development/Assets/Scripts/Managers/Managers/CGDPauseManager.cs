@@ -148,14 +148,14 @@ public class CGDPauseManager : MonoBehaviourPunCallbacks
 
     void ModifiyPlayerNumForAllPlayers(int leftPlayerNum)
     {
-        print("Leaving the room, tell the room order to adjust in my absence");
+        Debug.Log("Leaving the room, tell the room order to adjust in my absence");
         _view.RPC("ModifiyPlayerNum", RpcTarget.All, leftPlayerNum);
     }
 
     [PunRPC]
     public void ModifiyPlayerNum(int leftPlayerNum)
     {
-        print("Another player left the room, adjusting order");
+        Debug.Log("Another player left the room, adjusting order");
         if (CGDGameSettings.PlayerNum > leftPlayerNum)
         {
             CGDGameSettings.PlayerNum--;

@@ -22,7 +22,7 @@ public class CGDArachneProjectile : MonoBehaviour
     {
         if (other.gameObject.layer != _invisibleColliderLayer && other.gameObject != OwnPlayer && _view.IsMine)
         {
-            print("Web exploded");
+            Debug.Log("Web exploded");
             GameObject webObject = PhotonNetwork.Instantiate(WebObject.name, gameObject.transform.position, Quaternion.identity);
             webObject.GetComponent<CGDArachneWeb>().OwnPlayer = OwnPlayer;
             PhotonNetwork.Destroy(gameObject);

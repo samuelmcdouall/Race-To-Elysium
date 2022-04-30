@@ -33,7 +33,6 @@ public class CGDMidasUltimateAttack : MonoBehaviour
     {
         if (collider.tag == "Player" && collider.gameObject != OwnPlayer)
         {
-            print("Slow affected other player");
             int photonViewID = collider.gameObject.GetComponent<PhotonView>().ViewID;
             collider.gameObject.GetComponent<CGDPlayer>().ApplySpeedModifierForSecondsToGivenPlayer(_slowPercentageModifier, _slowDuration, photonViewID, true);
         }

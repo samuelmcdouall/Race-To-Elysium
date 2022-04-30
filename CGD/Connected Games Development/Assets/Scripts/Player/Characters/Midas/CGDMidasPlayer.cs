@@ -31,7 +31,7 @@ public class CGDMidasPlayer : CGDPlayer
     {
         if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
-            print("Midas Ultimate Attack!");
+            Debug.Log("Midas Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
             SwitchAnimationStateTo(_midasUltimateAttackState, true);
@@ -39,12 +39,11 @@ public class CGDMidasPlayer : CGDPlayer
             Invoke("UltimateAttackComplete", UltAttackAnimationDelay);
             PlaySoundClipForEveryone(transform.position.x, transform.position.y, transform.position.z, "MidasUltSFX", true);
             PlayFXForEveryone(transform.position.x, transform.position.y, transform.position.z, "MidasUltFX", true);
-            //PhotonNetwork.Instantiate(SlowFX.name, transform.position, Quaternion.identity);
             UltimateCollider.GetComponent<CGDMidasUltimateAttack>().ActivateUltimateCollider();
         }
         else
         {
-            print("Not enough charge!");
+            Debug.Log("Not enough charge!");
         }
     }
 

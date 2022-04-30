@@ -58,7 +58,7 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
                     }
 
                 default:
-                    print("Error, not an area denial projectile");
+                    Debug.Log("Error, not an area denial projectile");
                     break;
             }
             PhotonNetwork.Destroy(gameObject);

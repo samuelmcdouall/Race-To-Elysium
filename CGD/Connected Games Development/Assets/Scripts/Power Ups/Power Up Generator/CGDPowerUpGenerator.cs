@@ -33,7 +33,6 @@ public class CGDPowerUpGenerator : MonoBehaviour
                 _timer = 0.0f;
                 if (GetComponent<CGDPowerUpManager>()._powerUpHeld == CGDPowerUpManager.PowerUpHeld.None)
                 {
-                    print("Power up obtained");
                     AudioSource.PlayClipAtPoint(GenerateSFX, transform.position, CGDGameSettings.SoundVolume);
                     GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
                     List<float> playersVerticalPositions = new List<float>();
@@ -62,7 +61,6 @@ public class CGDPowerUpGenerator : MonoBehaviour
                         movementProbability = playerPosition;
                         movementProbability = Mathf.Max(movementProbability, 0.1f);
                     }
-                    print("Movement Probability: " + movementProbability);
                     float randPowerUpType = Random.Range(0.0f, 1.0f);
 
                     bool giveMovementPowerUp = false;

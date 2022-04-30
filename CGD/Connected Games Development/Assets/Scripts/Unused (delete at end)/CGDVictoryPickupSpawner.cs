@@ -1,5 +1,5 @@
-using Photon.Pun;
 using UnityEngine;
+using Photon.Pun;
 
 public class CGDVictoryPickupSpawner : MonoBehaviour // this is now the exact same as the pickup spawner so can probably just delete it and use the pickupspawner script instead
 {

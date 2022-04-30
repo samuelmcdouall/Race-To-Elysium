@@ -1,5 +1,6 @@
-using Photon.Pun;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class CGDConnectToServer : MonoBehaviourPunCallbacks
 {
@@ -7,14 +8,14 @@ public class CGDConnectToServer : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.IsConnected)
         {
-            print("Not connected, attempting to connect");
+            Debug.Log("Not connected, attempting to connect");
             PhotonNetwork.ConnectUsingSettings();
         }
     }
 
     public override void OnConnectedToMaster()
     {
-        print("Successfuly connected to master!");
+        Debug.Log("Successfuly connected to master!");
         SceneManager.LoadScene("LoginScene");
     }
 }

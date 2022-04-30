@@ -36,7 +36,7 @@ public class CGDMedusaPlayer : CGDPlayer
     {
         if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
-            print("Medusa Ultimate Attack!");
+            Debug.Log("Medusa Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
             SwitchAnimationStateTo(_medusaUltimateAttackState, true);
@@ -50,21 +50,20 @@ public class CGDMedusaPlayer : CGDPlayer
             {
                 if (hit.transform.gameObject.tag == "Player")
                 {
-                    print("I just hit a player, freeze them!");
+                    Debug.Log("I just hit a player, freeze them!");
                     int photonViewID = hit.transform.gameObject.GetComponent<PhotonView>().ViewID;
                     PlayFXForEveryone(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z, "MedusaUltFX", true);
-                    //PhotonNetwork.Instantiate(FreezeFX.name, hit.transform.position, Quaternion.identity);
                     hit.transform.gameObject.GetComponent<CGDPlayer>().DisableControlsForSecondsToGivenPlayer(_freezeDuration, photonViewID, true);
                 }
             }
             else
             {
-                print("Didn't hit anything!");
+                Debug.Log("Didn't hit anything!");
             }
         }
         else
         {
-            print("Not enough charge!");
+            Debug.Log("Not enough charge!");
         }
     }
 

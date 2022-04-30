@@ -58,7 +58,7 @@ public class CGDGameSceneLoader : MonoBehaviour
 
     public void BeginCountDownForAllPlayers()
     {
-        print("I'm the last player/the master host has told us to start the game, telling everyone to start counting down");
+        Debug.Log("I'm the last player/the master host has told us to start the game, telling everyone to start counting down");
         _view.RPC("BeginCountDown", RpcTarget.AllBuffered);
     }
 

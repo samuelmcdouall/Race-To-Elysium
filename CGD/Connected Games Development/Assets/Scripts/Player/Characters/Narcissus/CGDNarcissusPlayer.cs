@@ -30,7 +30,7 @@ public class CGDNarcissusPlayer : CGDPlayer
     {
         if (UltimateCharge == 100.0f && _enabledControls && !CGDGameOverScreenManager.GameOver && !CGDPauseManager.Paused)
         {
-            print("Narcissus Ultimate Attack!");
+            Debug.Log("Narcissus Ultimate Attack!");
             UltimateCharge = 0.0f;
             UltimateBar.SetBar(UltimateCharge);
             SwitchAnimationStateTo(_narcissusUltimateAttackState, true);
@@ -42,7 +42,7 @@ public class CGDNarcissusPlayer : CGDPlayer
         }
         else
         {
-            print("Not enough charge!");
+            Debug.Log("Not enough charge!");
         }
     }
 

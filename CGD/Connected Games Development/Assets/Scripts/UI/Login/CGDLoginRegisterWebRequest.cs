@@ -55,13 +55,11 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
             yield return webRequest.SendWebRequest();
             if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.Log(webRequest.error);
                 ErrorBox.text = "Failed to connect." + "\n" + "Try playing as guest";
             }
             else
             {
                 string returnText = webRequest.downloadHandler.text;
-                Debug.Log(returnText);
                 if (returnText.Contains("(LS)"))
                 {
                     CGDGameSettings.Username = username;
@@ -94,13 +92,11 @@ public class CGDLoginRegisterWebRequest : MonoBehaviour
             yield return webRequest.SendWebRequest();
             if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.Log(webRequest.error);
                 ErrorBox.text = "Failed to connect." +"\n"+ "Try playing as guest";
             }
             else
             {
                 string returnText = webRequest.downloadHandler.text;
-                Debug.Log(returnText);
                 if (returnText.Contains("(NUCS)"))
                 {
                     CGDGameSettings.Username = username;
