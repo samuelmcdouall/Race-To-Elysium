@@ -968,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnPlayer: {fileID: 8221330821640465093}
   _repelBubbleDuration: 0.1
-  _repelForce: 400
+  _repelForce: 2000
   _repelCooldown: 1
   _ultChargeGain: 20
   _attackAnimationDelay: 0.8
@@ -1787,12 +1787,12 @@ MonoBehaviour:
   JumpBoostIcon: {fileID: 6853517555051296988}
   _jumpBoostPerModifier: 50
   _jumpBoostDuration: 5
-  JumpBoostSFX: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
+  JumpBoostSFX: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
   SpeedJumpBoostIcon: {fileID: 5748851069014820587}
   _speedBothBoostPerModifier: 75
   _jumpBothBoostPerModifier: 75
   _speedJumpBoostDuration: 5
-  SpeedJumpBoostSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+  SpeedJumpBoostSFX: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
   PeelIcon: {fileID: 8163210365830816885}
   SpikesIcon: {fileID: 6553394028364121862}
   PoisonCloudIcon: {fileID: 1097280556114827888}

@@ -1004,7 +1004,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 2.57
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5545937952404159129
 GameObject:
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnPlayer: {fileID: 8359134243737553029}
   _repelBubbleDuration: 0.1
-  _repelForce: 400
+  _repelForce: 2000
   _repelCooldown: 1
   _ultChargeGain: 20
   _attackAnimationDelay: 0.8
@@ -1824,12 +1824,12 @@ MonoBehaviour:
   JumpBoostIcon: {fileID: 2593969053256500862}
   _jumpBoostPerModifier: 50
   _jumpBoostDuration: 5
-  JumpBoostSFX: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
+  JumpBoostSFX: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
   SpeedJumpBoostIcon: {fileID: 3942500443731501637}
   _speedBothBoostPerModifier: 75
   _jumpBothBoostPerModifier: 75
   _speedJumpBoostDuration: 5
-  SpeedJumpBoostSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+  SpeedJumpBoostSFX: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
   PeelIcon: {fileID: 7600097708502795993}
   SpikesIcon: {fileID: 1639338433547482821}
   PoisonCloudIcon: {fileID: 5248128060807017915}
