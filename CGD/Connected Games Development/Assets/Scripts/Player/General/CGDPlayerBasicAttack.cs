@@ -143,6 +143,7 @@ public class CGDPlayerBasicAttack : MonoBehaviour
     {
         Vector3 playerToEnemyDirection = Vector3.Normalize(collider.gameObject.transform.position - OwnPlayer.transform.position);
         Vector3 forceToAdd = playerToEnemyDirection * _repelForce;
+        forceToAdd = new Vector3(forceToAdd.x, 0.0f, forceToAdd.z); // Remove vertical component
         return forceToAdd;
     }
 
