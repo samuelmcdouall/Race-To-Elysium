@@ -206,4 +206,3 @@ MonoBehaviour:
   SpikesObject: {fileID: 3705997953930696889, guid: c1f8fbc1ab45c4241b61d6a2b21891a5, type: 3}
   PoisonCloudObject: {fileID: 5783760718336293984, guid: d7a7834f1aef6884699bc01eafc472c0, type: 3}
   LavaPoolObject: {fileID: 604380418509950762, guid: 75712eff0df9fa64087c503bad3b2624, type: 3}
-  CollideSFX: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}

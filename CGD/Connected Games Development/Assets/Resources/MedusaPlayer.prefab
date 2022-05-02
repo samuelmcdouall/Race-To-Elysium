@@ -1286,7 +1286,6 @@ MonoBehaviour:
   _freezeDuration: 5
   _freezeRange: 20
   FreezeFX: {fileID: 1965343156803978, guid: bf082a81e768e374e8bb129ce6f07bfc, type: 3}
-  HitFreezeSFX: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
   Crosshair: {fileID: 426513440886468901}
 --- !u!114 &1958545619369189649
 MonoBehaviour:
