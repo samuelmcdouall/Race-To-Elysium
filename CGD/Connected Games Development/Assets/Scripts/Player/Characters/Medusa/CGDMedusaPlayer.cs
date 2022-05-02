@@ -9,7 +9,6 @@ public class CGDMedusaPlayer : CGDPlayer
     [SerializeField]
     float _freezeRange;
     public GameObject FreezeFX;
-    public AudioClip HitFreezeSFX;
     public GameObject Crosshair;
 
     void Awake()

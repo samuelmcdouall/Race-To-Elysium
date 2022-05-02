@@ -9,7 +9,6 @@ public class CGDPowerUpAreaDenialProjectile : MonoBehaviour
     public GameObject SpikesObject;
     public GameObject PoisonCloudObject;
     public GameObject LavaPoolObject;
-    public AudioClip CollideSFX;
     [System.NonSerialized]
     public GameObject OwnPlayer;
     [System.NonSerialized]
